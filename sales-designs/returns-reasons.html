@@ -1,0 +1,453 @@
+<html lang="en" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="customer-portal.css">
+    <title>Customer Portal</title>
+  </head>
+  <body id="crew" class="overscroll-none ready">
+    <div id="root">
+      <div
+        class="h-full"
+        data-sentry-component="AppShell"
+        data-sentry-source-file="app-shell-component.tsx"
+      >
+        <div class="relative grid h-full grid-rows-[min-content_1fr]">
+          <header
+            class="flex min-h-16 flex-col items-center justify-center bg-white shadow"
+            data-sentry-component="Header"
+            data-sentry-source-file="app-shell-component.tsx"
+          >
+            <span
+              aria-label="Go to Order look up"
+              data-sentry-element="Link"
+              data-sentry-source-file="link-button.tsx"
+              class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 p-0 text-primary-on-container shadow-none hover:underline focus:underline my-3 h-10 w-full max-w-md"
+              data-sentry-component="LinkButton"
+            >
+              <div
+                class="h-full w-full bg-header-logo bg-contain bg-center bg-no-repeat"
+                data-testid="header-logo"
+              ></div>
+            </span>
+          </header>
+          <div
+            class="h-auto bg-banner bg-cover bg-fixed text-base md:bg-banner-img"
+            data-sentry-component="Body"
+            data-sentry-source-file="app-shell-component.tsx"
+          >
+            <div class="mx-auto h-auto max-w-3xl p-2">
+              <div
+                id="app-body"
+                class="relative h-auto w-full rounded-none border border-gray-200 bg-gray-50 px-4 py-8 shadow md:block md:rounded-lg"
+              >
+                <nav
+                  class="-mx-4 -mt-8 mb-4 rounded-t-md p-4 text-gray-800"
+                  data-sentry-component="AppBar"
+                  data-sentry-source-file="app-shell-component.tsx"
+                >
+                  <div
+                    class="flex flex-col items-center justify-between gap-1 md:flex-row"
+                  >
+                    <div
+                      class="flex w-full items-center justify-between gap-1 md:w-auto"
+                    >
+                      <span
+                        data-sentry-element="Link"
+                        data-sentry-source-file="link-button.tsx"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 shadow-none hover:underline focus:underline text-gray-800 hover:text-gray-600 p-1 text-sm"
+                        data-sentry-component="LinkButton"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fal"
+                          data-icon="magnifying-glass"
+                          class="svg-inline--fa fa-magnifying-glass size-4 mr-1"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          data-sentry-element="FontAwesomeIcon"
+                          data-sentry-component="Icon"
+                          data-sentry-source-file="icon.tsx"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M384 208A176 176 0 1 0 32 208a176 176 0 1 0 352 0zM343.3 366C307 397.2 259.7 416 208 416C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208c0 51.7-18.8 99-50 135.3L507.3 484.7c6.2 6.2 6.2 16.4 0 22.6s-16.4 6.2-22.6 0L343.3 366z"
+                          ></path>
+                        </svg>
+                        Search
+                      </span>
+                    </div>
+                    <div
+                      class="flex w-full justify-between gap-1 px-1 text-xs font-medium md:w-auto md:flex-col md:px-0 md:text-right"
+                    >
+                      <span>Order: #3183</span
+                      ><span
+                        >Order Date:
+                        <span id="orderDate">Nov 4, 2024</span></span
+                      >
+                    </div>
+                  </div>
+                </nav>
+                <!-- Order Page              -->
+                <!-- ======================= -->
+                
+                <!-- Reason Page             -->
+                <!-- ======================= -->
+                <main id="rPortalReason" class="flex-1">
+                  <section
+                    class="flex flex-col gap-4"
+                    data-sentry-component="Page"
+                    data-sentry-source-file="page.tsx"
+                  >
+                    <div class="px-4 sr-only">
+                      <h1 class="text-center text-2xl text-gray-800">
+                        What happened and how can we make it right?
+                      </h1>
+                    </div>
+                    <section
+                      aria-labelledby=":r0:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":r0:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            The product you will be returning
+                          </h2>
+                        </div>
+                      </header>
+                      <article
+                        class="flex flex-col gap-8 sm:flex-row sm:items-center"
+                        aria-labelledby=":r1:"
+                      >
+                        <div class="flex w-full items-center gap-4">
+                          <div
+                            class="relative rounded flex-shrink-0 self-start"
+                            data-sentry-component="ProductImage"
+                            data-sentry-source-file="product-image.tsx"
+                          >
+                            <img
+                              id="productImg"
+                              src="https://cdn.shopify.com/s/files/1/0912/4151/3278/files/blue-surfboard-carl.png?v=1735662510"
+                              alt="Surfboard - The Carl"
+                              class="rounded border border-outline object-contain size-12"
+                            />
+                          </div>
+                          <div
+                            class="flex w-full flex-col gap-1 text-sm font-medium text-gray-500"
+                          >
+                            <div
+                              class="flex w-full justify-between text-gray-800"
+                            >
+                              <span id="productTitle">Surfboard - The Carl</span
+                              ><span id="productPrice" class="hidden sm:block"
+                                >$995.00</span
+                              >
+                            </div>
+                            <span id="productOptions" class="font-normal"
+                              >blue</span
+                            >
+                          </div>
+                        </div>
+                      </article>
+                    </section>
+                    <section
+                      aria-labelledby=":r2:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":r2:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            Why are you submitting this item for return?
+                          </h2>
+                        </div>
+                      </header>
+                      <form
+                        method="post"
+                        action="/lunas-sobre-mi-jamon/order/6356769833278/Return/tzg2rtkat3/reason"
+                        name="claimReason"
+                        data-sentry-element="RouterForm"
+                        data-sentry-source-file="form.tsx"
+                        class="flex flex-col gap-6"
+                        data-sentry-component="Form"
+                      >
+                        <fieldset
+                          class="mt-2"
+                          data-sentry-component="RadioGroup"
+                          data-sentry-source-file="radio-group.tsx"
+                        >
+                          <legend
+                            class="text-sm font-medium text-gray-700 sr-only"
+                          >
+                            Select a reason
+                          </legend>
+                          <div>
+                            <label
+                              data-sentry-element="unknown"
+                              data-sentry-component="Label"
+                              data-sentry-source-file="field.tsx"
+                              class="text-sm font-medium text-gray-700 -mb-[1px] flex cursor-pointer items-center gap-3 border border-gray-200 bg-white p-4 last:mb-0 last:rounded-b-md focus:outline-none [&amp;:nth-child(1)]:rounded-t-md"
+                              ><input
+                                name="reasonId"
+                                required=""
+                                type="radio"
+                                class="text-primary focus:ring-primary"
+                                value="280"
+                              />Item is defective</label
+                            ><label
+                              data-sentry-element="unknown"
+                              data-sentry-component="Label"
+                              data-sentry-source-file="field.tsx"
+                              class="text-sm font-medium text-gray-700 -mb-[1px] flex cursor-pointer items-center gap-3 border border-gray-200 bg-white p-4 last:mb-0 last:rounded-b-md focus:outline-none [&amp;:nth-child(1)]:rounded-t-md"
+                              ><input
+                                name="reasonId"
+                                required=""
+                                type="radio"
+                                class="text-primary focus:ring-primary"
+                                value="285"
+                              />Wrong size</label
+                            ><label
+                              data-sentry-element="unknown"
+                              data-sentry-component="Label"
+                              data-sentry-source-file="field.tsx"
+                              class="text-sm font-medium text-gray-700 -mb-[1px] flex cursor-pointer items-center gap-3 border border-gray-200 bg-white p-4 last:mb-0 last:rounded-b-md focus:outline-none [&amp;:nth-child(1)]:rounded-t-md"
+                              ><input
+                                name="reasonId"
+                                required=""
+                                type="radio"
+                                class="text-primary focus:ring-primary"
+                                value="281"
+                              />Item damaged during shipping</label
+                            ><label
+                              data-sentry-element="unknown"
+                              data-sentry-component="Label"
+                              data-sentry-source-file="field.tsx"
+                              class="text-sm font-medium text-gray-700 -mb-[1px] flex cursor-pointer items-center gap-3 border border-gray-200 bg-white p-4 last:mb-0 last:rounded-b-md focus:outline-none [&amp;:nth-child(1)]:rounded-t-md"
+                              ><input
+                                checked
+                                name="reasonId"
+                                required=""
+                                type="radio"
+                                class="text-primary focus:ring-primary"
+                                value="284"
+                              />Wrong item</label
+                            ><label
+                              data-sentry-element="unknown"
+                              data-sentry-component="Label"
+                              data-sentry-source-file="field.tsx"
+                              class="text-sm font-medium text-gray-700 -mb-[1px] flex cursor-pointer items-center gap-3 border border-gray-200 bg-white p-4 last:mb-0 last:rounded-b-md focus:outline-none [&amp;:nth-child(1)]:rounded-t-md"
+                              ><input
+                                name="reasonId"
+                                required=""
+                                type="radio"
+                                class="text-primary focus:ring-primary"
+                                value="279"
+                              />Not what I expected</label
+                            >
+                          </div>
+                        </fieldset>
+                        <button
+                          id="rPortalReasonNext"
+                          data-sentry-element="Button"
+                          data-sentry-source-file="button.tsx"
+                          data-sentry-component="Button"
+                          type="button"
+                          class="inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 bg-primary text-on-primary w-full md:w-1/2"
+                        >
+                          <span>Next</span>
+                        </button>
+                      </form>
+                    </section>
+                  </section>
+                </main>
+                
+
+                <footer
+                  class="mt-8 flex flex-col items-stretch justify-between space-x-4 md:flex-row"
+                  data-testid="app-footer"
+                  data-sentry-component="Footer"
+                  data-sentry-source-file="app-shell-component.tsx"
+                >
+                  <div
+                    class="flex items-center justify-center text-center md:justify-start md:text-left"
+                  >
+                    <p class="text-xs">
+                      Need help with? Contact us at support@<span
+                        id="emailAddressBrandName"
+                        style="text-transform: lowercase"
+                        >ooni</span
+                      >.com
+                    </p>
+                  </div>
+                  <div
+                    class="mt-8 flex items-center justify-center text-xs md:mt-0 md:justify-start"
+                  >
+                    <span class="w-14"
+                      ><a
+                        rel="noreferrer"
+                        data-sentry-element="Link"
+                        data-sentry-source-file="link-button.tsx"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 p-0 text-primary-on-container shadow-none hover:underline focus:underline"
+                        data-sentry-component="LinkButton"
+                        href="https://corso.com/returns-exchanges"
+                        target="_blank"
+                        ><img
+                          alt="Corso Logo"
+                          src="https://corso-media.sfo3.cdn.digitaloceanspaces.com/img/corso-logo.png" /></a
+                    ></span>
+                  </div>
+                </footer>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      localStorage.setItem("moneyBack", false);
+
+      // Get the encoded checkout url paramater
+      const params = new URLSearchParams(window.location.search);
+      const checkoutParams = params.get("checkout");
+
+      // Decode and Parse
+      const decodedCheckoutParams = atob(checkoutParams);
+      const checkoutJson = JSON.parse(decodedCheckoutParams);
+
+      console.log("checkoutJson", checkoutJson);
+
+      // turn url into usable variables
+      const {
+        rates,
+        brandColor,
+        brandLogo,
+        productName,
+        productDesc,
+        productPrice,
+        productImage,
+        exchangeProductImage,
+        exchangeProductName,
+        exchangeProductOptions,
+        exchangeProductOptionLabel,
+        plusPrice,
+        checkbox,
+        checkboxLabel,
+        checkboxDesc,
+        widgetImageUrl,
+        storeName,
+        showProducts,
+      } = checkoutJson;
+
+      // Get today's date
+      const today = new Date();
+
+      // Get yesterday's date
+      const yesterday = new Date();
+      const twoDaysAgo = new Date();
+      const fiveDaysAgo = new Date();
+      const sevenDaysAgo = new Date();
+      const thirtyDaysAhead = new Date();
+      yesterday.setDate(today.getDate() - 1);
+      twoDaysAgo.setDate(today.getDate() - 2);
+      fiveDaysAgo.setDate(today.getDate() - 5);
+      sevenDaysAgo.setDate(today.getDate() - 7);
+      thirtyDaysAhead.setDate(today.getDate() + 31);
+
+      // Format the date as "Jan 19, 2025"
+      const options = { year: "numeric", month: "short", day: "numeric" };
+      const formattedDateToday = today.toLocaleDateString("en-US", options);
+      const formattedDateYesterday = yesterday.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateTwoDaysAgo = twoDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateFiveDaysAgo = fiveDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateSevenDaysAgo = sevenDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateThirtyDaysAhead = thirtyDaysAhead.toLocaleDateString(
+        "en-US",
+        options
+      );
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.documentElement.style.setProperty(
+          "--corso-primary",
+          "#" + brandColor
+        );
+
+        document.documentElement.style.setProperty(
+          "--corso-header-img-url",
+          `url("${brandLogo}")`
+        );
+
+        document.documentElement.style.setProperty(
+          "--corso-primary-on-container",
+          "#" + brandColor
+        );
+
+        const orderDate = document.getElementById("orderDate");
+        const productImgs = document.querySelectorAll("#productImg");
+        const productTitles = document.querySelectorAll("#productTitle");
+        const productOptions = document.querySelectorAll("#productOptions");
+        const productPrices = document.querySelectorAll("#productPrice");
+
+        const emailAddressBrandName = document.getElementById(
+          "emailAddressBrandName"
+        );
+
+        orderDate.innerText = formattedDateSevenDaysAgo;
+        emailAddressBrandName.innerText = storeName.replace(/\s+/g, "");
+
+        productImgs.forEach((img) => {
+          img.src = productImage;
+        });
+
+        productTitles.forEach((text) => {
+          text.innerText = productName;
+        });
+
+        productOptions.forEach((text) => {
+          text.innerText = productDesc;
+        });
+
+        productPrices.forEach((text) => {
+          text.innerText = "$" + (productPrice * 1).toFixed(2);
+        });
+
+        productOptions.forEach((text) => {
+          text.innerText = productDesc;
+        });
+
+      });
+    </script>
+
+    <div class="menu-nav"></div>
+
+    <div class="next-nav">
+      <div data-next-page="returns-reasons-detail" data-next-text="Next"></div>
+    </div>
+
+    <script src="navigation.js"></script>
+
+  </body>
+</html>

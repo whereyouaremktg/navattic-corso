@@ -1,0 +1,893 @@
+<html lang="en" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="customer-portal.css">
+    <title>Customer Portal</title>
+  </head>
+  <body id="crew" class="overscroll-none ready">
+    <div id="root">
+      <div
+        class="h-full"
+        data-sentry-component="AppShell"
+        data-sentry-source-file="app-shell-component.tsx"
+      >
+        <div class="relative grid h-full grid-rows-[min-content_1fr]">
+          <header
+            class="flex min-h-16 flex-col items-center justify-center bg-white shadow"
+            data-sentry-component="Header"
+            data-sentry-source-file="app-shell-component.tsx"
+          >
+            <span
+              aria-label="Go to Order look up"
+              data-sentry-element="Link"
+              data-sentry-source-file="link-button.tsx"
+              class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 p-0 text-primary-on-container shadow-none hover:underline focus:underline my-3 h-10 w-full max-w-md"
+              data-sentry-component="LinkButton"
+            >
+              <div
+                class="h-full w-full bg-header-logo bg-contain bg-center bg-no-repeat"
+                data-testid="header-logo"
+              ></div>
+            </span>
+          </header>
+          <div
+            class="h-auto bg-banner bg-cover bg-fixed text-base md:bg-banner-img"
+            data-sentry-component="Body"
+            data-sentry-source-file="app-shell-component.tsx"
+          >
+            <div class="mx-auto h-auto max-w-3xl p-2">
+              <div
+                id="app-body"
+                class="relative h-auto w-full rounded-none border border-gray-200 bg-gray-50 px-4 py-8 shadow md:block md:rounded-lg"
+              >
+                <nav
+                  class="-mx-4 -mt-8 mb-4 rounded-t-md p-4 text-gray-800"
+                  data-sentry-component="AppBar"
+                  data-sentry-source-file="app-shell-component.tsx"
+                >
+                  <div
+                    class="flex flex-col items-center justify-between gap-1 md:flex-row"
+                  >
+                    <div
+                      class="flex w-full items-center justify-between gap-1 md:w-auto"
+                    >
+                      <span
+                        data-sentry-element="Link"
+                        data-sentry-source-file="link-button.tsx"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 shadow-none hover:underline focus:underline text-gray-800 hover:text-gray-600 p-1 text-sm"
+                        data-sentry-component="LinkButton"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fal"
+                          data-icon="magnifying-glass"
+                          class="svg-inline--fa fa-magnifying-glass size-4 mr-1"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          data-sentry-element="FontAwesomeIcon"
+                          data-sentry-component="Icon"
+                          data-sentry-source-file="icon.tsx"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M384 208A176 176 0 1 0 32 208a176 176 0 1 0 352 0zM343.3 366C307 397.2 259.7 416 208 416C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208c0 51.7-18.8 99-50 135.3L507.3 484.7c6.2 6.2 6.2 16.4 0 22.6s-16.4 6.2-22.6 0L343.3 366z"
+                          ></path>
+                        </svg>
+                        Search
+                      </span>
+                    </div>
+                    <div
+                      class="flex w-full justify-between gap-1 px-1 text-xs font-medium md:w-auto md:flex-col md:px-0 md:text-right"
+                    >
+                      <span>Order: #3183</span
+                      ><span
+                        >Order Date:
+                        <span id="orderDate">Nov 4, 2024</span></span
+                      >
+                    </div>
+                  </div>
+                </nav>
+                <!-- Registration Info Page -->
+                <!-- =================      -->
+
+                <main class="flex-1">
+                  <section class="flex flex-col gap-4" data-sentry-component="Page" data-sentry-source-file="Page.tsx">
+                    <header class="px-4">
+                      <h1 class="text-center heading-md text-gray-900">Let's grab some quick info</h1>
+                    </header>
+                    <section aria-labelledby="" class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-xs md:p-8" data-sentry-component="Card" data-sentry-source-file="Card.tsx">
+                      <form method="post" action="/luna-qa/register?index" enctype="multipart/form-data" data-sentry-element="RouterForm" data-sentry-source-file="Form.tsx" class="flex flex-col gap-6" data-sentry-component="Form">
+                        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                          <div data-testid="customerInfoFields" class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:col-span-2" data-sentry-component="CustomerInfoFields" data-sentry-source-file="CustomerInfoFields.tsx">
+                            <div class="flex w-full flex-col gap-1 sm:col-span-2 relative" data-sentry-component="Root" data-sentry-source-file="Field.tsx"><input type="email" class="body-lg w-full rounded-md border-outline py-2 px-4 duration-100 ease-linear focus:border-primary focus:ring-primary data-empty:text-transparent data-empty:focus:text-gray-600 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-600 disabled:ring-gray-200 data-invalid:border-error data-invalid:focus:border-error data-invalid:focus:ring-error peer pt-5 pb-1" name="email" required="" autocomplete="email" id="email" aria-describedby="email-help-text email-error-text" data-sentry-element="InputPrimitive" data-sentry-source-file="Input.tsx" value="carlsmiles@email.com" style=""><label data-sentry-element="unknown" data-sentry-source-file="Field.tsx" for="email" class="bg-transparent label-lg text-gray-600 pointer-events-none absolute ml-4 origin-left p-0 duration-100 ease-linear translate-y-1 scale-[0.85] peer-focus:peer-data-empty:translate-y-1 peer-focus:peer-data-empty:scale-[0.85] peer-data-empty:translate-y-4 peer-data-empty:scale-100 peer-data-empty:text-gray-600" data-sentry-component="Label">Email Address</label></div>
+                            <div class="flex w-full flex-col gap-1 relative" data-sentry-component="Root" data-sentry-source-file="Field.tsx"><input type="text" class="body-lg w-full rounded-md border-outline py-2 px-4 duration-100 ease-linear focus:border-primary focus:ring-primary data-empty:text-transparent data-empty:focus:text-gray-600 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-600 disabled:ring-gray-200 data-invalid:border-error data-invalid:focus:border-error data-invalid:focus:ring-error peer pt-5 pb-1" name="firstName" required="" autocomplete="given-name" data-sentry-element="InputPrimitive" data-sentry-source-file="Input.tsx" id="firstName" aria-describedby="firstName-help-text firstName-error-text" value="Carl" style=""><label data-sentry-element="unknown" data-sentry-source-file="Field.tsx" for="firstName" class="bg-transparent label-lg text-gray-600 pointer-events-none absolute ml-4 origin-left p-0 duration-100 ease-linear translate-y-1 scale-[0.85] peer-focus:peer-data-empty:translate-y-1 peer-focus:peer-data-empty:scale-[0.85] peer-data-empty:translate-y-4 peer-data-empty:scale-100 peer-data-empty:text-gray-600" data-sentry-component="Label">First Name</label></div>
+                            <div class="flex w-full flex-col gap-1 relative" data-sentry-component="Root" data-sentry-source-file="Field.tsx"><input type="text" class="body-lg w-full rounded-md border-outline py-2 px-4 duration-100 ease-linear focus:border-primary focus:ring-primary data-empty:text-transparent data-empty:focus:text-gray-600 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-600 disabled:ring-gray-200 data-invalid:border-error data-invalid:focus:border-error data-invalid:focus:ring-error peer pt-5 pb-1" name="lastName" required="" autocomplete="family-name" data-sentry-element="InputPrimitive" data-sentry-source-file="Input.tsx" id="lastName" aria-describedby="lastName-help-text lastName-error-text" value="Smiles" style=""><label data-sentry-element="unknown" data-sentry-source-file="Field.tsx" for="lastName" class="bg-transparent label-lg text-gray-600 pointer-events-none absolute ml-4 origin-left p-0 duration-100 ease-linear translate-y-1 scale-[0.85] peer-focus:peer-data-empty:translate-y-1 peer-focus:peer-data-empty:scale-[0.85] peer-data-empty:translate-y-4 peer-data-empty:scale-100 peer-data-empty:text-gray-600" data-sentry-component="Label">Last Name</label></div>
+                            <div class="flex w-full flex-col gap-1 sm:col-span-2" data-sentry-component="Root" data-sentry-source-file="Field.tsx">
+                              <div class="relative">
+                                <input tabindex="-1" class="absolute inset-0 rounded-[7px] border-none text-transparent outline-0 data-[autofill=false]:sr-only autofill:transition-[color] autofill:duration-[calc(infinity*1s)] autofill:ease-[step-end]" required="" name="address[countryCode]" autocomplete="country" value="US" data-autofill="false">
+                                <button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r1:" data-state="closed" class="group after:invisible after:content-[&quot;.&quot;] relative flex w-full items-center justify-between rounded-md border border-outline px-4 pt-5 pb-1 text-left [&amp;&gt;span]:line-clamp-1 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-hidden data-[state=&quot;open&quot;]:border-primary data-[state=&quot;open&quot;]:ring-1 data-[state=&quot;open&quot;]:ring-primary data-[state=&quot;open&quot;]:outline-hidden disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-600 disabled:ring-gray-200 data-[valid=false]:border-error data-[valid=false]:focus:ring-error data-[valid=false]:data-[state=&quot;open&quot;]:border-error data-[valid=false]:data-[state=&quot;open&quot;]:ring-error" id="countryCode" aria-describedby="luid-1 luid-0" data-valid="true" data-empty="false" data-sentry-element="Trigger" data-sentry-source-file="Combobox.tsx">
+                                  <label for="countryCode" class="bg-transparent label-lg text-gray-600 pointer-events-none absolute left-0 ml-4 origin-left px-0 pt-0 pb-1 duration-100 ease-linear -translate-y-4 scale-[0.85] group-data-[state=&quot;open&quot;]:group-data-[empty=true]:-translate-y-4 group-data-[state=&quot;open&quot;]:group-data-[empty=true]:scale-[0.85] group-data-[empty=true]:-translate-y-2 group-data-[empty=true]:scale-100 group-data-[empty=true]:pb-0 group-data-[empty=true]:text-gray-600" data-sentry-component="Label" data-sentry-source-file="Field.tsx">Country</label>United States
+                                  <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down absolute top-4 right-4 size-4 text-gray-600 transition-transform group-data-[state=open]:-rotate-180" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-sentry-element="FontAwesomeIcon" data-sentry-component="Icon" data-sentry-source-file="Icon.tsx">
+                                    <path fill="currentColor" d="M267.3 395.3c-6.2 6.2-16.4 6.2-22.6 0l-192-192c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0L256 361.4 436.7 180.7c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6l-192 192z"></path>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="flex w-full flex-col gap-1 sm:col-span-2 relative" data-sentry-component="Root" data-sentry-source-file="Field.tsx"><input type="text" class="body-lg w-full rounded-md border-outline py-2 px-4 duration-100 ease-linear focus:border-primary focus:ring-primary data-empty:text-transparent data-empty:focus:text-gray-600 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-600 disabled:ring-gray-200 data-invalid:border-error data-invalid:focus:border-error data-invalid:focus:ring-error peer pt-5 pb-1" name="address[line1]" required="" autocomplete="address-line1" id="line1" aria-describedby="line1-help-text line1-error-text" data-sentry-element="InputPrimitive" data-sentry-source-file="Input.tsx" value="223 Erbes Road" style=""><label data-sentry-element="unknown" data-sentry-source-file="Field.tsx" for="line1" class="bg-transparent label-lg text-gray-600 pointer-events-none absolute ml-4 origin-left p-0 duration-100 ease-linear translate-y-1 scale-[0.85] peer-focus:peer-data-empty:translate-y-1 peer-focus:peer-data-empty:scale-[0.85] peer-data-empty:translate-y-4 peer-data-empty:scale-100 peer-data-empty:text-gray-600" data-sentry-component="Label">Address</label></div>
+                            <div class="flex w-full flex-col gap-1 relative" data-sentry-component="Root" data-sentry-source-file="Field.tsx"><input type="text" class="body-lg w-full rounded-md border-outline py-2 px-4 duration-100 ease-linear focus:border-primary focus:ring-primary data-empty:text-transparent data-empty:focus:text-gray-600 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-600 disabled:ring-gray-200 data-invalid:border-error data-invalid:focus:border-error data-invalid:focus:ring-error peer pt-5 pb-1" data-empty="" name="address[line2]" autocomplete="address-line2" id="line2" aria-describedby="line2-help-text line2-error-text" data-sentry-element="InputPrimitive" data-sentry-source-file="Input.tsx" value=""><label data-sentry-element="unknown" data-sentry-source-file="Field.tsx" for="line2" class="bg-transparent label-lg text-gray-600 pointer-events-none absolute ml-4 origin-left p-0 duration-100 ease-linear translate-y-1 scale-[0.85] peer-focus:peer-data-empty:translate-y-1 peer-focus:peer-data-empty:scale-[0.85] peer-data-empty:translate-y-4 peer-data-empty:scale-100 peer-data-empty:text-gray-600" data-sentry-component="Label">Apt, suite, etc. (optional)</label></div>
+                            <div class="flex w-full flex-col gap-1 relative" data-sentry-component="Root" data-sentry-source-file="Field.tsx"><input type="text" class="body-lg w-full rounded-md border-outline py-2 px-4 duration-100 ease-linear focus:border-primary focus:ring-primary data-empty:text-transparent data-empty:focus:text-gray-600 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-600 disabled:ring-gray-200 data-invalid:border-error data-invalid:focus:border-error data-invalid:focus:ring-error peer pt-5 pb-1" name="address[city]" required="" autocomplete="address-level2" id="city" aria-describedby="city-help-text city-error-text" data-sentry-element="InputPrimitive" data-sentry-source-file="Input.tsx" value="Thousand Oaks" style=""><label data-sentry-element="unknown" data-sentry-source-file="Field.tsx" for="city" class="bg-transparent label-lg text-gray-600 pointer-events-none absolute ml-4 origin-left p-0 duration-100 ease-linear translate-y-1 scale-[0.85] peer-focus:peer-data-empty:translate-y-1 peer-focus:peer-data-empty:scale-[0.85] peer-data-empty:translate-y-4 peer-data-empty:scale-100 peer-data-empty:text-gray-600" data-sentry-component="Label">City</label></div>
+                            <div class="flex w-full flex-col gap-1" data-sentry-component="Root" data-sentry-source-file="Field.tsx">
+                              <div class="relative">
+                                <input tabindex="-1" class="absolute inset-0 rounded-[7px] border-none text-transparent outline-0 data-[autofill=false]:sr-only autofill:transition-[color] autofill:duration-[calc(infinity*1s)] autofill:ease-[step-end]" required="" name="address[stateOrProvinceCode]" autocomplete="address-level1" value="CA" data-autofill="false">
+                                <button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r7t:" data-state="closed" class="group after:invisible after:content-[&quot;.&quot;] relative flex w-full items-center justify-between rounded-md border border-outline px-4 pt-5 pb-1 text-left [&amp;&gt;span]:line-clamp-1 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-hidden data-[state=&quot;open&quot;]:border-primary data-[state=&quot;open&quot;]:ring-1 data-[state=&quot;open&quot;]:ring-primary data-[state=&quot;open&quot;]:outline-hidden disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-600 disabled:ring-gray-200 data-[valid=false]:border-error data-[valid=false]:focus:ring-error data-[valid=false]:data-[state=&quot;open&quot;]:border-error data-[valid=false]:data-[state=&quot;open&quot;]:ring-error" id="stateOrProvinceCode" aria-describedby="luid-13 luid-12" data-valid="true" data-empty="false" data-sentry-element="Trigger" data-sentry-source-file="Combobox.tsx">
+                                  <label for="stateOrProvinceCode" class="bg-transparent label-lg text-gray-600 pointer-events-none absolute left-0 ml-4 origin-left px-0 pt-0 pb-1 duration-100 ease-linear -translate-y-4 scale-[0.85] group-data-[state=&quot;open&quot;]:group-data-[empty=true]:-translate-y-4 group-data-[state=&quot;open&quot;]:group-data-[empty=true]:scale-[0.85] group-data-[empty=true]:-translate-y-2 group-data-[empty=true]:scale-100 group-data-[empty=true]:pb-0 group-data-[empty=true]:text-gray-600" data-sentry-component="Label" data-sentry-source-file="Field.tsx">State or Province</label>California
+                                  <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down absolute top-4 right-4 size-4 text-gray-600 transition-transform group-data-[state=open]:-rotate-180" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-sentry-element="FontAwesomeIcon" data-sentry-component="Icon" data-sentry-source-file="Icon.tsx">
+                                    <path fill="currentColor" d="M267.3 395.3c-6.2 6.2-16.4 6.2-22.6 0l-192-192c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0L256 361.4 436.7 180.7c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6l-192 192z"></path>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="flex w-full flex-col gap-1 relative" data-sentry-component="Root" data-sentry-source-file="Field.tsx"><input type="text" class="body-lg w-full rounded-md border-outline py-2 px-4 duration-100 ease-linear focus:border-primary focus:ring-primary data-empty:text-transparent data-empty:focus:text-gray-600 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-600 disabled:ring-gray-200 data-invalid:border-error data-invalid:focus:border-error data-invalid:focus:ring-error peer pt-5 pb-1" name="address[postalCode]" required="" autocomplete="postal-code" id="postalCode" aria-describedby="postalCode-help-text postalCode-error-text" data-sentry-element="InputPrimitive" data-sentry-source-file="Input.tsx" value="91263" style=""><label data-sentry-element="unknown" data-sentry-source-file="Field.tsx" for="postalCode" class="bg-transparent label-lg text-gray-600 pointer-events-none absolute ml-4 origin-left p-0 duration-100 ease-linear translate-y-1 scale-[0.85] peer-focus:peer-data-empty:translate-y-1 peer-focus:peer-data-empty:scale-[0.85] peer-data-empty:translate-y-4 peer-data-empty:scale-100 peer-data-empty:text-gray-600" data-sentry-component="Label">Postal Code</label></div>
+                            <div class="flex w-full flex-col gap-1 relative" data-sentry-component="Root" data-sentry-source-file="Field.tsx"><input type="tel" class="body-lg w-full rounded-md border-outline py-2 px-4 duration-100 ease-linear focus:border-primary focus:ring-primary data-empty:text-transparent data-empty:focus:text-gray-600 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-600 disabled:ring-gray-200 data-invalid:border-error data-invalid:focus:border-error data-invalid:focus:ring-error peer pt-5 pb-1" name="address[phone]" required="" autocomplete="tel" id="phone" aria-describedby="phone-help-text phone-error-text" data-sentry-element="InputPrimitive" data-sentry-source-file="Input.tsx" value="9495736456" style=""><label data-sentry-element="unknown" data-sentry-source-file="Field.tsx" for="phone" class="bg-transparent label-lg text-gray-600 pointer-events-none absolute ml-4 origin-left p-0 duration-100 ease-linear translate-y-1 scale-[0.85] peer-focus:peer-data-empty:translate-y-1 peer-focus:peer-data-empty:scale-[0.85] peer-data-empty:translate-y-4 peer-data-empty:scale-100 peer-data-empty:text-gray-600" data-sentry-component="Label">Phone</label></div>
+                          </div>
+                          <div class="flex w-full flex-col gap-1 relative" data-sentry-component="Root" data-sentry-source-file="Field.tsx"><input type="date" class="body-lg w-full rounded-md border-outline py-2 px-4 duration-100 ease-linear focus:border-primary focus:ring-primary data-empty:text-transparent data-empty:focus:text-gray-600 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-600 disabled:ring-gray-200 data-invalid:border-error data-invalid:focus:border-error data-invalid:focus:ring-error peer pt-5 pb-1" min="1900-01-01" max="2026-01-08" name="estimatedPurchaseDate" required="" data-sentry-element="InputPrimitive" data-sentry-source-file="Input.tsx" id="estimated-purchase-date" aria-describedby="estimated-purchase-date-help-text estimated-purchase-date-error-text" value=""><label data-sentry-element="unknown" data-sentry-source-file="Field.tsx" for="estimated-purchase-date" class="bg-transparent label-lg text-gray-600 pointer-events-none absolute ml-4 origin-left p-0 duration-100 ease-linear translate-y-1 scale-[0.85] peer-focus:peer-data-empty:translate-y-1 peer-focus:peer-data-empty:scale-[0.85] peer-data-empty:translate-y-4 peer-data-empty:scale-100 peer-data-empty:text-gray-600" data-sentry-component="Label">Estimated Purchase Date</label></div>
+                          <div class="flex w-full flex-col gap-1" data-sentry-component="Root" data-sentry-source-file="Field.tsx">
+                            <div class="relative">
+                              <input tabindex="-1" class="absolute inset-0 rounded-[7px] border-none text-transparent outline-0 data-[autofill=false]:sr-only autofill:transition-[color] autofill:duration-[calc(infinity*1s)] autofill:ease-[step-end]" required="" name="storeSalesChannel" value="122" data-autofill="false">
+                              <button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r2:" data-state="closed" class="group after:invisible after:content-[&quot;.&quot;] relative flex w-full items-center justify-between rounded-md border border-outline px-4 pt-5 pb-1 text-left [&amp;&gt;span]:line-clamp-1 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-hidden data-[state=&quot;open&quot;]:border-primary data-[state=&quot;open&quot;]:ring-1 data-[state=&quot;open&quot;]:ring-primary data-[state=&quot;open&quot;]:outline-hidden disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-600 disabled:ring-gray-200 data-[valid=false]:border-error data-[valid=false]:focus:ring-error data-[valid=false]:data-[state=&quot;open&quot;]:border-error data-[valid=false]:data-[state=&quot;open&quot;]:ring-error" id="purchase-location" aria-describedby="luid-3 luid-2" data-valid="true" data-empty="false" data-sentry-element="Trigger" data-sentry-source-file="Combobox.tsx">
+                                <label for="purchase-location" class="bg-transparent label-lg text-gray-600 pointer-events-none absolute left-0 ml-4 origin-left px-0 pt-0 pb-1 duration-100 ease-linear -translate-y-4 scale-[0.85] group-data-[state=&quot;open&quot;]:group-data-[empty=true]:-translate-y-4 group-data-[state=&quot;open&quot;]:group-data-[empty=true]:scale-[0.85] group-data-[empty=true]:-translate-y-2 group-data-[empty=true]:scale-100 group-data-[empty=true]:pb-0 group-data-[empty=true]:text-gray-600" data-sentry-component="Label" data-sentry-source-file="Field.tsx">Original Purchase Location</label>Amazon
+                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down absolute top-4 right-4 size-4 text-gray-600 transition-transform group-data-[state=open]:-rotate-180" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-sentry-element="FontAwesomeIcon" data-sentry-component="Icon" data-sentry-source-file="Icon.tsx">
+                                  <path fill="currentColor" d="M267.3 395.3c-6.2 6.2-16.4 6.2-22.6 0l-192-192c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0L256 361.4 436.7 180.7c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6l-192 192z"></path>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="flex w-full flex-col gap-1 sm:col-span-2 relative" data-sentry-component="Root" data-sentry-source-file="Field.tsx"><input type="text" class="body-lg w-full rounded-md border-outline py-2 px-4 duration-100 ease-linear focus:border-primary focus:ring-primary data-empty:text-transparent data-empty:focus:text-gray-600 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-600 disabled:ring-gray-200 data-invalid:border-error data-invalid:focus:border-error data-invalid:focus:ring-error peer pt-5 pb-1" data-empty="" name="orderNumber" data-sentry-element="InputPrimitive" data-sentry-source-file="Input.tsx" id="orderNumber" aria-describedby="orderNumber-help-text orderNumber-error-text" value=""><label data-sentry-element="unknown" data-sentry-source-file="Field.tsx" for="orderNumber" class="bg-transparent label-lg text-gray-600 pointer-events-none absolute ml-4 origin-left p-0 duration-100 ease-linear translate-y-1 scale-[0.85] peer-focus:peer-data-empty:translate-y-1 peer-focus:peer-data-empty:scale-[0.85] peer-data-empty:translate-y-4 peer-data-empty:scale-100 peer-data-empty:text-gray-600" data-sentry-component="Label"> Original Order Number (optional)</label></div>
+                          <div class="flex w-full flex-col gap-1 sm:col-span-2" data-sentry-component="Root" data-sentry-source-file="Field.tsx">
+                            <label data-sentry-element="unknown" data-sentry-source-file="Field.tsx" for="luid-6" class="bg-transparent label-lg text-gray-600" data-sentry-component="Label">Proof of Purchase </label>
+                            <p id="luid-4" class="body-sm text-gray-600 mb-1" data-sentry-component="HelpText" data-sentry-source-file="Field.tsx">Upload a receipt, invoice, or other proof of purchase.</p>
+                            <div id="luid-7" class="relative flex w-full flex-col items-center justify-center gap-4 rounded-lg border border-dashed border-outline bg-gray-50 p-4 body-md text-gray-600 focus-within:border-primary focus-within:bg-white hover:bg-gray-100" data-sentry-component="Dropzone" data-sentry-source-file="FileUploader.tsx">
+                              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cloud-arrow-up" class="svg-inline--fa fa-cloud-arrow-up size-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-sentry-element="FontAwesomeIcon" data-sentry-component="Icon" data-sentry-source-file="Icon.tsx">
+                                <path fill="currentColor" d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128l-368 0zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39L296 392c0 13.3 10.7 24 24 24s24-10.7 24-24l0-134.1 39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z"></path>
+                              </svg>
+                              <span class="ml-3">Drag and drop your files here or click to browse</span><span class="">1 of 1 file uploaded</span><span class="sr-only">required</span><input role="button" data-testid="fileInput" id="luid-6" aria-describedby="luid-4 luid-5 luid-7" multiple="" class="absolute inset-0 cursor-pointer opacity-0" type="file" accept="image/jpeg, image/png, image/webp, video/mp4, video/webm, application/pdf, video/quicktime">
+                            </div>
+                            <input id="requiredCountValidity" type="number" aria-hidden="true" tabindex="-1" class="sr-only" min="1" value="0">
+                          </div>
+                          <input type="hidden" data-testid="required-asset-count" name="requiredAssetCount" value="1"><input type="hidden" name="referrer" data-testid="referrer" value="">
+                          <ul class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+                                <li>
+                                  <figure class="relative aspect-square w-full min-w-[80px] rounded-lg border border-gray-300">
+                                    <img class="h-full w-full rounded-lg object-cover" src="https://corso-crew.sfo3.digitaloceanspaces.com/file/proof-of-purchase/2025-06-02t16-52-43-317z-receipt-template-with-barcode.jpg" alt="2025-06-02t16-52-43-317z-receipt-template-with-barcode.jpg">
+                                    <div class="group absolute inset-0 flex items-start justify-end p-1.5">
+                                      <button type="button" class="inline-flex items-center justify-center border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 shadow-none hover:underline focus:underline rounded-full bg-black/60 p-1 text-white transition group-hover:bg-black/90" data-sentry-component="Button" data-sentry-source-file="button.tsx">
+                                        <svg aria-labelledby="svg-inline--fa-title-rgbu3TU9upn1" data-prefix="fal" data-icon="xmark" class="svg-inline--fa fa-xmark size-5" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-sentry-element="FontAwesomeIcon" data-sentry-component="Icon" data-sentry-source-file="icon.tsx">
+                                          <title id="svg-inline--fa-title-rgbu3TU9upn1">
+                                            Remove
+                                            2025-06-02t16-52-43-317z-receipt-template-with-barcode.jpg
+                                          </title>
+                                          <path fill="currentColor" d="M324.5 411.1c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6L214.6 256 347.1 123.5c6.2-6.2 6.2-16.4 0-22.6s-16.4-6.2-22.6 0L192 233.4 59.6 100.9c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6L169.4 256 36.9 388.5c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0L192 278.6 324.5 411.1z"></path>
+                                        </svg>
+                                      </button>
+                                    </div>
+                                    <figcaption class="sr-only" data-sentry-element="figcaption" data-sentry-source-file="file-uploader.tsx">
+                                      2025-06-02t16-52-43-317z-receipt-template-with-barcode.jpg
+                                    </figcaption>
+                                  </figure>
+                                </li>
+                              </ul>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 sm:col-span-2 relative" data-sentry-component="Root" data-sentry-source-file="Field.tsx">
+                          <div class="flex items-start gap-3">
+                            <input type="checkbox" class="size-5 rounded border border-outline text-primary duration-100 ease-linear focus:border-primary focus:ring-2 focus:ring-primary focus:ring-offset-2 checked:bg-primary checked:border-primary checked:hover:bg-primary/80 checked:focus:bg-primary appearance-none disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-600 disabled:ring-gray-200 data-invalid:border-error data-invalid:focus:border-error data-invalid:focus:ring-error" name="emailMarketingConsent" id="marketing-consent" aria-describedby="marketing-consent-help-text marketing-consent-error-text" data-sentry-element="InputPrimitive" data-sentry-source-file="Checkbox.tsx" value="on" checked="">
+                            <div class="flex flex-col gap-1">
+                              <label data-sentry-element="unknown" data-sentry-source-file="Field.tsx" for="marketing-consent" class="bg-transparent label-lg text-gray-600 cursor-pointer" data-sentry-component="Label">I would like to receive email communication</label>
+                              <p id="marketing-consent-help-text" class="body-sm text-gray-600" data-sentry-component="HelpText" data-sentry-source-file="Field.tsx"><span class="flex flex-col items-start gap-1">We will send valuable information to keep you updated on our latest deals and products.<a class="label-lg inline-flex items-center rounded-md border border-transparent hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer focus:outline-primary focus:outline-2 focus:outline-offset-2 max-w-fit justify-start p-0 text-[length:inherit] text-gray-900 shadow-none hover:underline focus:border-none focus:underline focus:ring-0 focus:ring-transparent focus:ring-offset-0 focus:outline-none" data-sentry-element="Link" data-sentry-component="LinkButton" data-sentry-source-file="LinkButton.tsx" href="https://www.corso.com" target="_blank"> Terms &amp; Conditions</a></span></p>
+                            </div>
+                          </div>
+                        </div>
+                        <button data-sentry-element="Submit" data-sentry-source-file="CustomerInfoPage.tsx" type="submit" class="label-lg inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 shadow-xs hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer focus:outline-solid focus:outline-primary focus:outline-2 focus:outline-offset-2 bg-primary text-on-primary w-full md:w-1/2"><span>Next</span></button>
+                      </form>
+                    </section>
+                  </section>
+                </main>
+
+
+                
+                <!-- Registration Product Page -->
+                <!-- =================         -->
+                <main
+                  class="flex-1"
+                  data-protonpass-form=""
+                  id="wPortalRegProduct"
+                  style="display: none"
+                >
+                  <section
+                    class="flex flex-col gap-4"
+                    data-sentry-component="Page"
+                    data-sentry-source-file="page.tsx"
+                  >
+                    <div class="px-4">
+                      <h1 class="text-center text-2xl text-gray-800">
+                        Select Your Products
+                      </h1>
+                    </div>
+                    <section
+                      aria-labelledby=":r19:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":r19:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            Getting started
+                          </h2>
+                        </div>
+                      </header>
+                      <span
+                        class="flex items-center gap-2 text-sm font-medium text-gray-800"
+                        >Please refer to your receipt or order to determine the
+                        name of the product you are looking to register. If
+                        you’re unable to identify your product, you can reach
+                        out to our team for help.</span
+                      >
+                    </section>
+                    <section
+                      aria-labelledby=":r1a:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":r1a:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            Search
+                          </h2>
+                        </div>
+                      </header>
+                      <div
+                        tabindex="-1"
+                        data-sentry-element="Command"
+                        data-sentry-source-file="register-product-component.tsx"
+                        cmdk-root=""
+                      >
+                        <label
+                          cmdk-label=""
+                          for=":r1d:"
+                          id=":r1c:"
+                          style="
+                            position: absolute;
+                            width: 1px;
+                            height: 1px;
+                            padding: 0px;
+                            margin: -1px;
+                            overflow: hidden;
+                            clip: rect(0px, 0px, 0px, 0px);
+                            white-space: nowrap;
+                            border-width: 0px;
+                          "
+                        ></label>
+                        <div class="relative">
+                          <input
+                            type="search"
+                            class="w-full rounded-md border-outline px-4 text-base duration-100 ease-linear focus:border-primary focus:ring-primary data-[empty]:text-transparent data-[empty]:focus:text-gray-700 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200 data-[invalid]:border-error data-[invalid]:focus:border-error data-[invalid]:focus:ring-error py-2 pr-12"
+                            id="search"
+                            data-sentry-element="InputPrimitive"
+                            data-sentry-source-file="register-product-component.tsx"
+                            placeholder="Search by product by name"
+                            cmdk-input=""
+                            autocomplete="off"
+                            autocorrect="off"
+                            spellcheck="false"
+                            aria-autocomplete="list"
+                            role="combobox"
+                            aria-expanded="true"
+                            aria-controls=":r1b:"
+                            aria-labelledby=":r1c:"
+                            value=""
+                          />
+                        </div>
+                        <div
+                          class="mt-4 max-h-96 overflow-auto [&amp;>[cmdk-list-sizer]]:flex [&amp;>[cmdk-list-sizer]]:flex-col [&amp;>[cmdk-list-sizer]]:gap-4"
+                          data-sentry-element="unknown"
+                          data-sentry-source-file="register-product-component.tsx"
+                          cmdk-list=""
+                          role="listbox"
+                          aria-label="Suggestions"
+                          id=":r3:"
+                          style="--cmdk-list-height: 96px"
+                        >
+                          <div cmdk-list-sizer="">
+                            <div
+                              value="61802673"
+                              class="pb-1 [&amp;>[cmdk-group-heading]]:mb-2 [&amp;>[cmdk-group-heading]]:text-lg [&amp;>[cmdk-group-heading]]:text-gray-600 [&amp;>[cmdk-group-items]]:flex [&amp;>[cmdk-group-items]]:flex-col [&amp;>[cmdk-group-items]]:gap-1 [&amp;>[cmdk-group-items]]:px-2"
+                              cmdk-group=""
+                              role="presentation"
+                              data-value="61802673"
+                            >
+                              <div
+                                cmdk-group-heading=""
+                                aria-hidden="true"
+                                id="productTitle"
+                              >
+                                Travel Bag 40L - Lost and Found
+                              </div>
+                              <div
+                                cmdk-group-items=""
+                                role="group"
+                                aria-labelledby=":rf:"
+                              >
+                                <div
+                                  class="cursor-pointer rounded-sm p-1 aria-selected:bg-gray-50 aria-selected:ring-1 aria-selected:ring-outline"
+                                  id=":rg:"
+                                  cmdk-item=""
+                                  role="option"
+                                  aria-disabled="false"
+                                  aria-selected="true"
+                                  data-disabled="false"
+                                  data-selected="true"
+                                  data-value="333009483"
+                                >
+                                  <article
+                                    class="flex flex-col gap-8 sm:flex-row sm:items-center"
+                                    aria-labelledby=":rh:"
+                                  >
+                                    <div class="flex w-full items-center gap-4">
+                                      <div
+                                        class="relative rounded flex-shrink-0 self-start"
+                                        data-sentry-component="ProductImage"
+                                        data-sentry-source-file="product-image.tsx"
+                                      >
+                                        <img
+                                          id="productImg"
+                                          src="https://cdn.shopify.com/s/files/1/0745/1299/files/TRBG40-BLK-02_TravelBag40L_Nomatic_AngleFront.png?v=1738086007"
+                                          alt="Travel Bag 40L - Lost and Found"
+                                          class="rounded border border-outline object-contain size-12"
+                                        />
+                                      </div>
+                                      <div
+                                        class="flex w-full flex-col gap-1 text-sm font-medium text-gray-500"
+                                      >
+                                        <div
+                                          class="flex w-full justify-between text-gray-800"
+                                        >
+                                          <span id="productTitle"
+                                            >Travel Bag 40L - Lost and
+                                            Found</span
+                                          >
+                                        </div>
+                                        <span
+                                          class="font-normal"
+                                          id="productTitle"
+                                          >Travel Bag 40L - Lost and Found</span
+                                        >
+                                      </div>
+                                    </div>
+                                  </article>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div
+                          class="mt-4 max-h-96 overflow-auto [&amp;>[cmdk-list-sizer]]:flex [&amp;>[cmdk-list-sizer]]:flex-col [&amp;>[cmdk-list-sizer]]:gap-4"
+                          data-sentry-element="unknown"
+                          data-sentry-source-file="register-product-component.tsx"
+                          cmdk-list=""
+                          role="listbox"
+                          aria-label="Suggestions"
+                          id=":r1b:"
+                          style="--cmdk-list-height: 0px; display: none"
+                        >
+                          <div cmdk-list-sizer="">
+                            <div cmdk-empty="" role="presentation">
+                              No products found, please try your search again.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                    <section
+                      data-testid="selection-review"
+                      aria-labelledby=":r3u:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":r3u:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            Review
+                          </h2>
+                        </div>
+                      </header>
+                      <form
+                        method="post"
+                        action="/nomatic/register/product"
+                        class="flex flex-col gap-6"
+                        data-sentry-element="RouterForm"
+                        data-sentry-component="Form"
+                        data-sentry-source-file="form.tsx"
+                      >
+                        <ul class="flex flex-col divide-y divide-outline">
+                          <li class="py-3">
+                            <article
+                              class="flex flex-col gap-8 sm:flex-row sm:items-center"
+                              aria-labelledby=":r3v:"
+                            >
+                              <div
+                                class="flex w-full items-center gap-4 sm:basis-2/3"
+                              >
+                                <div
+                                  class="relative rounded flex-shrink-0 self-start"
+                                  data-sentry-component="ProductImage"
+                                  data-sentry-source-file="product-image.tsx"
+                                >
+                                  <img
+                                    id="productImg"
+                                    src="https://cdn.shopify.com/s/files/1/0745/1299/files/TRBG40-BLK-02_TravelBag40L_Nomatic_AngleFront.png?v=1738086007"
+                                    alt="Travel Bag 40L"
+                                    class="rounded border border-outline object-contain size-12"
+                                  />
+                                </div>
+                                <div
+                                  class="flex w-full flex-col gap-1 text-sm font-medium text-gray-500"
+                                >
+                                  <div
+                                    class="flex w-full justify-between text-gray-800"
+                                  >
+                                    <span id="productTitle"
+                                      >Travel Bag 40L</span
+                                    >
+                                  </div>
+                                  <span class="font-normal" id="productOptions"
+                                    >Travel Bag 40L</span
+                                  >
+                                </div>
+                              </div>
+                              <div class="sm:basis-1/3">
+                                <div
+                                  class="flex items-end justify-end gap-6 sm:items-stretch"
+                                  data-sentry-component="SelectVariantActions"
+                                  data-sentry-source-file="register-product-component.tsx"
+                                >
+                                  <input
+                                    type="hidden"
+                                    name="variants[0][id]"
+                                    value="333009450"
+                                  />
+                                  <div
+                                    class="w-full flex flex-1 flex-col gap-2 sm:flex-row sm:items-center sm:justify-end"
+                                    data-sentry-component="Root"
+                                    data-sentry-source-file="field.tsx"
+                                  >
+                                    <label
+                                      data-sentry-element="unknown"
+                                      data-sentry-source-file="field.tsx"
+                                      for="333009450-quantity"
+                                      class="bg-transparent text-sm font-medium text-gray-700"
+                                      data-sentry-component="Label"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        focusable="false"
+                                        data-prefix="fal"
+                                        data-icon="xmark"
+                                        class="svg-inline--fa fa-xmark size-5 hidden sm:block"
+                                        role="img"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 384 512"
+                                        data-sentry-element="FontAwesomeIcon"
+                                        data-sentry-component="Icon"
+                                        data-sentry-source-file="icon.tsx"
+                                      >
+                                        <path
+                                          fill="currentColor"
+                                          d="M324.5 411.1c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6L214.6 256 347.1 123.5c6.2-6.2 6.2-16.4 0-22.6s-16.4-6.2-22.6 0L192 233.4 59.6 100.9c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6L169.4 256 36.9 388.5c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0L192 278.6 324.5 411.1z"
+                                        ></path>
+                                      </svg>
+                                      <span class="sm:sr-only">Quantity</span>
+                                    </label>
+                                    <input
+                                      type="number"
+                                      class="rounded-md border-outline text-base duration-100 ease-linear focus:border-primary focus:ring-primary data-[empty]:text-transparent data-[empty]:focus:text-gray-700 text-right [appearance:textfield] [&amp;::-webkit-outer-spin-button]:appearance-none [&amp;::-webkit-inner-spin-button]:appearance-none disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200 data-[invalid]:border-error data-[invalid]:focus:border-error data-[invalid]:focus:ring-error w-14 px-2 py-2"
+                                      min="1"
+                                      id="333009450-quantity"
+                                      name="variants[0][quantity]"
+                                      required=""
+                                      aria-describedby="333009450-quantity-help"
+                                      data-sentry-element="InputPrimitive"
+                                      data-sentry-source-file="register-product-component.tsx"
+                                      value="1"
+                                    /><span
+                                      id="333009450-quantity-help"
+                                      class="sr-only"
+                                      >Quantity of Travel Bag 40L Travel Bag
+                                      40L</span
+                                    >
+                                  </div>
+                                  <button
+                                    data-sentry-element="Button"
+                                    data-sentry-source-file="button.tsx"
+                                    type="button"
+                                    class="inline-flex items-center justify-center rounded-md border px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 border-primary bg-transparent text-primary-on-container hover:bg-surface sm:w-14 sm:flex-none"
+                                    data-sentry-component="Button"
+                                  >
+                                    <svg
+                                      aria-labelledby="svg-inline--fa-title-zyxphYax8wxh"
+                                      data-prefix="fal"
+                                      data-icon="trash"
+                                      class="svg-inline--fa fa-trash size-5"
+                                      role="img"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      viewBox="0 0 448 512"
+                                      data-sentry-element="FontAwesomeIcon"
+                                      data-sentry-component="Icon"
+                                      data-sentry-source-file="icon.tsx"
+                                    >
+                                      <title
+                                        id="svg-inline--fa-title-zyxphYax8wxh"
+                                      >
+                                        Remove Travel Bag 40L
+                                      </title>
+                                      <path
+                                        fill="currentColor"
+                                        d="M177.7 32l92.5 0c5.5 0 10.6 2.8 13.6 7.5L299.1 64 148.9 64l15.3-24.5c2.9-4.7 8.1-7.5 13.6-7.5zM336.9 64L311 22.6C302.2 8.5 286.8 0 270.3 0L177.7 0C161.2 0 145.8 8.5 137 22.6L111.1 64 64.1 64 32 64 16 64C7.2 64 0 71.2 0 80s7.2 16 16 16l18.3 0L59.8 452.6C62.1 486.1 90 512 123.6 512l200.8 0c33.6 0 61.4-25.9 63.8-59.4L413.7 96 432 96c8.8 0 16-7.2 16-16s-7.2-16-16-16l-16 0-32.1 0-47.1 0zm44.8 32L356.3 450.3C355.1 467 341.2 480 324.4 480l-200.8 0c-16.8 0-30.7-13-31.9-29.7L66.4 96l315.3 0z"
+                                      ></path>
+                                    </svg>
+                                    <span class="ml-1 sm:sr-only">Remove</span>
+                                  </button>
+                                </div>
+                              </div>
+                            </article>
+                          </li>
+                        </ul>
+                        <button
+                          data-sentry-element="Button"
+                          data-sentry-component="Button"
+                          data-sentry-source-file="button.tsx"
+                          type="button"
+                          class="inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 bg-primary text-on-primary w-full md:w-1/2"
+                        >
+                          <span>Submit</span>
+                        </button>
+                      </form>
+                    </section>
+                  </section>
+                  <span
+                    id="nextButtonRegProduct"
+                    style="cursor: pointer"
+                    class="next-button allow-click"
+                    >Next</span
+                  >
+                </main>
+                <!-- Registration Confirmation Page -->
+                <!-- =================              -->
+                <main
+                  class="flex-1"
+                  data-protonpass-form=""
+                  id="wPortalRegConfirmation"
+                  style="display: none"
+                >
+                  <section
+                    class="flex flex-col gap-4"
+                    data-sentry-component="Page"
+                    data-sentry-source-file="page.tsx"
+                  >
+                    <div class="px-4">
+                      <h1 class="text-center text-2xl text-gray-800">
+                        Registration Created
+                      </h1>
+                    </div>
+                    <section
+                      aria-labelledby=""
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <p>
+                        <span class="font-sm text-gray-800"
+                          >Thank you your registration, please keep this number
+                          for your records.</span
+                        >
+                      </p>
+                      <dl
+                        class="grid grid-cols-2 divide-y divide-outline *:py-2 [&amp;>dd]:text-right [&amp;>dd]:text-gray-700 [&amp;>dd:first-of-type]:!border-t-0"
+                      >
+                        <dt id="externalId">Confirmation</dt>
+                        <dd aria-labelledby="externalId">#REG-3183-1</dd>
+                        <dt id="email">Email</dt>
+                        <dd aria-labelledby="email">carlsmiles@email.com</dd>
+                        <dt id="createdDate">Created</dt>
+                        <dd aria-labelledby="createdDate">Jun 2, 2025</dd>
+                      </dl>
+                      <div
+                        class="gap mt-2 flex justify-between gap-6 *:flex-1 *:whitespace-nowrap"
+                      >
+                        <span
+                          class="inline-flex items-center justify-center rounded-md border px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 border-primary bg-transparent text-primary-on-container hover:bg-surface"
+                          >Back To Merchant</span
+                        >
+                        <span
+                          class="inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 bg-primary text-on-primary"
+                          >Start A Claim</span
+                        >
+                      </div>
+                    </section>
+                  </section>
+                  <span
+                    id="nextButtonRegConfirmation"
+                    style="cursor: pointer"
+                    class="next-button allow-click"
+                    >Next</span
+                  >
+                </main>
+
+                <footer
+                  class="mt-8 flex flex-col items-stretch justify-between space-x-4 md:flex-row"
+                  data-testid="app-footer"
+                  data-sentry-component="Footer"
+                  data-sentry-source-file="app-shell-component.tsx"
+                >
+                  <div
+                    class="flex items-center justify-center text-center md:justify-start md:text-left"
+                  >
+                    <p class="text-xs">
+                      Need help with? Contact us at support@<span
+                        id="emailAddressBrandName"
+                        style="text-transform: lowercase"
+                        >ooni</span
+                      >.com
+                    </p>
+                  </div>
+                  <div
+                    class="mt-8 flex items-center justify-center text-xs md:mt-0 md:justify-start"
+                  >
+                    <span class="w-14"
+                      ><a
+                        rel="noreferrer"
+                        data-sentry-element="Link"
+                        data-sentry-source-file="link-button.tsx"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 p-0 text-primary-on-container shadow-none hover:underline focus:underline"
+                        data-sentry-component="LinkButton"
+                        href="https://corso.com/returns-exchanges"
+                        target="_blank"
+                        ><img
+                          alt="Corso Logo"
+                          src="https://corso-media.sfo3.cdn.digitaloceanspaces.com/img/corso-logo.png" /></a
+                    ></span>
+                  </div>
+                </footer>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      // Get the encoded checkout url paramater
+      const params = new URLSearchParams(window.location.search);
+      const checkoutParams = params.get("checkout");
+
+      // Decode and Parse
+      const decodedCheckoutParams = atob(checkoutParams);
+      const checkoutJson = JSON.parse(decodedCheckoutParams);
+
+      console.log("checkoutJson", checkoutJson);
+
+      // turn url into usable variables
+      const {
+        rates,
+        brandColor,
+        brandLogo,
+        productName,
+        productDesc,
+        productPrice,
+        productImage,
+        exchangeProductImage,
+        exchangeProductName,
+        exchangeProductOptions,
+        exchangeProductOptionLabel,
+        plusPrice,
+        checkbox,
+        checkboxLabel,
+        checkboxDesc,
+        widgetImageUrl,
+        storeName,
+		showProducts
+      } = checkoutJson;
+
+      // Get today's date
+      const today = new Date();
+
+      // Get yesterday's date
+      const yesterday = new Date();
+      const twoDaysAgo = new Date();
+      const fiveDaysAgo = new Date();
+      const sevenDaysAgo = new Date();
+      const thirtyDaysAhead = new Date();
+      const oneYearAhead = new Date();
+      const estimatedPurchaseDate = new Date();
+      estimatedPurchaseDate.setDate(estimatedPurchaseDate.getDate() - 7); // go back 7 days
+      const epdSevenDaysAgo = estimatedPurchaseDate.toISOString().split("T")[0];
+      yesterday.setDate(today.getDate() - 1);
+      twoDaysAgo.setDate(today.getDate() - 2);
+      fiveDaysAgo.setDate(today.getDate() - 5);
+      sevenDaysAgo.setDate(today.getDate() - 7);
+      thirtyDaysAhead.setDate(today.getDate() + 31);
+      oneYearAhead.setDate(today.getDate() + 358);
+
+      // Format the date as "Jan 19, 2025"
+      const options = { year: "numeric", month: "short", day: "numeric" };
+      const formattedDateToday = today.toLocaleDateString("en-US", options);
+      const formattedDateYesterday = yesterday.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateTwoDaysAgo = twoDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateFiveDaysAgo = fiveDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateSevenDaysAgo = sevenDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateThirtyDaysAhead = thirtyDaysAhead.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateOneYearAhead = oneYearAhead.toLocaleDateString(
+        "en-US",
+        options
+      );
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.documentElement.style.setProperty(
+          "--corso-primary",
+          "#" + brandColor
+        );
+
+        document.documentElement.style.setProperty(
+          "--corso-header-img-url",
+          `url("${brandLogo}")`
+        );
+
+        document.documentElement.style.setProperty(
+          "--corso-primary-on-container",
+          "#" + brandColor
+        );
+
+        const orderDate = document.getElementById("orderDate");
+        const todaysDate = document.getElementById("todaysDate");
+        const eligibleUntilDate = document.getElementById("eligibleUntilDate");
+        const productImgs = document.querySelectorAll("#productImg");
+        const productTitles = document.querySelectorAll("#productTitle");
+        const productOptions = document.querySelectorAll("#productOptions");
+        const productPrices = document.querySelectorAll("#productPrice");
+        const productImgIneligible = document.getElementById(
+          "productImgIneligible"
+        );
+        const productTitleIneligible = document.getElementById(
+          "productTitleIneligible"
+        );
+        const productPriceIneligible = document.getElementById(
+          "productPriceIneligible"
+        );
+        const emailAddressBrandName = document.getElementById(
+          "emailAddressBrandName"
+        );
+        const productImgExchange = document.querySelectorAll(
+          "#productImgExchange"
+        );
+        const exchangeProductOptionLabelText = document.getElementById(
+          "exchangeProductOptionLabel"
+        );
+        const productNameExchange = document.querySelectorAll(
+          "#productNameExchange"
+        );
+        const productOptionExchange = document.querySelectorAll(
+          "#productOptionExchange"
+        );
+        const moneyBackIncentive = document.querySelectorAll(
+          "#moneyBackIncentive"
+        );
+        const moneyBackTotalWithIncentive = document.querySelectorAll(
+          "#moneyBackTotalWithIncentive"
+        );
+        const estimatedPurchaseDate = document.getElementById(
+          "estimated-purchase-date"
+        );
+        const regSearchValue = document.getElementById("search");
+
+        orderDate.innerText = formattedDateSevenDaysAgo;
+      
+        emailAddressBrandName.innerText = storeName.replace(/\s+/g, "");
+        estimatedPurchaseDate.value = epdSevenDaysAgo;
+        regSearchValue.value = productName.substring(0, 5);
+
+        if (exchangeProductImage) {
+          productImgExchange.forEach((img) => {
+            img.src = exchangeProductImage;
+          });
+          productNameExchange.forEach((text) => {
+            text.innerHTML = exchangeProductName;
+          });
+          productOptionExchange.forEach((text) => {
+            text.innerHTML = exchangeProductOptions[0];
+          });
+        } else {
+          productImgExchange.forEach((img) => {
+            img.src = productImage;
+          });
+          productNameExchange.forEach((text) => {
+            text.innerHTML = productName;
+          });
+          productOptionExchange.forEach((text) => {
+            text.innerHTML = productDesc;
+          });
+        }
+
+        
+        productImgs.forEach((img) => {
+          img.src = productImage;
+        });
+
+        productTitles.forEach((text) => {
+          text.innerText = productName;
+        });
+
+        productOptions.forEach((text) => {
+          text.innerText = productDesc;
+        });
+
+        productPrices.forEach((text) => {
+          text.innerText = "$" + (productPrice * 1).toFixed(2);
+        });
+
+        let variantSelect = document.getElementById("exchangeProductOptions");
+        
+        
+
+        productOptions.forEach((text) => {
+          text.innerText = productDesc;
+        });
+
+        
+
+        document.querySelectorAll('a:not(.allow-click)').forEach(link => {
+					link.addEventListener('click', event => {
+						event.preventDefault();
+					});
+				});
+      });
+    </script>
+
+    <div class="menu-nav"></div>
+
+    <div class="next-nav">
+      <div data-next-page="warranties-reg-product" data-next-text="Next"></div>
+    </div>
+
+    <script src="navigation.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Email</title>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
+    <!-- BEGIN: Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=aspect-ratio,line-clamp"></script>
+    <!-- END: Tailwind -->
+
+    <!-- BEGIN: Alpinejs -->
+    <script defer src="https://unpkg.com/alpinejs"></script>
+    <script>
+      const GmailKit = () => ({
+        loaded: false,
+        postContent: null,
+        postContentComments: null,
+        sidebarExtended: true,
+        currentSubreddit: "Inbox",
+        subreddits: ["Inbox", "Starred", "Snoozed", "Sent", "Drafts"],
+        subredditIcons: [
+          "https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/inbox_fill_baseline_p900_20dp.png",
+          "https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/star_baseline_nv700_20dp.png",
+          "https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/schedule_baseline_nv700_20dp.png",
+          "https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/send_baseline_nv700_20dp.png",
+          "https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/draft_baseline_nv700_20dp.png",
+          "https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/expand_less_baseline_nv700_20dp.png",
+          "https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/label_important_baseline_nv700_20dp.png",
+          "https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/schedule_send_baseline_nv700_20dp.png",
+          "https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/stacked_email_baseline_nv700_20dp.png",
+          "https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/report_baseline_nv700_20dp.png",
+          "https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/delete_baseline_nv700_20dp.png",
+        ],
+        altSubredditIcons:
+          "https://www.gstatic.com/images/icons/material/system/1x/flag_gm_blue_20dp.png",
+
+        subredditItems: [],
+        subredditLoaded: false,
+        viewedPosts: {},
+
+        init() {
+          this.loaded = true;
+        },
+      });
+    </script>
+    <!-- END: Alpinejs -->
+
+    <style>
+      :root {
+        --brandColor: #000000;
+      }
+      .view-order-button {
+        background-color: var(--brandColor);
+      }
+      .visit-our-store-link,
+      .corso-text-link {
+        color: var(--brandColor);
+      }
+      
+    </style>
+    <link rel="stylesheet" href="navigation.css">
+  </head>
+  <body
+    class="h-screen overflow-hidden flex items-center justify-center"
+    style="background: #edf2f7"
+  >
+    <main x-data="GmailKit">
+      <template x-if="loaded">
+        <div class="h-screen flex">
+          <!-- BEGIN: Navbar -->
+          <nav
+            class="w-16 h-full bg-[#eaf1fb] flex flex-col items-center space-y-4 py-2"
+          >
+            <button
+              @click="sidebarExtended = !sidebarExtended"
+              class="flex items-center justify-center hover:bg-[#dae1eb] rounded-full w-12 h-12"
+            >
+              <svg focusable="false" viewBox="0 0 24 24" class="w-6 h-6">
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+              </svg>
+            </button>
+
+            <button>
+              <div
+                class="w-12 h-8 rounded-full bg-blue-200/50 mx-auto bg-center bg-no-repeat"
+                style="
+                  background-image: url('https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/mail_fill_baseline_p900_20dp.png');
+                "
+              ></div>
+              <p class="text-xs">Mail</p>
+            </button>
+
+            <button>
+              <div
+                class="w-12 h-8 rounded-full mx-auto bg-center bg-no-repeat"
+                style="
+                  background-image: url('https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/chat_bubble_baseline_nv700_20dp.png');
+                "
+              ></div>
+              <p class="text-xs">Chat</p>
+            </button>
+
+            <button>
+              <div
+                class="w-12 h-8 rounded-full mx-auto bg-center bg-no-repeat"
+                style="
+                  background-image: url('https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/gmail_groups_baseline_nv700_20dp.png');
+                "
+              ></div>
+              <p class="text-xs">Spaces</p>
+            </button>
+
+            <button>
+              <div
+                class="w-12 h-8 rounded-full mx-auto bg-center bg-no-repeat"
+                style="
+                  background-image: url('https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/meet_baseline_nv700_20dp.png');
+                "
+              ></div>
+              <p class="text-xs">Meet</p>
+            </button>
+          </nav>
+          <!-- END: Navbar -->
+          <!-- BEGIN: Sidebar -->
+          <template x-if="sidebarExtended">
+            <aside class="w-64 bg-gray-50 h-screen py-3 px-6">
+              <img
+                src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r5.png"
+                alt="Gmail Logo"
+              />
+
+              <button
+                @click="addSubreddit"
+                class="px-3 py-3 bg-cyan-400/30 rounded-xl my-6 flex flex-row space-x-4 items-center"
+              >
+                <div
+                  class="w-6 h-6 object-fill bg-no-repeat"
+                  style="
+                    background-image: url('https://www.gstatic.com/images/icons/material/system_gm/1x/create_black_24dp.png');
+                  "
+                ></div>
+                <p class="text-sm pr-4">Compose</p>
+              </button>
+
+              <div class="flex flex-col space-y-0">
+                <template x-for="(subreddit, index) in subreddits">
+                  <div
+                    @click="changeSubreddit(subreddit)"
+                    class="flex items-center space-x-2 rounded-full py-2 px-4 cursor-pointer"
+                    :class="{ 'bg-blue-200/80 font-bold': subreddit === currentSubreddit, 'hover:bg-gray-200/80': subreddit !== currentSubreddit }"
+                  >
+                    <div class="w-4 h-4 rounded-full">
+                      <img
+                        :src="(subredditIcons.length <= index) ? altSubredditIcons : subredditIcons[index]"
+                        alt="Subreddit Icon"
+                      />
+                    </div>
+                    <div
+                      class="text-sm font-medium text-gray-700"
+                      x-text="subreddit"
+                    ></div>
+                  </div>
+                </template>
+              </div>
+
+              <div class="pt-8 flex flex-col space-y-0">
+                <div class="flex mb-4">
+                  <div class="flex-1">
+                    <p class="text-lg">Labels</p>
+                  </div>
+                  <div>+</div>
+                </div>
+              </div>
+            </aside>
+          </template>
+          <!-- END: Sidebar -->
+
+          <div class="flex-1 h-screen max-h-screen flex flex-col">
+            <!-- BEGIN: Menu bar -->
+            <header class="w-full flex flex-row items-center pr-4">
+              <div
+                class="w-[48%] h-12 px-4 border-0 rounded-xl bg-blue-100/50 my-2 flex items-center space-x-4"
+              >
+                <div>
+                  <svg
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                    class="w-6 h-6 text-gray-700"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M20.49,19l-5.73-5.73C15.53,12.2,16,10.91,16,9.5C16,5.91,13.09,3,9.5,3S3,5.91,3,9.5C3,13.09,5.91,16,9.5,16 c1.41,0,2.7-0.47,3.77-1.24L19,20.49L20.49,19z M5,9.5C5,7.01,7.01,5,9.5,5S14,7.01,14,9.5S11.99,14,9.5,14S5,11.99,5,9.5z"
+                    ></path>
+                    <path d="M0,0h24v24H0V0z" fill="none"></path>
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  disabled="true"
+                  placeholder="Search in mail"
+                  class="flex-1 bg-transparent outline-none placeholder-gray-600"
+                />
+
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6 text-gray-700"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="flex-1 flex items-center justify-end space-x-4">
+                <div>
+                  <div
+                    class="border border-gray-300 pl-4 pr-2 py-2 rounded-full flex items-center space-x-2"
+                  >
+                    <div>
+                      <div class="rounded-full w-3 h-3 bg-green-700"></div>
+                    </div>
+                    <div>
+                      <p class="text-sm text-gray-500 font-medium">Active</p>
+                    </div>
+                    <div>
+                      <svg viewBox="0 0 24 24" class="h-6 w-6 text-gray-800">
+                        <path fill="currentColor" d="M7 10l5 5 5-5z"></path>
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <svg
+                    class="w-6 h-6 text-gray-600"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="#000000"
+                    focusable="false"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path
+                      fill="currentColor"
+                      d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <svg
+                    class="w-6 h-6 text-gray-600"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M13.85 22.25h-3.7c-.74 0-1.36-.54-1.45-1.27l-.27-1.89c-.27-.14-.53-.29-.79-.46l-1.8.72c-.7.26-1.47-.03-1.81-.65L2.2 15.53c-.35-.66-.2-1.44.36-1.88l1.53-1.19c-.01-.15-.02-.3-.02-.46 0-.15.01-.31.02-.46l-1.52-1.19c-.59-.45-.74-1.26-.37-1.88l1.85-3.19c.34-.62 1.11-.9 1.79-.63l1.81.73c.26-.17.52-.32.78-.46l.27-1.91c.09-.7.71-1.25 1.44-1.25h3.7c.74 0 1.36.54 1.45 1.27l.27 1.89c.27.14.53.29.79.46l1.8-.72c.71-.26 1.48.03 1.82.65l1.84 3.18c.36.66.2 1.44-.36 1.88l-1.52 1.19c.01.15.02.3.02.46s-.01.31-.02.46l1.52 1.19c.56.45.72 1.23.37 1.86l-1.86 3.22c-.34.62-1.11.9-1.8.63l-1.8-.72c-.26.17-.52.32-.78.46l-.27 1.91c-.1.68-.72 1.22-1.46 1.22zm-3.23-2h2.76l.37-2.55.53-.22c.44-.18.88-.44 1.34-.78l.45-.34 2.38.96 1.38-2.4-2.03-1.58.07-.56c.03-.26.06-.51.06-.78s-.03-.53-.06-.78l-.07-.56 2.03-1.58-1.39-2.4-2.39.96-.45-.35c-.42-.32-.87-.58-1.33-.77l-.52-.22-.37-2.55h-2.76l-.37 2.55-.53.21c-.44.19-.88.44-1.34.79l-.45.33-2.38-.95-1.39 2.39 2.03 1.58-.07.56a7 7 0 0 0-.06.79c0 .26.02.53.06.78l.07.56-2.03 1.58 1.38 2.4 2.39-.96.45.35c.43.33.86.58 1.33.77l.53.22.38 2.55z"
+                    ></path>
+                    <circle
+                      fill="currentColor"
+                      cx="12"
+                      cy="12"
+                      r="3.5"
+                    ></circle>
+                  </svg>
+                </div>
+                <div>
+                  <svg
+                    class="w-6 h-6 text-gray-600"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"
+                    ></path>
+                  </svg>
+                </div>
+
+                <span
+                  class="border border-gray-200 p-2 flex space-x-2 items-center rounded-md cursor-pointer hover:bg-gray-100"
+                >
+                  <img
+                    src="https://www.google.com/u/1/ac/images/logo.gif?uid=105939349603080396778&service=google_gsuite"
+                    class="h-6"
+                  />
+
+                  <img
+                    src="https://i.stack.imgur.com/34AD2.jpg"
+                    class="h-8 w-8 object-cover rounded-full"
+                  />
+                </span>
+              </div>
+            </header>
+            <!-- BEGIN: Prelist actions -->
+            <div class="w-full flex flex-row items-center p-4">
+              <div>
+                <div
+                  class="w-5 h-5 bg-contain bg-no-repeat"
+                  style="
+                    background-image: url('https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/check_box_outline_blank_baseline_nv700_20dp.png');
+                  "
+                ></div>
+              </div>
+              <div class="pr-4">
+                <div
+                  class="w-5 h-5 bg-contain bg-no-repeat"
+                  style="
+                    background-image: url('https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/arrow_drop_down_baseline_nv700_20dp.png');
+                  "
+                ></div>
+              </div>
+              <div class="pr-4">
+                <div
+                  class="w-5 h-5 bg-contain bg-no-repeat"
+                  style="
+                    background-image: url('https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/archive_baseline_nv700_20dp.png');
+                  "
+                ></div>
+              </div>
+              <div class="pr-4">
+                <div
+                  class="w-5 h-5 bg-contain bg-no-repeat"
+                  style="
+                    background-image: url('https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/report_baseline_nv700_20dp.png');
+                  "
+                ></div>
+              </div>
+              <div class="pr-6 border-r border-gray-200">
+                <div
+                  class="w-5 h-5 bg-contain bg-no-repeat"
+                  style="
+                    background-image: url('https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/delete_baseline_nv700_20dp.png');
+                  "
+                ></div>
+              </div>
+              <div class="pl-6 pr-4">
+                <div
+                  class="w-5 h-5 bg-contain bg-no-repeat"
+                  style="
+                    background-image: url('https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/mail_baseline_nv700_20dp.png');
+                  "
+                ></div>
+              </div>
+              <div class="pr-4">
+                <div
+                  class="w-5 h-5 bg-contain bg-no-repeat"
+                  style="
+                    background-image: url('https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/schedule_baseline_nv700_20dp.png');
+                  "
+                ></div>
+              </div>
+              <div class="pr-6 border-r border-gray-200">
+                <div
+                  class="w-5 h-5 bg-contain bg-no-repeat"
+                  style="
+                    background-image: url('https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/add_task_baseline_nv700_20dp.png');
+                  "
+                ></div>
+              </div>
+              <div class="pl-6 pr-4">
+                <div
+                  class="w-5 h-5 bg-contain bg-no-repeat"
+                  style="
+                    background-image: url('https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/drive_file_move_outline_baseline_nv700_20dp.png');
+                  "
+                ></div>
+              </div>
+              <div class="pl-4">
+                <div
+                  class="w-5 h-5 bg-contain bg-no-repeat"
+                  style="
+                    background-image: url('https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/label_baseline_nv700_20dp.png');
+                  "
+                ></div>
+              </div>
+              <div class="pl-4">
+                <div
+                  class="w-5 h-5 bg-contain bg-no-repeat"
+                  style="
+                    background-image: url('https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/more_vert_baseline_nv700_20dp.png');
+                  "
+                ></div>
+              </div>
+            </div>
+            <!-- END: Prelist actions -->
+            <!-- END: Menu bar -->
+            <div class="flex flex-row flex-1 overflow-y-auto">
+              <!-- BEGIN: Post content -->
+              <article class="flex-1 bg-white overflow-y-scroll">
+                <template x-if="postContent === null">
+                  <div class="p-8" style="max-width: 768px">
+                    <table class="body">
+                      <tr>
+                        <td>
+                          <table class="header row">
+                            <tr>
+                              <td class="header__cell" style="">
+                                <center>
+                                  <table
+                                    class="container"
+                                    style="
+                                      width: 560px;
+                                      text-align: left;
+                                      border-spacing: 0;
+                                      border-collapse: collapse;
+                                      margin: 0 auto;
+                                    "
+                                  >
+                                    <tr>
+                                      <td>
+                                        <table class="row w-full">
+                                          <tr>
+                                            <td class="shop-name__cell">
+                                              <img
+                                                id="emailBrandLogo"
+                                                style="
+                                                  padding-bottom: 20px;
+                                                  max-width: 300px;
+                                                  max-height: 150px;
+                                                "
+                                                src="https://cdn.shopify.com/s/files/1/0924/8073/3474/files/carl-surf-shop_x320.png?v=1736311317"
+                                                alt="Brand Name"
+                                                style="max-width: 250px"
+                                              />
+                                            </td>
+                                            <td
+                                              class="order-number__cell text-right"
+                                            >
+                                              <span
+                                                class="order-number__text text-right"
+                                                style="
+                                                  font-size: 16px;
+                                                  color: #999999;
+                                                "
+                                              >
+                                                ORDER #9999
+                                              </span>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </center>
+                              </td>
+                            </tr>
+                          </table>
+                          <table class="row content">
+                            <tr>
+                              <td class="content__cell">
+                                <center>
+                                  <table class="container">
+                                    <tr>
+                                      <td>
+                                        <h2
+                                          style="
+                                            font-weight: normal;
+                                            font-size: 24px;
+                                            margin: 0 0 10px;
+                                          "
+                                        >
+                                          Thank you for your order, Carl!
+                                        </h2>
+
+                                        <p
+                                          style="
+                                            color: #777;
+                                            line-height: 150%;
+                                            font-size: 16px;
+                                            margin: 0;
+                                          "
+                                        >
+                                          We're getting your order ready to be
+                                          shipped. We will notify you when it
+                                          has been sent.
+                                        </p>
+
+                                        <table class="row actions">
+                                          <tr>
+                                            <td class="empty-line">&nbsp;</td>
+                                          </tr>
+                                          <tr>
+                                            <td class="actions__cell">
+                                              <table
+                                                class="button main-action-cell"
+                                                style="
+                                                  border-spacing: 0;
+                                                  border-collapse: collapse;
+                                                  float: left;
+                                                  margin-right: 15px;
+                                                "
+                                              >
+                                                <tr>
+                                                  <td
+                                                    id="viewOrderButton"
+                                                    class="view-order-button button__cell"
+                                                    style="border-radius: 4px"
+                                                  >
+                                                    <span
+                                                      style="
+                                                        font-size: 16px;
+                                                        text-decoration: none;
+                                                        display: block;
+                                                        color: #fff;
+                                                        padding: 20px 25px;
+                                                      "
+                                                      class="button__text"
+                                                      >View your order</span
+                                                    >
+                                                  </td>
+                                                </tr>
+                                              </table>
+
+                                              <table
+                                                class="link secondary-action-cell"
+                                                style="
+                                                  border-spacing: 0;
+                                                  border-collapse: collapse;
+                                                  margin-top: 19px;
+                                                "
+                                              >
+                                                <tr>
+                                                  <td
+                                                    class="link__cell"
+                                                    style="
+                                                      color: #777;
+                                                      line-height: 150%;
+                                                      font-size: 16px;
+                                                      margin: 0;
+                                                    "
+                                                  >
+                                                    or
+                                                    <span
+                                                      class="visit-our-store-link"
+                                                      >Visit our store</span
+                                                    >
+                                                  </td>
+                                                </tr>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </center>
+                              </td>
+                            </tr>
+                          </table>
+
+                          <div
+                            style="
+                              padding: 20px 0;
+                              margin: 20px auto;
+                              border-top: 1px solid #ddd;
+                              border-bottom: 1px solid #ddd;
+                            "
+                          >
+                            <div
+                              style="
+                                padding-bottom: 10px;
+                                text-align: center;
+                                font-size: 14px;
+                                display: flex;
+                                justify-content: center;
+                              "
+                            >
+                              <img
+                                style="width: 80px"
+                                src="https://corso-media.sfo3.cdn.digitaloceanspaces.com/img/Corso_Horizontal-Lockup_Black.png"
+                                alt="corso logo"
+                                width="80"
+                                title="corso logo"
+                              />
+                            </div>
+                            <p
+                              style="
+                                color: #777;
+                                line-height: 150%;
+                                font-size: 16px;
+                                margin: 0;
+                              "
+                            >
+                              Your order has Shipping Protection by Corso.
+                              Should you have any shipping issues with lost,
+                              damaged, missing, or stolen items, simply visit
+                              <a
+                                class="corso-text-link"
+                                id="appDotCorsoDotCom"
+                                href="#"
+                                >app.corso.com</a
+                              >. If you don't want your shipment protected or if
+                              this was added by mistake,
+                              <a
+                                class="corso-text-link"
+                                href="https://forms.clickup.com/42065550/f/183qme-6271/JLVXFC17A70G600A8N?What+store+did+you+order+from%3F=Demo&What+is+the+order+number%3F=999999&What+is+the+email+address+on+the+order%3F=dallin@corso.com"
+                                >opt out here</a
+                              >.
+                            </p>
+                          </div>
+
+                          <table class="row section w-full">
+                            <tr>
+                              <td class="section__cell">
+                                <div>
+                                  <table class="container">
+                                    <tr>
+                                      <td>
+                                        <h3
+                                          style="
+                                            font-weight: normal;
+                                            font-size: 20px;
+                                            margin: 0 0 25px;
+                                          "
+                                        >
+                                          Order summary
+                                        </h3>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                  <table
+                                    class="container"
+                                    style="
+                                      text-align: left;
+                                      border-spacing: 0;
+                                      border-collapse: collapse;
+                                      margin: 0 auto;
+                                    "
+                                  >
+                                    <tr>
+                                      <td>
+                                        <table class="row w-full">
+                                          <tr class="order-list__item w-full">
+                                            <td class="order-list__item__cell">
+                                              <table class="w-full">
+                                                <td>
+                                                  <img
+                                                    id="emailProductImage"
+                                                    style="
+                                                      width: 60px;
+                                                      min-width: 60px;
+                                                      margin-right: 15px;
+                                                      border-radius: 8px;
+                                                      border: 1px solid #e5e5e5;
+                                                    "
+                                                    src="https://cdn.shopify.com/s/files/1/0924/8073/3474/files/paddle-board-green_64x64.png?v=1736310331"
+                                                    align="left"
+                                                    width="60"
+                                                    height="60"
+                                                    class="order-list__product-image"
+                                                  />
+                                                </td>
+                                                <td
+                                                  class="order-list__product-description-cell w-full"
+                                                >
+                                                  <span
+                                                    id="emailProductName"
+                                                    class="order-list__item-title"
+                                                    style="
+                                                      font-size: 16px;
+                                                      font-weight: 600;
+                                                      line-height: 1.4;
+                                                      color: #555;
+                                                    "
+                                                    >Paddle Board</span
+                                                  ><br />
+                                                </td>
+                                                <td
+                                                  class="order-list__price-cell"
+                                                  style="white-space: nowrap"
+                                                >
+                                                  <p
+                                                    id="emailProductPrice"
+                                                    class="order-list__item-price"
+                                                    style="
+                                                      color: #555;
+                                                      line-height: 150%;
+                                                      font-size: 16px;
+                                                      font-weight: 600;
+                                                      margin: 4px 0 0 15px;
+                                                    "
+                                                  >
+                                                    $299.99
+                                                  </p>
+                                                </td>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                          <tr
+                                            class="order-list__item w-full"
+                                            id="productCheckoutPlus"
+                                            style="display: none"
+                                          >
+                                            <td class="order-list__item__cell">
+                                              <table class="w-full">
+                                                <td>
+                                                  <img
+                                                    id="emailCheckoutPlusImage"
+                                                    style="
+                                                      width: 60px;
+                                                      min-width: 60px;
+                                                      margin-right: 15px;
+                                                      border-radius: 8px;
+                                                      border: 1px solid #e5e5e5;
+                                                    "
+                                                    src="https://cdn.shopify.com/s/files/1/0924/8073/3474/files/paddle-board-green_64x64.png?v=1736310331"
+                                                    align="left"
+                                                    width="60"
+                                                    height="60"
+                                                    class="order-list__product-image"
+                                                  />
+                                                </td>
+                                                <td
+                                                  class="order-list__product-description-cell w-full"
+                                                >
+                                                  <span
+                                                    id="emailCheckoutPlusName"
+                                                    class="order-list__item-title"
+                                                    style="
+                                                      font-size: 16px;
+                                                      font-weight: 600;
+                                                      line-height: 1.4;
+                                                      color: #555;
+                                                    "
+                                                    >Paddle Board</span
+                                                  ><br />
+                                                </td>
+                                                <td
+                                                  class="order-list__price-cell"
+                                                  style="white-space: nowrap"
+                                                >
+                                                  <p
+                                                    id="emailCheckoutPlusPrice"
+                                                    class="order-list__item-price"
+                                                    style="
+                                                      color: #555;
+                                                      line-height: 150%;
+                                                      font-size: 16px;
+                                                      font-weight: 600;
+                                                      margin: 4px 0 0 15px;
+                                                    "
+                                                  >
+                                                    $299.99
+                                                  </p>
+                                                </td>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                        <table
+                                          class="row subtotal-lines"
+                                          style="
+                                            width: 100%;
+                                            border-spacing: 0;
+                                            border-collapse: collapse;
+                                            margin-top: 15px;
+                                            border-top-width: 1px;
+                                            border-top-color: #e5e5e5;
+                                            border-top-style: solid;
+                                          "
+                                        >
+                                          <tr>
+                                            <td
+                                              class="subtotal-spacer"
+                                              style="width: 40%"
+                                            ></td>
+                                            <td>
+                                              <table
+                                                class="row subtotal-table w-full mt-6"
+                                              >
+                                                <tr class="subtotal-line">
+                                                  <td
+                                                    class="subtotal-line__title"
+                                                  >
+                                                    <p
+                                                      style="
+                                                        color: #777;
+                                                        line-height: 1.2em;
+                                                        font-size: 16px;
+                                                        margin: 4px 0 0;
+                                                      "
+                                                    >
+                                                      <span>Subtotal</span>
+                                                    </p>
+                                                  </td>
+                                                  <td
+                                                    class="subtotal-line__value text-right"
+                                                  >
+                                                    <strong
+                                                      id="emailSubtotalPrice"
+                                                      style="
+                                                        font-size: 16px;
+                                                        color: #555;
+                                                      "
+                                                      >$299.99</strong
+                                                    >
+                                                  </td>
+                                                </tr>
+                                                <tr class="subtotal-line">
+                                                  <td
+                                                    class="subtotal-line__title"
+                                                  >
+                                                    <p
+                                                      style="
+                                                        color: #777;
+                                                        line-height: 1.2em;
+                                                        font-size: 16px;
+                                                        margin: 4px 0 0;
+                                                      "
+                                                    >
+                                                      <span>Shipping</span>
+                                                    </p>
+                                                  </td>
+                                                  <td
+                                                    class="subtotal-line__value text-right"
+                                                  >
+                                                    <strong
+                                                      style="
+                                                        font-size: 16px;
+                                                        color: #555;
+                                                      "
+                                                      >FREE</strong
+                                                    >
+                                                  </td>
+                                                </tr>
+                                              </table>
+
+                                              <table
+                                                class="row subtotal-table subtotal-table--total"
+                                                style="
+                                                  width: 100%;
+                                                  border-spacing: 0;
+                                                  border-collapse: collapse;
+                                                  margin-top: 20px;
+                                                  border-top-width: 2px;
+                                                  border-top-color: #e5e5e5;
+                                                  border-top-style: solid;
+                                                "
+                                              >
+                                                <tr class="subtotal-line">
+                                                  <td
+                                                    class="subtotal-line__title"
+                                                  >
+                                                    <p
+                                                      style="
+                                                        color: #777;
+                                                        line-height: 1.2em;
+                                                        font-size: 16px;
+                                                        margin: 4px 0 0;
+                                                      "
+                                                    >
+                                                      <span>Total</span>
+                                                    </p>
+                                                  </td>
+                                                  <td
+                                                    class="subtotal-line__value text-right"
+                                                  >
+                                                    <strong
+                                                      id="emailTotalPrice"
+                                                      style="
+                                                        font-size: 24px;
+                                                        color: #555;
+                                                      "
+                                                      >$120.00</strong
+                                                    >
+                                                  </td>
+                                                </tr>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </template>
+                <template x-if="postContent !== null">
+                  <div class="px-8">
+                    <h1 class="text-xl" x-text="postContent.title"></h1>
+                    <div>
+                      <div
+                        class="px-[0.25rem] rounded bg-neutral-200 text-gray-800 text-xs w-fit"
+                      >
+                        Inbox
+                      </div>
+                    </div>
+                    <div class="flex flex-row space-x-4 items-center">
+                      <div class="w-10 h-10">
+                        <img
+                          :src="postContent.thumbnail"
+                          onerror="this.src = 'https://lh3.googleusercontent.com/a/default-user=s40-p'"
+                          class="rounded-full object-cover w-10 h-10 aspect-square"
+                        />
+                      </div>
+                      <div class="flex flex-col justify-between py-2">
+                        <div>
+                          <p
+                            class="font-medium text-sm"
+                            x-text="postContent.author"
+                          ></p>
+                        </div>
+                        <div><p class="text-xs text-gray-700">to me</p></div>
+                      </div>
+                      <div
+                        class="flex-1 flex flex-col justify-between items-end py-2"
+                      >
+                        <div class="flex flex-row items-center space-x-2">
+                          <div>
+                            <p
+                              class="text-gray-500 text-xs"
+                              x-text="new Date(postContent.created_utc * 1000).toLocaleString()"
+                            ></p>
+                          </div>
+                          <div>
+                            <div
+                              class="w-4 h-4 bg-no-repeat bg-contain"
+                              style="
+                                background-image: url('https://www.gstatic.com/images/icons/material/system_gm/1x/star_border_black_20dp.png');
+                              "
+                            ></div>
+                          </div>
+
+                          <div>
+                            <div
+                              class="w-4 h-4 bg-no-repeat bg-contain"
+                              style="
+                                background-image: url('//ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/reply_baseline_nv700_20dp.png');
+                              "
+                            ></div>
+                          </div>
+
+                          <div>
+                            <div
+                              class="w-4 h-4 bg-no-repeat bg-contain"
+                              style="
+                                background-image: url('//ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/more_vert_baseline_nv700_20dp.png');
+                              "
+                            ></div>
+                          </div>
+                        </div>
+                        <div>
+                          <p
+                            class="font-medium text-sm opacity-0"
+                            x-text="postContent.author"
+                          ></p>
+                        </div>
+                      </div>
+                    </div>
+                    <a
+                      :href="postContent.url"
+                      target="_blank"
+                      class="text-sm text-blue-500 underline pl-14"
+                      x-text="postContent.url"
+                    ></a>
+                    <p
+                      class="text-sm text-gray-500 pl-14"
+                      x-text="postContent.selftext"
+                    ></p>
+
+                    <div class="ml-14 flex flex-col mt-6">
+                      <template x-if="postContentComments.length === 0">
+                        <p>No comments</p>
+                      </template>
+
+                      <!-- Print all comments -->
+                      <template x-for="comment in postContentComments">
+                        <div class="border-l-2 border-gray-300 pb-2">
+                          <div
+                            :style="`padding-left: ${comment.data.depth * 0.5 + 0.25}rem`"
+                          >
+                            <h3
+                              class="text-sm text-gray-700"
+                              x-text="'u/' + comment.data.author"
+                            ></h3>
+                            <p class="text-sm" x-text="comment.data.body"></p>
+                          </div>
+                        </div>
+                      </template>
+                      <!-- END Print all comments -->
+                    </div>
+                  </div>
+                </template>
+              </article>
+              <!-- END: Post content -->
+            </div>
+          </div>
+        </div>
+      </template>
+      <template x-if="!loaded">
+        <div class="h-screen flex justify-center items-center">
+          <div
+            class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"
+          ></div>
+        </div>
+      </template>
+    </main>
+
+    <script>
+      // Get the encoded checkout url paramater
+      const params = new URLSearchParams(window.location.search);
+      const checkoutParams = params.get("checkout");
+
+      // Decode and Parse
+      const decodedCheckoutParams = atob(checkoutParams);
+      const checkoutJson = JSON.parse(decodedCheckoutParams);
+
+      console.log("checkoutJson", checkoutJson);
+
+      // turn url into usable variables
+      const {
+        rates,
+        brandColor,
+        brandLogo,
+        productName,
+        productDesc,
+        productPrice,
+        productImage,
+        checkbox,
+        checkboxLabel,
+        checkboxDesc,
+        method,
+        plusPrice,
+        widgetImageUrl,
+        showProducts
+      } = checkoutJson;
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.documentElement.style.setProperty(
+          "--brandColor",
+          "#" + brandColor
+        );
+
+        const emailBrandLogo = document.getElementById("emailBrandLogo");
+        const viewOrderButton = document.getElementById("viewOrderButton");
+
+        const emailProductImage = document.getElementById("emailProductImage");
+        const emailProductName = document.getElementById("emailProductName");
+        const emailProductPrice = document.getElementById("emailProductPrice");
+
+        const emailCheckoutPlusImage = document.getElementById(
+          "emailCheckoutPlusImage"
+        );
+        const emailCheckoutPlusName = document.getElementById(
+          "emailCheckoutPlusName"
+        );
+        const emailCheckoutPlusPrice = document.getElementById(
+          "emailCheckoutPlusPrice"
+        );
+
+        const emailSubtotalPrice =
+          document.getElementById("emailSubtotalPrice");
+        const emailTotalPrice = document.getElementById("emailTotalPrice");
+
+        emailBrandLogo.src = brandLogo;
+        viewOrderButton.bgColor = "#" + brandColor;
+
+        emailProductImage.src = productImage;
+        emailProductName.innerText = productName;
+        emailProductPrice.innerText = "$" + (productPrice * 1).toFixed(2);
+
+        emailCheckoutPlusImage.src = widgetImageUrl;
+        emailCheckoutPlusName.innerText = checkboxLabel;
+        emailCheckoutPlusPrice.innerText = "$" + (plusPrice * 1).toFixed(2);
+
+        let checkoutPlusPrice = 0;
+
+        if (method === "product") {
+          const productCheckoutPlus = document.getElementById(
+            "productCheckoutPlus"
+          );
+          productCheckoutPlus.style.display = "table-row";
+          checkoutPlusPrice = plusPrice;
+        }
+
+        emailSubtotalPrice.innerText =
+          "$" + (productPrice * 1 + checkoutPlusPrice * 1).toFixed(2);
+        emailTotalPrice.innerText =
+          "$" +
+          (
+            productPrice * 1 +
+            
+            checkoutPlusPrice * 1
+          ).toFixed(2);
+
+        
+        document.getElementById("appDotCorsoDotCom").href =
+          "portal.html?checkout=" + checkoutParams;
+      });
+    </script>
+
+    <div class="menu-nav"></div>
+
+    <div class="next-nav">
+      <div data-next-page="portal" data-next-text="Go To Hub"></div>
+    </div>
+
+    <script src="navigation.js"></script>
+  </body>
+</html>

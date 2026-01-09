@@ -1,0 +1,402 @@
+<html lang="en" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="customer-portal.css">
+    <title>Customer Portal</title>
+  </head>
+  <body id="crew" class="overscroll-none ready">
+    <div id="root">
+      <div
+        class="h-full"
+        data-sentry-component="AppShell"
+        data-sentry-source-file="app-shell-component.tsx"
+      >
+        <div class="relative grid h-full grid-rows-[min-content_1fr]">
+          <header
+            class="flex min-h-16 flex-col items-center justify-center bg-white shadow"
+            data-sentry-component="Header"
+            data-sentry-source-file="app-shell-component.tsx"
+          >
+            <span
+              aria-label="Go to Order look up"
+              data-sentry-element="Link"
+              data-sentry-source-file="link-button.tsx"
+              class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 p-0 text-primary-on-container shadow-none hover:underline focus:underline my-3 h-10 w-full max-w-md"
+              data-sentry-component="LinkButton"
+            >
+              <div
+                class="h-full w-full bg-header-logo bg-contain bg-center bg-no-repeat"
+                data-testid="header-logo"
+              ></div>
+            </span>
+          </header>
+          <div
+            class="h-auto bg-banner bg-cover bg-fixed text-base md:bg-banner-img"
+            data-sentry-component="Body"
+            data-sentry-source-file="app-shell-component.tsx"
+          >
+            <div class="mx-auto h-auto max-w-3xl p-2">
+              <div
+                id="app-body"
+                class="relative h-auto w-full rounded-none border border-gray-200 bg-gray-50 px-4 py-8 shadow md:block md:rounded-lg"
+              >
+                <nav
+                  class="-mx-4 -mt-8 mb-4 rounded-t-md p-4 text-gray-800"
+                  data-sentry-component="AppBar"
+                  data-sentry-source-file="app-shell-component.tsx"
+                >
+                  <div
+                    class="flex flex-col items-center justify-between gap-1 md:flex-row"
+                  >
+                    <div
+                      class="flex w-full items-center justify-between gap-1 md:w-auto"
+                    >
+                      <span
+                        data-sentry-element="Link"
+                        data-sentry-source-file="link-button.tsx"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 shadow-none hover:underline focus:underline text-gray-800 hover:text-gray-600 p-1 text-sm"
+                        data-sentry-component="LinkButton"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fal"
+                          data-icon="magnifying-glass"
+                          class="svg-inline--fa fa-magnifying-glass size-4 mr-1"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          data-sentry-element="FontAwesomeIcon"
+                          data-sentry-component="Icon"
+                          data-sentry-source-file="icon.tsx"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M384 208A176 176 0 1 0 32 208a176 176 0 1 0 352 0zM343.3 366C307 397.2 259.7 416 208 416C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208c0 51.7-18.8 99-50 135.3L507.3 484.7c6.2 6.2 6.2 16.4 0 22.6s-16.4 6.2-22.6 0L343.3 366z"
+                          ></path>
+                        </svg>
+                        Search
+                      </span>
+                    </div>
+                    <div
+                      class="flex w-full justify-between gap-1 px-1 text-xs font-medium md:w-auto md:flex-col md:px-0 md:text-right"
+                    >
+                      <span>Order: #3183</span
+                      ><span
+                        >Order Date:
+                        <span id="orderDate">Nov 4, 2024</span></span
+                      >
+                    </div>
+                  </div>
+                </nav>
+
+                <main class="flex-1">
+                  <section class="flex flex-col gap-4" data-sentry-component="Page" data-sentry-source-file="Page.tsx">
+                      <header class="px-4">
+                          <h1 class="text-center text-2xl text-gray-800">Return Summary</h1>
+                          <p class="mt-1 text-center text-gray-500">Review your decisions before submitting your request</p>
+                      </header>
+                      <div class="relative" data-sentry-component="LoadingBoundary" data-sentry-source-file="LoadingBoundary.tsx">
+                          <section aria-labelledby="" class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-xs md:p-8" data-sentry-component="Card" data-sentry-source-file="Card.tsx">
+                              <form method="post" action="/luna-qa/order/11752031551854/return/return-summary" name="return-summary-form" data-sentry-element="RouterForm" data-sentry-source-file="Form.tsx" class="flex flex-col gap-6" data-sentry-component="Form">
+                                  <div class="flex flex-col divide-y divide-outline *:first:pt-0 *:last:pb-0 *:py-4" data-sentry-element="Element" data-sentry-component="Divide" data-sentry-source-file="Divide.tsx">
+                                      <details class="group bg-white" data-sentry-component="Disclosure" data-sentry-source-file="Disclosure.tsx" open="">
+                                          <summary role="button" class="flex cursor-pointer list-none items-center gap-2 rounded-sm text-sm font-medium text-gray-800 marker:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary focus-visible:outline-solid [&amp;::-webkit-details-marker]:hidden">
+                                              <div class="flex w-full items-center justify-between gap-1">
+                                                  <div class="flex items-center gap-1">Return Credit<svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right size-3 transition-transform group-open:rotate-90" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-sentry-element="FontAwesomeIcon" data-sentry-component="Icon" data-sentry-source-file="Icon.tsx"><path fill="currentColor" d="M299.3 244.7c6.2 6.2 6.2 16.4 0 22.6l-192 192c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6L265.4 256 84.7 75.3c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0l192 192z"></path></svg></div><span id="returnCredit">$433.64</span></div>
+                                          </summary>
+                                          <div class="mt-2">
+                                              <div class="flex flex-col gap-2 rounded-md bg-gray-50 text-sm text-gray-700">
+                                                  <div class="flex flex-col gap-3 rounded-md bg-gray-50 p-2" data-sentry-component="LineItems" data-sentry-source-file="ReturnSummaryPage.tsx">
+                                                      <p class="text-sm">Return Item (1)</p>
+                                                      <article class="flex flex-col gap-8 sm:flex-row sm:items-center" aria-labelledby=":rb:">
+                                                          <div class="flex w-full items-center gap-4">
+                                                              <div class="relative" data-sentry-component="ProductImage" data-sentry-source-file="ProductImage.tsx">
+                                                                  <div class="relative flex aspect-square items-center justify-center rounded-lg border border-outline object-cover *:size-full *:rounded-[7px] *:border-none *:object-contain size-12" data-sentry-component="MediaDisplay" data-sentry-source-file="MediaDisplay.tsx"><img class="max-h-[80svh] max-w-[90svw]" id="productImg" src="https://cdn.shopify.com/s/files/1/0930/6852/5934/files/paddle-board-green.png?v=1753129565" alt="Paddle Board - Green"><button type="button" class="group absolute inset-0 flex cursor-zoom-in items-center justify-center focus:ring-2 focus:ring-primary focus:outline-none"><span class="sr-only">View Full Size</span></button></div><span class="inline-flex max-w-max items-center gap-x-1 rounded-full border px-2 py-[0.15rem] text-xs whitespace-nowrap bg-gray-50 border-outline text-gray-800 absolute -top-2 -right-2" data-sentry-component="Badge" data-sentry-source-file="Badge.tsx"><span class="sr-only">Quantity</span><span>1</span></span>
+                                                              </div>
+                                                              <div class="flex w-full flex-col gap-1 text-sm font-medium text-gray-500">
+                                                                  <div class="flex w-full justify-between text-gray-800"><span id="productTitle">Paddle Board - Green</span><span class="hidden sm:block" data-sentry-component="PriceDisplay" data-sentry-source-file="LineItem.tsx"><span id="productPrice">395.00</span> x 1</span></div><span class="font-normal" id="productOptions">green</span></div>
+                                                          </div>
+                                                      </article>
+                                                  </div>
+                                                  
+                                                  <div class="flex justify-between p-2"><span>Shop Now Incentive</span><span>$10.00</span></div>
+                                              </div>
+                                          </div>
+                                      </details>
+                                      <details class="group bg-white" open="" data-sentry-component="Disclosure" data-sentry-source-file="Disclosure.tsx">
+                                          <summary role="button" class="flex cursor-pointer list-none items-center gap-2 rounded-sm text-sm font-medium text-gray-800 marker:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary focus-visible:outline-solid [&amp;::-webkit-details-marker]:hidden">
+                                              <div class="flex w-full items-center justify-between gap-1">
+                                          </summary>
+                                          <div class="mt-2">
+                                              <div class="flex flex-col gap-2 rounded-md bg-gray-50 text-sm text-gray-700">
+                                                  <div class="flex flex-col gap-3 rounded-md bg-gray-50 p-2" data-sentry-component="LineItems" data-sentry-source-file="ReturnSummaryPage.tsx">
+                                                      <p class="text-sm">Exchange Item (1)</p>
+                                                      <article class="flex flex-col gap-8 sm:flex-row sm:items-center" aria-labelledby=":rc:">
+                                                          <div class="flex w-full items-center gap-4">
+                                                              <div class="relative" data-sentry-component="ProductImage" data-sentry-source-file="ProductImage.tsx">
+                                                                  <div class="relative flex aspect-square items-center justify-center rounded-lg border border-outline object-cover *:size-full *:rounded-[7px] *:border-none *:object-contain size-12" data-sentry-component="MediaDisplay" data-sentry-source-file="MediaDisplay.tsx"><img id="productImgExchange" class="max-h-[80svh] max-w-[90svw]" src="https://cdn.shopify.com/s/files/1/0930/6852/5934/files/surf-board-black.png?v=1753129558" alt="Surfboard - Blank Series"><button type="button" class="group absolute inset-0 flex cursor-zoom-in items-center justify-center focus:ring-2 focus:ring-primary focus:outline-none"><span class="sr-only">View Full Size</span></button></div><span class="inline-flex max-w-max items-center gap-x-1 rounded-full border px-2 py-[0.15rem] text-xs whitespace-nowrap bg-gray-50 border-outline text-gray-800 absolute -top-2 -right-2" data-sentry-component="Badge" data-sentry-source-file="Badge.tsx"><span class="sr-only">Quantity</span><span>1</span></span>
+                                                              </div>
+                                                              <div class="flex w-full flex-col gap-1 text-sm font-medium text-gray-500">
+                                                                  <div class="flex w-full justify-between text-gray-800"><span id="productNameExchange">Surfboard - Blank Series</span><span class="hidden sm:block" data-sentry-component="PriceDisplay" data-sentry-source-file="LineItem.tsx"><span id="productPriceExchange">$0.00</span> x 1</span></div><span class="font-normal" id="productOptionExchange">black</span></div>
+                                                          </div>
+                                                      </article>
+                                                  </div>
+                                                 
+                                              </div>
+                                          </div>
+                                      </details><input data-testid="selection-input" type="hidden" name="exchangeMethod" value="standard">
+                                      <div class="flex flex-col gap-4" data-sentry-component="MonetarySection" data-sentry-source-file="ReturnSummaryPage.tsx">
+                                          <dl class="grid grid-cols-2 *:py-2 *:first:pt-0 *:last:pb-0 *:nth-2:pt-0 *:nth-last-2:pb-0 font-medium" data-sentry-component="DescriptionList" data-sentry-source-file="DescriptionList.tsx"><dt id=":rd:" class="text-sm">Payment due</dt>
+                                              <dd aria-labelledby=":rd:" class="text-sm text-right" id="paymentDue">$419.00</dd>
+                                          </dl>
+                                          <div id="card-element" class="w-full mt-2 StripeElement StripeElement--complete" data-sentry-component="PaymentCardInput" data-sentry-source-file="PaymentCardInput.tsx">
+                                              <div class="__PrivateStripeElement" style="margin: 0px !important; padding: 0px !important; border: none !important; display: block !important; background: transparent !important; position: relative !important; opacity: 1 !important; --stripeElementWidth: 668px;"><iframe name="__privateStripeFrame0253" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/elements-inner-card-c6dfd9041070caafc68c45f639fb3995.html#__shared_params__[version]=v3&amp;__shared_params__[light_experiment_assignments]=%7B%22token%22%3A%227e7c7560-9881-4df2-9505-b2e9fb6dbd0d%22%2C%22assignments%22%3A%7B%7D%7D&amp;wait=false&amp;mids[guid]=02a5b666-7c16-42c2-add6-86190ee88f8d9e91ef&amp;mids[muid]=57dd06c2-3663-4dd5-b69e-6545f96ce0613d5f69&amp;mids[sid]=da219bec-419b-4861-afa5-2fee27902ea0f3cd88&amp;elementId=card-54d567b7-749b-4853-802c-57ab95964881&amp;stripeJsMountedInIframe=false&amp;rtl=false&amp;componentName=card&amp;keyMode=test&amp;apiKey=pk_test_51Li2PBKDUc1W1StoIUXQT465Kv3NPN8Jtz2aot1OFlUZb4c9zUe5StAz5iS9eBXQSFnLVoiqTYLjU5TzXlgX687P007CPlz2hr&amp;frameMessagingStrategy=postMessage&amp;referrer=https%3A%2F%2Fapp.stg.corso.com%2Fluna-qa%2Forder%2F11752031551854%2Freturn%2Freturn-summary&amp;controllerId=__privateStripeController0251" title="Secure card payment input frame" style="border: 0px !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; user-select: none !important; transform: translate(0px) !important; color-scheme: light only !important; height: 16.8px;"></iframe><input class="__PrivateStripeElement-input" aria-hidden="true" aria-label=" " autocomplete="false" maxlength="1" style="border: none !important; display: block !important; position: absolute !important; height: 1px !important; top: -1px !important; left: 0px !important; padding: 0px !important; margin: 0px !important; width: 100% !important; opacity: 0 !important; background: transparent !important; pointer-events: none !important; font-size: 16px !important; z-index: -1 !important;">
+                                                  <div style="display: block !important; position: absolute !important; top: 50% !important; right: -6px !important; width: 139px !important; margin: -16px 0px 0px !important; padding: 0px !important; border: 0px !important; background: none !important; opacity: 1 !important; overflow: hidden !important; pointer-events: auto !important; transition: none !important; height: 32px !important;"><iframe name="cardButton0256" frameborder="0" allowtransparency="true" scrolling="no" src="https://js.stripe.com/v3/elements-inner-link-button-for-card-2896780f15a2e1b367f2f88cd90fc00f.html#locale=en&amp;style[backgroundColor]=&amp;style[foregroundColor]=&amp;frameId=__privateStripeFrame0253&amp;publishableKey=pk_test_51Li2PBKDUc1W1StoIUXQT465Kv3NPN8Jtz2aot1OFlUZb4c9zUe5StAz5iS9eBXQSFnLVoiqTYLjU5TzXlgX687P007CPlz2hr&amp;stripeAccount=acct_1RajyOGqNhub3M1F&amp;stripeJsId=7e7c7560-9881-4df2-9505-b2e9fb6dbd0d&amp;controllerId=__privateStripeController0251&amp;mids[guid]=02a5b666-7c16-42c2-add6-86190ee88f8d9e91ef&amp;mids[muid]=57dd06c2-3663-4dd5-b69e-6545f96ce0613d5f69&amp;mids[sid]=da219bec-419b-4861-afa5-2fee27902ea0f3cd88&amp;component=card&amp;elementId=card-54d567b7-749b-4853-802c-57ab95964881" style="margin: 0px !important; user-select: none !important; transform: translate(0px) !important; color-scheme: light only !important; display: block !important; position: absolute !important; top: 0px !important; right: 0px !important; height: 32px !important; width: calc(var(--stripeElementWidth) + 12px) !important; padding: 0px !important; border: 0px !important; overflow: hidden !important; opacity: 1 !important; transition: none !important;" tabindex="0"></iframe></div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div><button data-sentry-element="Submit" data-sentry-source-file="ReturnSummaryPage.tsx" type="submit" class="inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 font-medium shadow-xs hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer focus:outline-solid focus:outline-primary focus:outline-2 focus:outline-offset-2 bg-primary text-on-primary w-full md:w-1/2"><span>Submit Return Request</span></button><input type="hidden" name="claimValues" value="{&quot;fromCustomerShipping&quot;:0,&quot;fee&quot;:0,&quot;feeName&quot;:&quot;&quot;,&quot;incentive&quot;:0,&quot;paymentIntentSecret&quot;:&quot;pi_3SmnQQGqNhub3M1F1JpvAlY6_secret_bBPy28zikW65l8kUbM8uEBtnq&quot;,&quot;balance&quot;:419,&quot;toCustomerShipping&quot;:0,&quot;authorizedAmount&quot;:419}"></form>
+                          </section>
+                      </div>
+                  </section>
+              </main>
+
+                
+                
+
+                <footer
+                  class="mt-8 flex flex-col items-stretch justify-between space-x-4 md:flex-row"
+                  data-testid="app-footer"
+                  data-sentry-component="Footer"
+                  data-sentry-source-file="app-shell-component.tsx"
+                >
+                  <div
+                    class="flex items-center justify-center text-center md:justify-start md:text-left"
+                  >
+                    <p class="text-xs">
+                      Need help with? Contact us at support@<span
+                        id="emailAddressBrandName"
+                        style="text-transform: lowercase"
+                        >ooni</span
+                      >.com
+                    </p>
+                  </div>
+                  <div
+                    class="mt-8 flex items-center justify-center text-xs md:mt-0 md:justify-start"
+                  >
+                    <span class="w-14"
+                      ><a
+                        rel="noreferrer"
+                        data-sentry-element="Link"
+                        data-sentry-source-file="link-button.tsx"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 p-0 text-primary-on-container shadow-none hover:underline focus:underline"
+                        data-sentry-component="LinkButton"
+                        href="https://corso.com/returns-exchanges"
+                        target="_blank"
+                        ><img
+                          alt="Corso Logo"
+                          src="https://corso-media.sfo3.cdn.digitaloceanspaces.com/img/corso-logo.png" /></a
+                    ></span>
+                  </div>
+                </footer>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      // Get the encoded checkout url paramater
+      const params = new URLSearchParams(window.location.search);
+      const checkoutParams = params.get("checkout");
+
+      // Decode and Parse
+      const decodedCheckoutParams = atob(checkoutParams);
+      const checkoutJson = JSON.parse(decodedCheckoutParams);
+
+      console.log("checkoutJson", checkoutJson);
+
+      // turn url into usable variables
+      const {
+        rates,
+        brandColor,
+        brandLogo,
+        productName,
+        productDesc,
+        productPrice,
+        productImage,
+        exchangeProductImage,
+        exchangeProductName,
+        exchangeProductOptions,
+        exchangeProductOptionLabel,
+        exchangeProductPrice,
+        plusPrice,
+        checkbox,
+        checkboxLabel,
+        checkboxDesc,
+        widgetImageUrl,
+        storeName,
+        showProducts,
+      } = checkoutJson;
+
+      // Get today's date
+      const today = new Date();
+
+      // Get yesterday's date
+      const yesterday = new Date();
+      const twoDaysAgo = new Date();
+      const fiveDaysAgo = new Date();
+      const sevenDaysAgo = new Date();
+      const thirtyDaysAhead = new Date();
+      yesterday.setDate(today.getDate() - 1);
+      twoDaysAgo.setDate(today.getDate() - 2);
+      fiveDaysAgo.setDate(today.getDate() - 5);
+      sevenDaysAgo.setDate(today.getDate() - 7);
+      thirtyDaysAhead.setDate(today.getDate() + 31);
+
+      // Format the date as "Jan 19, 2025"
+      const options = { year: "numeric", month: "short", day: "numeric" };
+      const formattedDateToday = today.toLocaleDateString("en-US", options);
+      const formattedDateYesterday = yesterday.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateTwoDaysAgo = twoDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateFiveDaysAgo = fiveDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateSevenDaysAgo = sevenDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateThirtyDaysAhead = thirtyDaysAhead.toLocaleDateString(
+        "en-US",
+        options
+      );
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.documentElement.style.setProperty(
+          "--corso-primary",
+          "#" + brandColor
+        );
+
+        document.documentElement.style.setProperty(
+          "--corso-header-img-url",
+          `url("${brandLogo}")`
+        );
+
+        document.documentElement.style.setProperty(
+          "--corso-primary-on-container",
+          "#" + brandColor
+        );
+
+        const orderDate = document.getElementById("orderDate");
+
+        const productImgs = document.querySelectorAll("#productImg");
+        const productTitles = document.querySelectorAll("#productTitle");
+        const productOptions = document.querySelectorAll("#productOptions");
+        const productPrices = document.querySelectorAll("#productPrice");
+
+        const productImgExchange = document.querySelectorAll(
+          "#productImgExchange"
+        );
+        const exchangeProductOptionLabelText = document.getElementById(
+          "exchangeProductOptionLabel"
+        );
+        const productNameExchange = document.querySelectorAll(
+          "#productNameExchange"
+        );
+        const productOptionExchange = document.querySelectorAll(
+          "#productOptionExchange"
+        );
+        const productPriceExchange = document.querySelectorAll(
+          "#productPriceExchange"
+        );
+        const returnCredit = document.querySelectorAll(
+          "#returnCredit"
+        );
+        const paymentDue = document.querySelectorAll(
+          "#paymentDue"
+        );
+
+        const emailAddressBrandName = document.getElementById(
+          "emailAddressBrandName"
+        );
+
+        orderDate.innerText = formattedDateSevenDaysAgo;
+        emailAddressBrandName.innerText = storeName.replace(/\s+/g, "");
+        const returnCreditAmount = ((productPrice * 1) + 10).toFixed(2);
+        const paymentDueAmount = (exchangeProductPrice - returnCreditAmount).toFixed(2);
+
+        productImgs.forEach((img) => {
+          img.src = productImage;
+        });
+
+        productTitles.forEach((text) => {
+          text.innerText = productName;
+        });
+
+        productOptions.forEach((text) => {
+          text.innerText = productDesc;
+        });
+
+        productPrices.forEach((text) => {
+          text.innerText = "$" + (productPrice * 1).toFixed(2);
+        });
+
+        productOptions.forEach((text) => {
+          text.innerText = productDesc;
+        });
+
+        if (exchangeProductImage) {
+          productImgExchange.forEach((img) => {
+            img.src = exchangeProductImage;
+          });
+          productNameExchange.forEach((text) => {
+            text.innerHTML = exchangeProductName;
+          });
+          productOptionExchange.forEach((text) => {
+            text.innerHTML = exchangeProductOptions[0];
+          });
+          productPriceExchange.forEach((text) => {
+            text.innerHTML = "$" + exchangeProductPrice.toFixed(2);
+          });
+          returnCredit.forEach((text) => {
+            text.innerHTML = "$" + returnCreditAmount;
+          });
+          paymentDue.forEach((text) => {
+            text.innerHTML = "$" + paymentDueAmount;
+          });
+        } else {
+          productImgExchange.forEach((img) => {
+            img.src = productImage;
+          });
+          productNameExchange.forEach((text) => {
+            text.innerHTML = productName;
+          });
+          productOptionExchange.forEach((text) => {
+            text.innerHTML = productDesc;
+          });
+        }
+
+      });
+    </script>
+
+    <div class="menu-nav"></div>
+
+    <div class="next-nav">
+      <div data-next-page="returns-confirmation" data-next-text="Next"></div>
+    </div>
+
+    <script src="navigation.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,399 @@
+<html lang="en" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="customer-portal.css">
+    <title>Customer Portal</title>
+  </head>
+  <body id="crew" class="overscroll-none ready">
+    <div id="root">
+      <div
+        class="h-full"
+        data-sentry-component="AppShell"
+        data-sentry-source-file="app-shell-component.tsx"
+      >
+        <div class="relative grid h-full grid-rows-[min-content_1fr]">
+          <header
+            class="flex min-h-16 flex-col items-center justify-center bg-white shadow"
+            data-sentry-component="Header"
+            data-sentry-source-file="app-shell-component.tsx"
+          >
+            <span
+              aria-label="Go to Order look up"
+              data-sentry-element="Link"
+              data-sentry-source-file="link-button.tsx"
+              class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 p-0 text-primary-on-container shadow-none hover:underline focus:underline my-3 h-10 w-full max-w-md"
+              data-sentry-component="LinkButton"
+            >
+              <div
+                class="h-full w-full bg-header-logo bg-contain bg-center bg-no-repeat"
+                data-testid="header-logo"
+              ></div>
+            </span>
+          </header>
+          <div
+            class="h-auto bg-banner bg-cover bg-fixed text-base md:bg-banner-img"
+            data-sentry-component="Body"
+            data-sentry-source-file="app-shell-component.tsx"
+          >
+            <div class="mx-auto h-auto max-w-3xl p-2">
+              <div
+                id="app-body"
+                class="relative h-auto w-full rounded-none border border-gray-200 bg-gray-50 px-4 py-8 shadow md:block md:rounded-lg"
+              >
+                <nav
+                  class="-mx-4 -mt-8 mb-4 rounded-t-md p-4 text-gray-800"
+                  data-sentry-component="AppBar"
+                  data-sentry-source-file="app-shell-component.tsx"
+                >
+                  <div
+                    class="flex flex-col items-center justify-between gap-1 md:flex-row"
+                  >
+                    <div
+                      class="flex w-full items-center justify-between gap-1 md:w-auto"
+                    >
+                      <span
+                        data-sentry-element="Link"
+                        data-sentry-source-file="link-button.tsx"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 shadow-none hover:underline focus:underline text-gray-800 hover:text-gray-600 p-1 text-sm"
+                        data-sentry-component="LinkButton"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fal"
+                          data-icon="magnifying-glass"
+                          class="svg-inline--fa fa-magnifying-glass size-4 mr-1"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          data-sentry-element="FontAwesomeIcon"
+                          data-sentry-component="Icon"
+                          data-sentry-source-file="icon.tsx"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M384 208A176 176 0 1 0 32 208a176 176 0 1 0 352 0zM343.3 366C307 397.2 259.7 416 208 416C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208c0 51.7-18.8 99-50 135.3L507.3 484.7c6.2 6.2 6.2 16.4 0 22.6s-16.4 6.2-22.6 0L343.3 366z"
+                          ></path>
+                        </svg>
+                        Search
+                      </span>
+                    </div>
+                    <div
+                      class="flex w-full justify-between gap-1 px-1 text-xs font-medium md:w-auto md:flex-col md:px-0 md:text-right"
+                    >
+                      <span>Order: #3183</span
+                      ><span
+                        >Order Date:
+                        <span id="orderDate">Nov 4, 2024</span></span
+                      >
+                    </div>
+                  </div>
+                </nav>
+
+                <main class="flex-1">
+                  <section class="flex flex-col gap-4" data-sentry-component="Page" data-sentry-source-file="Page.tsx">
+                      <header class="px-4">
+                          <h1 class="text-center text-2xl text-gray-800">We received your request</h1>
+                          <p class="mt-1 text-center text-gray-500">Confirmation number: #985-1202-1</p>
+                      </header>
+                      <section data-testid="return-shipments-card" aria-labelledby=":re:" class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-xs md:p-8" data-sentry-component="Card" data-sentry-source-file="Card.tsx">
+                          <header>
+                              <div class="grid gap-2 sm:grid-cols-[max-content_1fr]">
+                                  <h2 id=":re:" class="text-left text-xl font-medium text-gray-800 order-last sm:order-first">Return Items By: <span id="returnByDate">Feb 4, 2026</span></h2>
+                              </div>
+                              <p class="text-gray-500">Please use the provided QR Code to return your items</p>
+                          </header>
+                          <div class="flex flex-col divide-y divide-outline *:first:pt-0 *:last:pb-0 *:py-4" data-sentry-element="Element" data-sentry-component="Divide" data-sentry-source-file="Divide.tsx">
+                              <article class="mb-4 border-b border-outline pb-4 last:mb-0 last:border-none last:pb-0" aria-labelledby=":rf:" data-sentry-component="ClaimLineItem" data-sentry-source-file="ClaimLineItem.tsx">
+                                  <div class="flex gap-4">
+                                      <div class="relative" data-sentry-component="ProductImage" data-sentry-source-file="ProductImage.tsx">
+                                          <div class="relative flex aspect-square items-center justify-center rounded-lg border border-outline object-cover *:size-full *:rounded-[7px] *:border-none *:object-contain size-12" data-sentry-component="MediaDisplay" data-sentry-source-file="MediaDisplay.tsx"><img class="max-h-[80svh] max-w-[90svw]" id="productImg" src="https://cdn.shopify.com/s/files/1/0930/6852/5934/files/paddle-board-green.png?v=1753129565" alt="Paddle Board - Green"><button type="button" class="group absolute inset-0 flex cursor-zoom-in items-center justify-center focus:ring-2 focus:ring-primary focus:outline-none"><span class="sr-only">View Full Size</span></button></div><span class="inline-flex max-w-max items-center gap-x-1 rounded-full border px-2 py-[0.15rem] text-xs whitespace-nowrap bg-gray-50 border-outline text-gray-800 absolute -top-2 -right-2" data-sentry-component="Badge" data-sentry-source-file="Badge.tsx"><span class="sr-only">Quantity</span><span>1</span></span>
+                                      </div>
+                                      <div class="flex w-full flex-col gap-1 text-sm font-medium text-gray-500">
+                                          <div>
+                                              <div class="flex w-full justify-between text-gray-800"><span id="productTitle">Paddle Board - Green</span><span class="" id="productPrice">$395.00</span></div><span id="productOptions">green</span></div>
+                                          <div class="flex gap-1"><span class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset" data-sentry-component="Chip" data-sentry-source-file="Chip.tsx">Request: Replacement Order</span></div>
+                                      </div>
+                                  </div>
+                              </article>
+                          </div>
+                          <figure class="flex w-full flex-col items-center self-center rounded-lg border border-outline sm:flex-row sm:items-stretch" data-sentry-component="QrCode" data-sentry-source-file="QrCode.tsx">
+                              <div class="flex basis-1/2 items-center justify-center"><img alt="QR Code for shipping label" class="w-72 p-4" src="https://corso-crew-stg.sfo3.cdn.digitaloceanspaces.com/image/shipping-label-qr-code/2026-01-07t04-07-30-506z-49b4fac26e8a4ae69bd3b13b54110d36.png"></div>
+                              <figcaption class="flex w-full basis-1/2 items-center justify-center rounded-tr-none rounded-br-lg rounded-bl-lg border-t border-outline bg-gray-50 p-4 sm:rounded-tr-lg sm:rounded-bl-none sm:border-t-0 sm:border-l" data-sentry-element="figcaption" data-sentry-source-file="QrCode.tsx"><span class="sr-only">QR Code for shipping label</span>
+                                  <dl class="grid *:first:pt-0 *:last:pb-0 *:nth-2:pt-0 *:nth-last-2:pb-0 w-full grid-cols-1 justify-start *:py-0 [&amp;&gt;dd]:mb-2 [&amp;&gt;dd]:text-left [&amp;&gt;dt]:text-sm [&amp;&gt;dt]:text-gray-500 [&amp;&gt;dt]:uppercase" data-sentry-component="DescriptionList" data-sentry-source-file="DescriptionList.tsx"><dt id=":rg:" class="text-base">Confirmation</dt>
+                                      <dd aria-labelledby=":rg:" class="text-base text-right">#985-1202-1</dd><dt id=":rh:" class="text-base">Carrier</dt>
+                                      <dd aria-labelledby=":rh:" class="text-base text-right"><span class="flex items-center gap-1"><img aria-hidden="true" alt="carrier" class="w-8" src="https://cdn.corso.com/img/carrier-usps-bk.svg">USPS</span></dd><dt id=":ri:" class="text-base">To</dt>
+                                      <dd aria-labelledby=":ri:" class="text-base text-right">Ship Lion</dd><dt id=":rj:" class="text-base">From</dt>
+                                      <dd aria-labelledby=":rj:" class="text-base text-right"><address class="italic" aria-label="Address" data-sentry-component="CustomerInfoDisplay" data-sentry-source-file="CustomerInfoDisplay.tsx"><span>223 Erbes Road</span><br><span>Thousand Oaks, CA 91362</span><br><span>US</span><br></address></dd>
+                                  </dl>
+                              </figcaption>
+                          </figure>
+                          <div class="flex flex-col gap-4 md:flex-row"><a class="inline-flex items-center justify-center rounded-md border px-4 py-2 font-medium shadow-xs hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer focus:outline-solid focus:outline-primary focus:outline-2 focus:outline-offset-2 border-primary bg-transparent text-primary-on-container hover:bg-surface w-full md:w-1/2" data-sentry-element="Link" data-sentry-component="LinkButton" data-sentry-source-file="LinkButton.tsx" href="https://corso-crew-stg.sfo3.cdn.digitaloceanspaces.com/pdf/shipping-label/2026-01-07t04-07-30-318z-e86f95442b3b8e4f09a20b70096fa8f50c.pdf" target="_blank">Download Return Label</a><a rel="noreferrer" class="inline-flex items-center justify-center rounded-md border px-4 py-2 font-medium shadow-xs hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer focus:outline-solid focus:outline-primary focus:outline-2 focus:outline-offset-2 border-primary bg-transparent text-primary-on-container hover:bg-surface w-full md:w-1/2" data-sentry-element="Link" data-sentry-component="LinkButton" data-sentry-source-file="LinkButton.tsx" href="https://luna-qa.myshopify.com" target="_blank">Back To Our Website</a></div>
+                      </section>
+                      <section data-testid="request-summary-card" aria-labelledby=":rk:" class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-xs md:p-8" data-sentry-component="Card" data-sentry-source-file="Card.tsx">
+                          <header>
+                              <div class="">
+                                  <h2 id=":rk:" class="text-left text-xl font-medium text-gray-800">What you are getting</h2>
+                              </div>
+                          </header>
+                          <div class="flex flex-col divide-y divide-outline *:first:pt-0 *:last:pb-0 *:py-4" data-sentry-element="Element" data-sentry-component="Divide" data-sentry-source-file="Divide.tsx">
+                              <article class="flex flex-col gap-8 sm:flex-row sm:items-center" aria-labelledby=":rl:">
+                                  <div class="flex w-full items-center gap-4">
+                                      <div class="relative" data-sentry-component="ProductImage" data-sentry-source-file="ProductImage.tsx">
+                                          <div class="relative flex aspect-square items-center justify-center rounded-lg border border-outline object-cover *:size-full *:rounded-[7px] *:border-none *:object-contain size-12" data-sentry-component="MediaDisplay" data-sentry-source-file="MediaDisplay.tsx"><img class="max-h-[80svh] max-w-[90svw]" id="productImgExchange" src="https://cdn.shopify.com/s/files/1/0930/6852/5934/files/surf-board-black.png?v=1753129558" alt="Surfboard - Blank Series"><button type="button" class="group absolute inset-0 flex cursor-zoom-in items-center justify-center focus:ring-2 focus:ring-primary focus:outline-none"><span class="sr-only">View Full Size</span></button></div><span class="inline-flex max-w-max items-center gap-x-1 rounded-full border px-2 py-[0.15rem] text-xs whitespace-nowrap bg-gray-50 border-outline text-gray-800 absolute -top-2 -right-2" data-sentry-component="Badge" data-sentry-source-file="Badge.tsx"><span class="sr-only">Quantity</span><span>1</span></span>
+                                      </div>
+                                      <div class="flex w-full flex-col gap-1 text-sm font-medium text-gray-500">
+                                          <div class="flex w-full justify-between text-gray-800"><span id="productNameExchange">Surfboard - Blank Series</span></div><span class="font-normal" id="productOptionExchange">black</span></div>
+                                  </div>
+                              </article>
+                          </div>
+                      </section>
+                  </section>
+              </main>
+
+                
+                
+
+                <footer
+                  class="mt-8 flex flex-col items-stretch justify-between space-x-4 md:flex-row"
+                  data-testid="app-footer"
+                  data-sentry-component="Footer"
+                  data-sentry-source-file="app-shell-component.tsx"
+                >
+                  <div
+                    class="flex items-center justify-center text-center md:justify-start md:text-left"
+                  >
+                    <p class="text-xs">
+                      Need help with? Contact us at support@<span
+                        id="emailAddressBrandName"
+                        style="text-transform: lowercase"
+                        >ooni</span
+                      >.com
+                    </p>
+                  </div>
+                  <div
+                    class="mt-8 flex items-center justify-center text-xs md:mt-0 md:justify-start"
+                  >
+                    <span class="w-14"
+                      ><a
+                        rel="noreferrer"
+                        data-sentry-element="Link"
+                        data-sentry-source-file="link-button.tsx"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 p-0 text-primary-on-container shadow-none hover:underline focus:underline"
+                        data-sentry-component="LinkButton"
+                        href="https://corso.com/returns-exchanges"
+                        target="_blank"
+                        ><img
+                          alt="Corso Logo"
+                          src="https://corso-media.sfo3.cdn.digitaloceanspaces.com/img/corso-logo.png" /></a
+                    ></span>
+                  </div>
+                </footer>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      // Get the encoded checkout url paramater
+      const params = new URLSearchParams(window.location.search);
+      const checkoutParams = params.get("checkout");
+
+      // Decode and Parse
+      const decodedCheckoutParams = atob(checkoutParams);
+      const checkoutJson = JSON.parse(decodedCheckoutParams);
+
+      console.log("checkoutJson", checkoutJson);
+
+      // turn url into usable variables
+      const {
+        rates,
+        brandColor,
+        brandLogo,
+        productName,
+        productDesc,
+        productPrice,
+        productImage,
+        exchangeProductImage,
+        exchangeProductName,
+        exchangeProductOptions,
+        exchangeProductOptionLabel,
+        exchangeProductPrice,
+        plusPrice,
+        checkbox,
+        checkboxLabel,
+        checkboxDesc,
+        widgetImageUrl,
+        storeName,
+        showProducts,
+      } = checkoutJson;
+
+      // Get today's date
+      const today = new Date();
+
+      // Get yesterday's date
+      const yesterday = new Date();
+      const twoDaysAgo = new Date();
+      const fiveDaysAgo = new Date();
+      const sevenDaysAgo = new Date();
+      const thirtyDaysAhead = new Date();
+      yesterday.setDate(today.getDate() - 1);
+      twoDaysAgo.setDate(today.getDate() - 2);
+      fiveDaysAgo.setDate(today.getDate() - 5);
+      sevenDaysAgo.setDate(today.getDate() - 7);
+      thirtyDaysAhead.setDate(today.getDate() + 31);
+
+      // Format the date as "Jan 19, 2025"
+      const options = { year: "numeric", month: "short", day: "numeric" };
+      const formattedDateToday = today.toLocaleDateString("en-US", options);
+      const formattedDateYesterday = yesterday.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateTwoDaysAgo = twoDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateFiveDaysAgo = fiveDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateSevenDaysAgo = sevenDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateThirtyDaysAhead = thirtyDaysAhead.toLocaleDateString(
+        "en-US",
+        options
+      );
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.documentElement.style.setProperty(
+          "--corso-primary",
+          "#" + brandColor
+        );
+
+        document.documentElement.style.setProperty(
+          "--corso-header-img-url",
+          `url("${brandLogo}")`
+        );
+
+        document.documentElement.style.setProperty(
+          "--corso-primary-on-container",
+          "#" + brandColor
+        );
+
+        const orderDate = document.getElementById("orderDate");
+
+        const productImgs = document.querySelectorAll("#productImg");
+        const productTitles = document.querySelectorAll("#productTitle");
+        const productOptions = document.querySelectorAll("#productOptions");
+        const productPrices = document.querySelectorAll("#productPrice");
+
+        const returnByDate = document.querySelectorAll(
+          "#returnByDate"
+        );
+
+        const productImgExchange = document.querySelectorAll(
+          "#productImgExchange"
+        );
+        const exchangeProductOptionLabelText = document.getElementById(
+          "exchangeProductOptionLabel"
+        );
+        const productNameExchange = document.querySelectorAll(
+          "#productNameExchange"
+        );
+        const productOptionExchange = document.querySelectorAll(
+          "#productOptionExchange"
+        );
+        const productPriceExchange = document.querySelectorAll(
+          "#productPriceExchange"
+        );
+        const returnCredit = document.querySelectorAll(
+          "#returnCredit"
+        );
+        const paymentDue = document.querySelectorAll(
+          "#paymentDue"
+        );
+
+        const emailAddressBrandName = document.getElementById(
+          "emailAddressBrandName"
+        );
+
+        orderDate.innerText = formattedDateSevenDaysAgo;
+        emailAddressBrandName.innerText = storeName.replace(/\s+/g, "");
+        const returnCreditAmount = ((productPrice * 1) + 10).toFixed(2);
+        const paymentDueAmount = (exchangeProductPrice - returnCreditAmount).toFixed(2);
+
+        returnByDate.forEach((text) => {
+          text.innerText = formattedDateThirtyDaysAhead;
+        });
+
+        productImgs.forEach((img) => {
+          img.src = productImage;
+        });
+
+        productTitles.forEach((text) => {
+          text.innerText = productName;
+        });
+
+        productOptions.forEach((text) => {
+          text.innerText = productDesc;
+        });
+
+        productPrices.forEach((text) => {
+          text.innerText = "$" + (productPrice * 1).toFixed(2);
+        });
+
+        productOptions.forEach((text) => {
+          text.innerText = productDesc;
+        });
+
+        if (exchangeProductImage) {
+          productImgExchange.forEach((img) => {
+            img.src = exchangeProductImage;
+          });
+          productNameExchange.forEach((text) => {
+            text.innerHTML = exchangeProductName;
+          });
+          productOptionExchange.forEach((text) => {
+            text.innerHTML = exchangeProductOptions[0];
+          });
+          productPriceExchange.forEach((text) => {
+            text.innerHTML = "$" + exchangeProductPrice.toFixed(2);
+          });
+          returnCredit.forEach((text) => {
+            text.innerHTML = "$" + returnCreditAmount;
+          });
+          paymentDue.forEach((text) => {
+            text.innerHTML = "$" + paymentDueAmount;
+          });
+        } else {
+          productImgExchange.forEach((img) => {
+            img.src = productImage;
+          });
+          productNameExchange.forEach((text) => {
+            text.innerHTML = productName;
+          });
+          productOptionExchange.forEach((text) => {
+            text.innerHTML = productDesc;
+          });
+        }
+
+      });
+    </script>
+
+    <div class="menu-nav"></div>
+
+    <div class="next-nav">
+      <div data-next-page="admin-returns" data-next-text="View Admin"></div>
+    </div>
+
+    <script src="navigation.js"></script>
+
+  </body>
+</html>

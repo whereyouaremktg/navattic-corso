@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <script>
+      !(function (t) {
+        var k = "ko",
+          i = (window.globalKoalaKey = window.globalKoalaKey || k);
+        if (window[i]) return;
+        var ko = (window[i] = []);
+        [
+          "identify",
+          "track",
+          "removeListeners",
+          "on",
+          "off",
+          "qualify",
+          "ready",
+        ].forEach(function (t) {
+          ko[t] = function () {
+            var n = [].slice.call(arguments);
+            return n.unshift(t), ko.push(n), ko;
+          };
+        });
+        var n = document.createElement("script");
+        (n.async = !0),
+          n.setAttribute(
+            "src",
+            "https://cdn.getkoala.com/v1/pk_d2026408a5cea71b0155ae3133d150e766cc/sdk.js"
+          ),
+          (document.body || document.head).appendChild(n);
+      })();
+    </script>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      :root {
+        --brandColor: #000000;
+      }
+      .view-order-button {
+        background-color: var(--brandColor);
+      }
+      .visit-our-store-link,
+      .corso-text-link {
+        color: var(--brandColor);
+      }
+      .checkout-plus-image {
+        width: 100%;
+      }
+    </style>
+    <link rel="stylesheet" href="navigation.css">
+  </head>
+  <body>
+    <div class="checkout-plus-container">
+      <a id="imageButton" href="shipping-plus.html">
+        <img
+          class="checkout-plus-image"
+          id="checkoutPlusImage"
+          src="#"
+          alt="Checkout Plus Image"
+        />
+      </a>
+    </div>
+
+    <script>
+      // Get the encoded checkout url paramater
+      const params = new URLSearchParams(window.location.search);
+      const checkoutParams = params.get("checkout");
+
+      // Decode and Parse
+      const decodedCheckoutParams = atob(checkoutParams);
+      const checkoutJson = JSON.parse(decodedCheckoutParams);
+
+      console.log("checkoutJson", checkoutJson);
+
+      // turn url into usable variables
+      const { widgetUrl, brandColor, checkoutPlusImageUrl, showNextButton, showProducts } =
+        checkoutJson;
+
+      document.addEventListener("DOMContentLoaded", () => {
+
+        const checkoutPlusImage = document.getElementById("checkoutPlusImage");
+        checkoutPlusImage.src = checkoutPlusImageUrl;
+
+        const imageButton = document.getElementById("imageButton");
+        imageButton.href = "shipping-plus.html?checkout=" + checkoutParams;
+
+      });
+    </script>
+
+    <div class="menu-nav"></div>
+
+    <div class="next-nav">
+      <div data-next-page="shipping-plus" data-next-text="Go To Checkout"></div>
+    </div>
+
+    <script src="navigation.js"></script>
+  </body>
+</html>

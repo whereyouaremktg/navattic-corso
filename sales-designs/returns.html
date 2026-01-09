@@ -1,0 +1,2630 @@
+<html lang="en" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="customer-portal.css">
+    <title>Customer Portal</title>
+  </head>
+  <body id="crew" class="overscroll-none ready">
+    <div id="root">
+      <div
+        class="h-full"
+        data-sentry-component="AppShell"
+        data-sentry-source-file="app-shell-component.tsx"
+      >
+        <div class="relative grid h-full grid-rows-[min-content_1fr]">
+          <header
+            class="flex min-h-16 flex-col items-center justify-center bg-white shadow"
+            data-sentry-component="Header"
+            data-sentry-source-file="app-shell-component.tsx"
+          >
+            <span
+              aria-label="Go to Order look up"
+              data-sentry-element="Link"
+              data-sentry-source-file="link-button.tsx"
+              class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 p-0 text-primary-on-container shadow-none hover:underline focus:underline my-3 h-10 w-full max-w-md"
+              data-sentry-component="LinkButton"
+            >
+              <div
+                class="h-full w-full bg-header-logo bg-contain bg-center bg-no-repeat"
+                data-testid="header-logo"
+              ></div>
+            </span>
+          </header>
+          <div
+            class="h-auto bg-banner bg-cover bg-fixed text-base md:bg-banner-img"
+            data-sentry-component="Body"
+            data-sentry-source-file="app-shell-component.tsx"
+          >
+            <div class="mx-auto h-auto max-w-3xl p-2">
+              <div
+                id="app-body"
+                class="relative h-auto w-full rounded-none border border-gray-200 bg-gray-50 px-4 py-8 shadow md:block md:rounded-lg"
+              >
+                <nav
+                  class="-mx-4 -mt-8 mb-4 rounded-t-md p-4 text-gray-800"
+                  data-sentry-component="AppBar"
+                  data-sentry-source-file="app-shell-component.tsx"
+                >
+                  <div
+                    class="flex flex-col items-center justify-between gap-1 md:flex-row"
+                  >
+                    <div
+                      class="flex w-full items-center justify-between gap-1 md:w-auto"
+                    >
+                      <span
+                        data-sentry-element="Link"
+                        data-sentry-source-file="link-button.tsx"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 shadow-none hover:underline focus:underline text-gray-800 hover:text-gray-600 p-1 text-sm"
+                        data-sentry-component="LinkButton"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fal"
+                          data-icon="magnifying-glass"
+                          class="svg-inline--fa fa-magnifying-glass size-4 mr-1"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          data-sentry-element="FontAwesomeIcon"
+                          data-sentry-component="Icon"
+                          data-sentry-source-file="icon.tsx"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M384 208A176 176 0 1 0 32 208a176 176 0 1 0 352 0zM343.3 366C307 397.2 259.7 416 208 416C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208c0 51.7-18.8 99-50 135.3L507.3 484.7c6.2 6.2 6.2 16.4 0 22.6s-16.4 6.2-22.6 0L343.3 366z"
+                          ></path>
+                        </svg>
+                        Search
+                      </span>
+                    </div>
+                    <div
+                      class="flex w-full justify-between gap-1 px-1 text-xs font-medium md:w-auto md:flex-col md:px-0 md:text-right"
+                    >
+                      <span>Order: #3183</span
+                      ><span
+                        >Order Date:
+                        <span id="orderDate">Nov 4, 2024</span></span
+                      >
+                    </div>
+                  </div>
+                </nav>
+                <!-- Order Page              -->
+                <!-- ======================= -->
+                <main id="rPortalOrder" class="flex-1">
+                  <section
+                    class="flex flex-col gap-4"
+                    data-sentry-component="Page"
+                    data-sentry-source-file="page.tsx"
+                  >
+                    <div class="px-4 sr-only">
+                      <h1 class="text-center text-2xl text-gray-800">
+                        To get started, select an eligible product for return
+                      </h1>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                      <section
+                        aria-labelledby=":r7:"
+                        class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                        data-sentry-component="Card"
+                        data-sentry-source-file="card.tsx"
+                      >
+                        <header>
+                          <div class="">
+                            <h2
+                              id=":r7:"
+                              class="text-left text-xl font-medium text-gray-800"
+                            >
+                              Eligible for return until
+                              <span id="eligibleUntilDate">Jun 15, 2025</span>
+                            </h2>
+                          </div>
+                        </header>
+                        <article
+                          class="flex flex-col gap-8 sm:flex-row sm:items-center border-b border-outline mt-4 pb-4 last:border-none last:pb-0"
+                          aria-labelledby=":r8:"
+                        >
+                          <div
+                            class="flex w-full items-center gap-4 sm:basis-2/3"
+                          >
+                            <div
+                              class="relative rounded flex-shrink-0 self-start"
+                              data-sentry-component="ProductImage"
+                              data-sentry-source-file="product-image.tsx"
+                            >
+                              <img
+                                id="productImg"
+                                src="https://cdn.shopify.com/s/files/1/0912/4151/3278/files/blue-surfboard-carl.png?v=1735662510"
+                                alt="Product"
+                                class="size-20 rounded border border-outline object-contain"
+                              /><span
+                                class="inline-flex max-w-max items-center gap-x-1 whitespace-nowrap rounded-full border px-2 py-[0.15rem] text-xs bg-gray-50 border-outline text-gray-800 absolute -right-2 -top-2"
+                                data-sentry-component="Badge"
+                                data-sentry-source-file="badge.tsx"
+                                ><span class="sr-only">Quantity</span
+                                ><span>1</span></span
+                              >
+                            </div>
+                            <div
+                              class="flex w-full flex-col gap-1 text-sm font-medium text-gray-500"
+                            >
+                              <div
+                                class="flex w-full justify-between text-gray-800"
+                              >
+                                <span id="productTitle"
+                                  >Surfboard - The Carl</span
+                                >
+                              </div>
+                              <span id="productOptions" class="font-normal"
+                                >blue</span
+                              ><span id="productPrice">$995.00</span>
+                            </div>
+                          </div>
+                          <div class="sm:basis-1/3">
+                            <button
+                              type="button"
+                              class="inline-flex items-center justify-center rounded-md border px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 border-primary bg-transparent text-primary-on-container hover:bg-surface w-full sm:w-52"
+                            >
+                              Select
+                            </button>
+                          </div>
+                        </article>
+                      </section>
+                      <section
+                        aria-labelledby=":r9:"
+                        class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                        data-sentry-component="Card"
+                        data-sentry-source-file="card.tsx"
+                      >
+                        <header>
+                          <div class="">
+                            <h2
+                              id=":r9:"
+                              class="text-left text-xl font-medium text-gray-800"
+                            >
+                              Ineligible for return
+                            </h2>
+                          </div>
+                        </header>
+                        <article
+                          class="flex flex-col gap-8 sm:flex-row sm:items-center border-b border-outline mt-4 pb-4 last:border-none last:pb-0 opacity-60"
+                          aria-labelledby=":ra:"
+                        >
+                          <div class="flex w-full items-center gap-4">
+                            <div
+                              class="relative rounded flex-shrink-0 self-start"
+                              data-sentry-component="ProductImage"
+                              data-sentry-source-file="product-image.tsx"
+                            >
+                              <img
+                                id="productImgIneligible"
+                                src="https://cdn.corso.com/img/Default%20box.png"
+                                alt="GQ Box"
+                                class="size-20 rounded border border-outline object-contain"
+                              /><span
+                                class="inline-flex max-w-max items-center gap-x-1 whitespace-nowrap rounded-full border px-2 py-[0.15rem] text-xs bg-gray-50 border-outline text-gray-800 absolute -right-2 -top-2"
+                                data-sentry-component="Badge"
+                                data-sentry-source-file="badge.tsx"
+                                ><span class="sr-only">Quantity</span
+                                ><span>1</span></span
+                              >
+                            </div>
+                            <div
+                              class="flex w-full flex-col gap-1 text-sm font-medium text-gray-500"
+                            >
+                              <div
+                                class="flex w-full justify-between text-gray-800"
+                              >
+                                <span id="productTitleIneligible"
+                                  >Delivery Guarantee</span
+                                >
+                              </div>
+                              <span id="productPriceIneligible">$2.50</span
+                              ><span
+                                class="text-red-700"
+                                data-sentry-component="Footnote"
+                                data-sentry-source-file="order-claim-component.tsx"
+                                >Final Sale</span
+                              >
+                            </div>
+                          </div>
+                        </article>
+                      </section>
+                    </div>
+                  </section>
+                </main>
+                <!-- Reason Page             -->
+                <!-- ======================= -->
+                <main id="rPortalReason" style="display: none" class="flex-1">
+                  <section
+                    class="flex flex-col gap-4"
+                    data-sentry-component="Page"
+                    data-sentry-source-file="page.tsx"
+                  >
+                    <div class="px-4 sr-only">
+                      <h1 class="text-center text-2xl text-gray-800">
+                        What happened and how can we make it right?
+                      </h1>
+                    </div>
+                    <section
+                      aria-labelledby=":r0:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":r0:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            The product you will be returning
+                          </h2>
+                        </div>
+                      </header>
+                      <article
+                        class="flex flex-col gap-8 sm:flex-row sm:items-center"
+                        aria-labelledby=":r1:"
+                      >
+                        <div class="flex w-full items-center gap-4">
+                          <div
+                            class="relative rounded flex-shrink-0 self-start"
+                            data-sentry-component="ProductImage"
+                            data-sentry-source-file="product-image.tsx"
+                          >
+                            <img
+                              id="productImg"
+                              src="https://cdn.shopify.com/s/files/1/0912/4151/3278/files/blue-surfboard-carl.png?v=1735662510"
+                              alt="Surfboard - The Carl"
+                              class="rounded border border-outline object-contain size-12"
+                            />
+                          </div>
+                          <div
+                            class="flex w-full flex-col gap-1 text-sm font-medium text-gray-500"
+                          >
+                            <div
+                              class="flex w-full justify-between text-gray-800"
+                            >
+                              <span id="productTitle">Surfboard - The Carl</span
+                              ><span id="productPrice" class="hidden sm:block"
+                                >$995.00</span
+                              >
+                            </div>
+                            <span id="productOptions" class="font-normal"
+                              >blue</span
+                            >
+                          </div>
+                        </div>
+                      </article>
+                    </section>
+                    <section
+                      aria-labelledby=":r2:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":r2:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            Why are you submitting this item for return?
+                          </h2>
+                        </div>
+                      </header>
+                      <form
+                        method="post"
+                        action="/lunas-sobre-mi-jamon/order/6356769833278/Return/tzg2rtkat3/reason"
+                        name="claimReason"
+                        data-sentry-element="RouterForm"
+                        data-sentry-source-file="form.tsx"
+                        class="flex flex-col gap-6"
+                        data-sentry-component="Form"
+                      >
+                        <fieldset
+                          class="mt-2"
+                          data-sentry-component="RadioGroup"
+                          data-sentry-source-file="radio-group.tsx"
+                        >
+                          <legend
+                            class="text-sm font-medium text-gray-700 sr-only"
+                          >
+                            Select a reason
+                          </legend>
+                          <div>
+                            <label
+                              data-sentry-element="unknown"
+                              data-sentry-component="Label"
+                              data-sentry-source-file="field.tsx"
+                              class="text-sm font-medium text-gray-700 -mb-[1px] flex cursor-pointer items-center gap-3 border border-gray-200 bg-white p-4 last:mb-0 last:rounded-b-md focus:outline-none [&amp;:nth-child(1)]:rounded-t-md"
+                              ><input
+                                name="reasonId"
+                                required=""
+                                type="radio"
+                                class="text-primary focus:ring-primary"
+                                value="280"
+                              />Item is defective</label
+                            ><label
+                              data-sentry-element="unknown"
+                              data-sentry-component="Label"
+                              data-sentry-source-file="field.tsx"
+                              class="text-sm font-medium text-gray-700 -mb-[1px] flex cursor-pointer items-center gap-3 border border-gray-200 bg-white p-4 last:mb-0 last:rounded-b-md focus:outline-none [&amp;:nth-child(1)]:rounded-t-md"
+                              ><input
+                                name="reasonId"
+                                required=""
+                                type="radio"
+                                class="text-primary focus:ring-primary"
+                                value="285"
+                              />Wrong size</label
+                            ><label
+                              data-sentry-element="unknown"
+                              data-sentry-component="Label"
+                              data-sentry-source-file="field.tsx"
+                              class="text-sm font-medium text-gray-700 -mb-[1px] flex cursor-pointer items-center gap-3 border border-gray-200 bg-white p-4 last:mb-0 last:rounded-b-md focus:outline-none [&amp;:nth-child(1)]:rounded-t-md"
+                              ><input
+                                name="reasonId"
+                                required=""
+                                type="radio"
+                                class="text-primary focus:ring-primary"
+                                value="281"
+                              />Item damaged during shipping</label
+                            ><label
+                              data-sentry-element="unknown"
+                              data-sentry-component="Label"
+                              data-sentry-source-file="field.tsx"
+                              class="text-sm font-medium text-gray-700 -mb-[1px] flex cursor-pointer items-center gap-3 border border-gray-200 bg-white p-4 last:mb-0 last:rounded-b-md focus:outline-none [&amp;:nth-child(1)]:rounded-t-md"
+                              ><input
+                                checked
+                                name="reasonId"
+                                required=""
+                                type="radio"
+                                class="text-primary focus:ring-primary"
+                                value="284"
+                              />Wrong item</label
+                            ><label
+                              data-sentry-element="unknown"
+                              data-sentry-component="Label"
+                              data-sentry-source-file="field.tsx"
+                              class="text-sm font-medium text-gray-700 -mb-[1px] flex cursor-pointer items-center gap-3 border border-gray-200 bg-white p-4 last:mb-0 last:rounded-b-md focus:outline-none [&amp;:nth-child(1)]:rounded-t-md"
+                              ><input
+                                name="reasonId"
+                                required=""
+                                type="radio"
+                                class="text-primary focus:ring-primary"
+                                value="279"
+                              />Not what I expected</label
+                            >
+                          </div>
+                        </fieldset>
+                        <button
+                          id="rPortalReasonNext"
+                          data-sentry-element="Button"
+                          data-sentry-source-file="button.tsx"
+                          data-sentry-component="Button"
+                          type="button"
+                          class="inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 bg-primary text-on-primary w-full md:w-1/2"
+                        >
+                          <span>Next</span>
+                        </button>
+                      </form>
+                    </section>
+                  </section>
+                  <span
+                    id="nextButtonReason"
+                    style="cursor: pointer"
+                    class="next-button"
+                    >Next</span
+                  >
+                </main>
+                <!-- Reason Detail Page      -->
+                <!-- ======================= -->
+                <main
+                  id="rPortalReasonDetail"
+                  style="display: none"
+                  class="flex-1"
+                >
+                  <section
+                    class="flex flex-col gap-4"
+                    data-sentry-component="Page"
+                    data-sentry-source-file="page.tsx"
+                  >
+                    <div class="px-4 sr-only">
+                      <h1 class="text-center text-2xl text-gray-800">
+                        What happened and how can we make it right?
+                      </h1>
+                    </div>
+                    <section
+                      aria-labelledby=":r0:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":r0:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            The product you will be returning
+                          </h2>
+                        </div>
+                      </header>
+                      <article
+                        class="flex flex-col gap-8 sm:flex-row sm:items-center"
+                        aria-labelledby=":r1:"
+                      >
+                        <div class="flex w-full items-center gap-4">
+                          <div
+                            class="relative rounded flex-shrink-0 self-start"
+                            data-sentry-component="ProductImage"
+                            data-sentry-source-file="product-image.tsx"
+                          >
+                            <img
+                              id="productImg"
+                              src="https://cdn.shopify.com/s/files/1/0912/4151/3278/files/blue-surfboard-carl.png?v=1735662510"
+                              alt="Surfboard - The Carl"
+                              class="rounded border border-outline object-contain size-12"
+                            />
+                          </div>
+                          <div
+                            class="flex w-full flex-col gap-1 text-sm font-medium text-gray-500"
+                          >
+                            <div
+                              class="flex w-full justify-between text-gray-800"
+                            >
+                              <span id="productTitle">Surfboard - The Carl</span
+                              ><span id="productPrice" class="hidden sm:block"
+                                >$995.00</span
+                              >
+                            </div>
+                            <span id="productOptions" class="font-normal"
+                              >blue</span
+                            >
+                          </div>
+                        </div>
+                      </article>
+                    </section>
+                    <section
+                      aria-labelledby=":ru:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":ru:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            Got it. Can you provide a little more detail?
+                          </h2>
+                        </div>
+                      </header>
+                      <form
+                        method="post"
+                        action="/lunas-sobre-mi-jamon/order/6356769833278/Return/tzg2rtkat3/reason/284"
+                        name="claimReasonDetail"
+                        data-sentry-element="RouterForm"
+                        data-sentry-source-file="form.tsx"
+                        class="flex flex-col gap-6"
+                        data-sentry-component="Form"
+                      >
+                        <fieldset
+                          class="mt-2"
+                          data-sentry-component="RadioGroup"
+                          data-sentry-source-file="radio-group.tsx"
+                        >
+                          <legend
+                            class="text-sm font-medium text-gray-700 sr-only"
+                          >
+                            Select a reason
+                          </legend>
+                          <div>
+                            <label
+                              data-sentry-element="unknown"
+                              data-sentry-component="Label"
+                              data-sentry-source-file="field.tsx"
+                              class="text-sm font-medium text-gray-700 -mb-[1px] flex cursor-pointer items-center gap-3 border border-gray-200 bg-white p-4 last:mb-0 last:rounded-b-md focus:outline-none [&amp;:nth-child(1)]:rounded-t-md"
+                              ><input
+                                name="claimReasonDetailId"
+                                required=""
+                                type="radio"
+                                class="text-primary focus:ring-primary"
+                                value="705"
+                              />I ordered the wrong product</label
+                            ><label
+                              data-sentry-element="unknown"
+                              data-sentry-component="Label"
+                              data-sentry-source-file="field.tsx"
+                              class="text-sm font-medium text-gray-700 -mb-[1px] flex cursor-pointer items-center gap-3 border border-gray-200 bg-white p-4 last:mb-0 last:rounded-b-md focus:outline-none [&amp;:nth-child(1)]:rounded-t-md"
+                              ><input
+                                checked
+                                name="claimReasonDetailId"
+                                required=""
+                                type="radio"
+                                class="text-primary focus:ring-primary"
+                                value="706"
+                              />Wrong item was sent</label
+                            >
+                          </div>
+                        </fieldset>
+                        <button
+                          id="rPortalReasonDetailNext"
+                          data-sentry-element="Button"
+                          data-sentry-source-file="button.tsx"
+                          data-sentry-component="Button"
+                          type="button"
+                          class="inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 bg-primary text-on-primary w-full md:w-1/2"
+                        >
+                          <span>Next</span>
+                        </button>
+                      </form>
+                    </section>
+                  </section>
+                  <span
+                    id="nextButtonReasonDetail"
+                    style="cursor: pointer"
+                    class="next-button"
+                    >Next</span
+                  >
+                </main>
+                <!-- Meta Page               -->
+                <!-- ======================= -->
+                <main id="rPortalMeta" class="flex-1" style="display: none">
+                  <section
+                    class="flex flex-col gap-4"
+                    data-sentry-component="Page"
+                    data-sentry-source-file="page.tsx"
+                  >
+                    <div class="px-4 sr-only">
+                      <h1 class="text-center text-2xl text-gray-800">
+                        What happened and how can we make it right?
+                      </h1>
+                    </div>
+                    <section
+                      aria-labelledby=":r0:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":r0:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            The product you will be returning
+                          </h2>
+                        </div>
+                      </header>
+                      <article
+                        class="flex flex-col gap-8 sm:flex-row sm:items-center"
+                        aria-labelledby=":r1:"
+                      >
+                        <div class="flex w-full items-center gap-4">
+                          <div
+                            class="relative rounded flex-shrink-0 self-start"
+                            data-sentry-component="ProductImage"
+                            data-sentry-source-file="product-image.tsx"
+                          >
+                            <img
+                              id="productImg"
+                              src="https://cdn.shopify.com/s/files/1/0912/4151/3278/files/blue-surfboard-carl.png?v=1735662510"
+                              alt="Surfboard - The Carl"
+                              class="rounded border border-outline object-contain size-12"
+                            />
+                          </div>
+                          <div
+                            class="flex w-full flex-col gap-1 text-sm font-medium text-gray-500"
+                          >
+                            <div
+                              class="flex w-full justify-between text-gray-800"
+                            >
+                              <span id="productTitle">Surfboard - The Carl</span
+                              ><span id="productPrice" class="hidden sm:block"
+                                >$995.00</span
+                              >
+                            </div>
+                            <span id="productOptions" class="font-normal"
+                              >blue</span
+                            >
+                          </div>
+                        </div>
+                      </article>
+                    </section>
+                    <section
+                      aria-labelledby=":r2:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":r2:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            Let's get some more information
+                          </h2>
+                        </div>
+                      </header>
+                      <form
+                        method="post"
+                        action="/lunas-sobre-mi-jamon/order/6356769833278/Return/tzg2rtkat3/meta"
+                        enctype="multipart/form-data"
+                        name="claimMeta"
+                        data-sentry-element="RouterForm"
+                        data-sentry-source-file="form.tsx"
+                        class="flex flex-col gap-6"
+                        data-sentry-component="Form"
+                      >
+                        <div
+                          class="flex w-full flex-col gap-1 relative"
+                          data-sentry-component="Root"
+                          data-sentry-source-file="field.tsx"
+                        >
+                          <label>Usage</label>
+                          <select
+                            style="
+                              border-radius: 4px;
+                              border-color: rgb(229 231 235);
+                            "
+                          >
+                            <option>Once a week</option>
+                            <option>Once a day</option>
+                            <option>Once a week</option>
+                            <option>Once a month</option>
+                            <option>Once a quarter</option>
+                            <option>Once a year</option>
+                          </select>
+                          <input
+                            aria-hidden="true"
+                            tabindex="-1"
+                            required=""
+                            name="85[value]"
+                            class="absolute size-0 overflow-hidden whitespace-nowrap border-none p-0"
+                            value="Once a week"
+                          />
+                          <p
+                            id="85-help-text"
+                            class="text-xs text-gray-700"
+                            data-sentry-component="HelpText"
+                            data-sentry-source-file="field.tsx"
+                          >
+                            How often do you use this product?
+                          </p>
+                        </div>
+                        <input type="hidden" name="85[type]" value="Select" />
+                        <div
+                          class="flex w-full flex-col gap-1 relative"
+                          data-sentry-component="Root"
+                          data-sentry-source-file="field.tsx"
+                        >
+                          <textarea
+                            name="comments"
+                            id="comments"
+                            aria-describedby="comments-help-text comments-error-text"
+                            data-sentry-element="TextAreaPrimitive"
+                            data-sentry-source-file="textarea.tsx"
+                            rows="4"
+                            class="w-full rounded-md border-gray-300 pl-4 pt-5 focus:border-primary focus:ring-primary disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200 data-[invalid]:border-error data-[invalid]:focus:border-error data-[invalid]:focus:ring-error peer"
+                          ></textarea
+                          ><label
+                            data-sentry-element="unknown"
+                            data-sentry-source-file="field.tsx"
+                            for="comments"
+                            class="bg-transparent font-medium text-gray-700 pointer-events-none absolute left-0 ml-4 p-0 duration-100 ease-linear translate-y-1 text-xs peer-data-[empty]:peer-focus:translate-y-1 peer-data-[empty]:peer-focus:text-xs peer-data-[empty]:translate-y-4 peer-data-[empty]:text-sm peer-data-[empty]:text-gray-500"
+                            data-sentry-component="Label"
+                            >Additional comments (optional)</label
+                          >
+                        </div>
+                        <div
+                          role="group"
+                          class="relative flex flex-col gap-2"
+                          data-sentry-component="FileUploader"
+                          data-sentry-source-file="file-uploader.tsx"
+                        >
+                          <button
+                            aria-describedby=":r4: :r5:"
+                            type="button"
+                            class="inline-flex items-center justify-center rounded-md border px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 border-primary bg-transparent text-primary-on-container hover:bg-surface w-full sm:max-w-max"
+                            data-sentry-component="Button"
+                            data-sentry-source-file="button.tsx"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              data-prefix="fas"
+                              data-icon="image"
+                              class="svg-inline--fa fa-image size-6"
+                              role="img"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 512 512"
+                              data-sentry-element="FontAwesomeIcon"
+                              data-sentry-component="Icon"
+                              data-sentry-source-file="icon.tsx"
+                            >
+                              <path
+                                fill="currentColor"
+                                d="M0 96C0 60.7 28.7 32 64 32l384 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM323.8 202.5c-4.5-6.6-11.9-10.5-19.8-10.5s-15.4 3.9-19.8 10.5l-87 127.6L170.7 297c-4.6-5.7-11.5-9-18.7-9s-14.2 3.3-18.7 9l-64 80c-5.8 7.2-6.9 17.1-2.9 25.4s12.4 13.6 21.6 13.6l96 0 32 0 208 0c8.9 0 17.1-4.9 21.2-12.8s3.6-17.4-1.4-24.7l-120-176zM112 192a48 48 0 1 0 0-96 48 48 0 1 0 0 96z"
+                              ></path>
+                            </svg>
+                            <span class="ml-3">Upload</span>
+                          </button>
+                          <input
+                            data-testid="fileInput"
+                            multiple=""
+                            hidden=""
+                            type="file"
+                            accept="image/jpeg,image/png,image/webp,video/mp4,video/webm,application/pdf"
+                          /><input
+                            style="display: none"
+                            id="requiredCountValidity"
+                            aria-hidden="true"
+                            tabindex="-1"
+                            min="0"
+                            data-sentry-element="InputPrimitive"
+                            data-sentry-source-file="file-uploader.tsx"
+                            type="number"
+                            class="rounded-md border-outline text-base duration-100 ease-linear focus:border-primary focus:ring-primary data-[empty]:text-transparent data-[empty]:focus:text-gray-700 text-right [appearance:textfield] [&amp;::-webkit-outer-spin-button]:appearance-none [&amp;::-webkit-inner-spin-button]:appearance-none disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200 data-[invalid]:border-error data-[invalid]:focus:border-error data-[invalid]:focus:ring-error absolute left-0 top-12 -m-1 h-0 w-0 border-0 p-0"
+                            data-empty=""
+                            value="0"
+                          />
+                        </div>
+                        <input
+                          type="hidden"
+                          data-testid="required-asset-count"
+                          name="requiredAssetCount"
+                          value="0"
+                        /><button
+                          id="rPortalMetaNext"
+                          data-sentry-element="Button"
+                          data-sentry-source-file="button.tsx"
+                          data-sentry-component="Button"
+                          type="button"
+                          class="inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 bg-primary text-on-primary w-full md:w-1/2"
+                        >
+                          <span>Next</span>
+                        </button>
+                      </form>
+                    </section>
+                  </section>
+                  <span
+                    id="nextButtonMeta"
+                    style="cursor: pointer"
+                    class="next-button"
+                    >Next</span
+                  >
+                </main>
+                <!-- Exchange Products Page  -->
+                <!-- ======================= -->
+                <main
+                  id="rPortalExchangeProducts"
+                  class="flex-1"
+                  style="display: none"
+                >
+                  <section
+                    class="flex flex-col gap-4"
+                    data-sentry-component="Page"
+                    data-sentry-source-file="page.tsx"
+                  >
+                    <div class="px-4 sr-only">
+                      <h1 class="text-center text-2xl text-gray-800">
+                        What happened and how can we make it right?
+                      </h1>
+                    </div>
+                    <section
+                      aria-labelledby=":r0:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":r0:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            The product you will be returning
+                          </h2>
+                        </div>
+                      </header>
+                      <article
+                        class="flex flex-col gap-8 sm:flex-row sm:items-center"
+                        aria-labelledby=":r1:"
+                      >
+                        <div class="flex w-full items-center gap-4">
+                          <div
+                            class="relative rounded flex-shrink-0 self-start"
+                            data-sentry-component="ProductImage"
+                            data-sentry-source-file="product-image.tsx"
+                          >
+                            <img
+                              id="productImg"
+                              src="https://cdn.shopify.com/s/files/1/0912/4151/3278/files/blue-surfboard-carl.png?v=1735662510"
+                              alt="Surfboard - The Carl"
+                              class="rounded border border-outline object-contain size-12"
+                            />
+                          </div>
+                          <div
+                            class="flex w-full flex-col gap-1 text-sm font-medium text-gray-500"
+                          >
+                            <div
+                              class="flex w-full justify-between text-gray-800"
+                            >
+                              <span id="productTitle">Surfboard - The Carl</span
+                              ><span id="productPrice" class="hidden sm:block"
+                                >$995.00</span
+                              >
+                            </div>
+                            <span id="productOptions" class="font-normal"
+                              >blue</span
+                            >
+                          </div>
+                        </div>
+                      </article>
+                    </section>
+                    <section
+                      aria-labelledby=":r17:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":r17:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            The product you will get
+                          </h2>
+                        </div>
+                      </header>
+                      <div
+                        class="mb-4 flex flex-col gap-2"
+                        data-testid="productSelectionGrid"
+                      >
+                        <div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+                          <button
+                            type="button"
+                            class="group flex flex-col items-center gap-2 outline-none"
+                            data-sentry-component="ProductDisplay"
+                            data-sentry-source-file="product-display.tsx"
+                          >
+                            <div
+                              class="relative aspect-square h-full max-h-40 min-h-20 w-full min-w-20 max-w-40 rounded ring-primary ring-offset-2 transition-shadow group-focus-within:ring-2 group-hover:shadow-md"
+                            >
+                              <div
+                                class="relative rounded border border-outline bg-white size-full"
+                                data-sentry-component="ProductImage"
+                                data-sentry-source-file="product-image.tsx"
+                              >
+                                <img
+                                  src="https://cdn.shopify.com/s/files/1/0912/4151/3278/files/paddle-board-green.png?v=1735662505"
+                                  id="productImg"
+                                  alt="Paddle Board - Green"
+                                  class="size-full object-contain"
+                                />
+                              </div>
+                              <p
+                                class="absolute bottom-0 left-0 right-0 break-words rounded-b bg-black/70 p-1 text-center text-xs text-white"
+                                style="background-color: #000000b3;"
+                              >
+                                Current Product
+                              </p>
+                            </div>
+                            <p
+                              class="text-center text-xs font-medium text-gray-900"
+                              id="productTitle"
+                            >
+                              Paddle Board - Green
+                            </p></button
+                          ><button
+                            type="button"
+                            class="group flex flex-col items-center gap-2 outline-none"
+                            data-sentry-component="ProductDisplay"
+                            data-sentry-source-file="product-display.tsx"
+                          >
+                            <div
+                              class="relative aspect-square h-full max-h-40 min-h-20 w-full min-w-20 max-w-40 rounded ring-primary ring-offset-2 transition-shadow group-focus-within:ring-2 group-hover:shadow-md"
+                            >
+                              <div
+                                class="relative rounded border border-outline bg-white size-full"
+                                data-sentry-component="ProductImage"
+                                data-sentry-source-file="product-image.tsx"
+                              >
+                                <img
+                                  src="https://cdn.shopify.com/s/files/1/0912/4151/3278/files/gqbox.png?v=1735662608"
+                                  alt="GQ Box"
+                                  class="size-full object-contain"
+                                  id="productImgExchange"
+                                />
+                              </div>
+                            </div>
+                            <p
+                              class="text-center text-xs font-medium text-gray-900"
+                              id="productNameExchange"
+                            >
+                              GQ Box
+                            </p></button
+                          >
+                          
+                        </div>
+                      </div>
+                      <div class="flex items-center justify-between gap-2 hidden">
+                        <button
+                          disabled=""
+                          data-sentry-element="Button"
+                          data-sentry-component="PaginationButton"
+                          data-sentry-source-file="product-selection-grid.tsx"
+                          type="button"
+                          class="inline-flex items-center justify-center rounded-md border px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 border-primary bg-transparent text-primary-on-container hover:bg-surface gap-1"
+                        >
+                          <span aria-hidden="true">←</span>Previous
+                        </button>
+                        <p
+                          class="text-center text-sm font-medium text-gray-600"
+                        >
+                          1 of 3
+                        </p>
+                        <button
+                          data-sentry-element="Button"
+                          data-sentry-component="PaginationButton"
+                          data-sentry-source-file="product-selection-grid.tsx"
+                          type="button"
+                          class="inline-flex items-center justify-center rounded-md border px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 border-primary bg-transparent text-primary-on-container hover:bg-surface gap-1"
+                        >
+                          Next<span aria-hidden="true">→</span>
+                        </button>
+                      </div>
+                    </section>
+                    <section
+                      aria-labelledby=":rs:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":rs:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            Not looking to exchange?
+                          </h2>
+                        </div>
+                      </header>
+                      <p class="text-gray-500">
+                        Please continue to finish your request.
+                      </p>
+                      <form
+                        method="post"
+                        action="/lunas-sobre-mi-jamon/order/6356769833278/Return/tzg2rtkat3/resolution"
+                        name="credit"
+                        aria-label="credit"
+                        data-sentry-element="RouterForm"
+                        data-sentry-source-file="form.tsx"
+                        class="flex flex-col gap-6"
+                        data-sentry-component="Form"
+                      >
+                        <input
+                          type="hidden"
+                          hidden=""
+                          data-testid="creditResolution"
+                          name="resolutionMethod"
+                          value="Refund"
+                        /><button
+                          id="rPortalExchangeMoneyBackNext"
+                          data-sentry-element="Button"
+                          data-sentry-source-file="button.tsx"
+                          data-sentry-component="Button"
+                          type="button"
+                          class="inline-flex items-center justify-center rounded-md border px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 border-primary bg-transparent text-primary-on-container hover:bg-surface w-full md:w-1/2"
+                        >
+                          <span>Continue</span>
+                        </button>
+                      </form>
+                    </section>
+                  </section>
+                  <span
+                    id="nextButtonExchangeProducts"
+                    style="cursor: pointer"
+                    class="next-button"
+                    >Next</span
+                  >
+                </main>
+                <!-- Exchange Page           -->
+                <!-- ======================= -->
+                <main id="rPortalExchange" class="flex-1" style="display: none">
+                  <section
+                    class="flex flex-col gap-4"
+                    data-sentry-component="Page"
+                    data-sentry-source-file="page.tsx"
+                  >
+                    <div class="px-4 sr-only">
+                      <h1 class="text-center text-2xl text-gray-800">
+                        What happened and how can we make it right?
+                      </h1>
+                    </div>
+                    <section
+                      aria-labelledby=":r0:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":r0:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            The product you will be returning
+                          </h2>
+                        </div>
+                      </header>
+                      <article
+                        class="flex flex-col gap-8 sm:flex-row sm:items-center"
+                        aria-labelledby=":r1:"
+                      >
+                        <div class="flex w-full items-center gap-4">
+                          <div
+                            class="relative rounded flex-shrink-0 self-start"
+                            data-sentry-component="ProductImage"
+                            data-sentry-source-file="product-image.tsx"
+                          >
+                            <img
+                              id="productImg"
+                              src="https://cdn.shopify.com/s/files/1/0912/4151/3278/files/blue-surfboard-carl.png?v=1735662510"
+                              alt="Surfboard - The Carl"
+                              class="rounded border border-outline object-contain size-12"
+                            />
+                          </div>
+                          <div
+                            class="flex w-full flex-col gap-1 text-sm font-medium text-gray-500"
+                          >
+                            <div
+                              class="flex w-full justify-between text-gray-800"
+                            >
+                              <span id="productTitle">Surfboard - The Carl</span
+                              ><span id="productPrice" class="hidden sm:block"
+                                >$995.00</span
+                              >
+                            </div>
+                            <span id="productOptions" class="font-normal"
+                              >blue</span
+                            >
+                          </div>
+                        </div>
+                      </article>
+                    </section>
+                    <section
+                      aria-labelledby=":rq:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":rq:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            What would you like as an exchange?
+                          </h2>
+                        </div>
+                      </header>
+                      <div class="gap-6 md:grid md:grid-cols-2">
+                        <div
+                          class="flex aspect-square items-center justify-center"
+                        >
+                          <div
+                            class="relative rounded"
+                            data-sentry-component="ProductImage"
+                            data-sentry-source-file="product-image.tsx"
+                          >
+                            <img
+                              id="productImgExchange"
+                              src="https://cdn.shopify.com/s/files/1/0912/4151/3278/files/blue-surfboard-carl.png?v=1735662510"
+                              alt="Exchange Product"
+                              class="rounded border border-outline object-contain size-full"
+                            />
+                          </div>
+                        </div>
+                        <form
+                          method="post"
+                          action="/lunas-sobre-mi-jamon/order/6356769833278/Return/tzg2rtkat3/resolution"
+                          name="variantExchange"
+                          aria-label="variant exchange"
+                          data-sentry-element="RouterForm"
+                          data-sentry-source-file="form.tsx"
+                          class="flex flex-col gap-4"
+                          data-sentry-component="Form"
+                        >
+                          <div style="display: flex; flex-direction: column">
+                            <label id="exchangeProductOptionLabel">Color</label>
+                            <select
+                              id="exchangeProductOptions"
+                              style="
+                                border-radius: 4px;
+                                border-color: rgb(229 231 235);
+                              "
+                            >
+                              <option>Black</option>
+                              <option>Red</option>
+                              <option>Blue</option>
+                            </select>
+                          </div>
+                          <input
+                            type="hidden"
+                            hidden=""
+                            name="resolutionMethod"
+                            data-testid="exchangeResolution"
+                            value="Variant_Exchange"
+                          /><input
+                            type="hidden"
+                            hidden=""
+                            name="variant"
+                            data-testid="variant"
+                            value='{"id":123550,"title":"Surfboard - The Carl","options":[{"name":"Color","value":"blue"}],"titleWithOptions":"Surfboard - The Carl","optionsValueString":"Surfboard - The Carl","idFromPlatform":"51088019620158","imgUrl":"https://cdn.shopify.com/s/files/1/0912/4151/3278/files/blue-surfboard-carl.png?v=1735662510","sku":"BLUESURF","price":"995","quantity":99991,"grams":4535}'
+                          /><button
+                            data-sentry-element="Button"
+                            data-sentry-source-file="button.tsx"
+                            data-sentry-component="Button"
+                            type="button"
+                            id="rPortalExchangeNext"
+                            class="inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 bg-primary text-on-primary w-full md:w-full"
+                          >
+                            <span>Choose This Product</span>
+                          </button>
+                        </form>
+                      </div>
+                    </section>
+                    <section
+                      aria-labelledby=":rs:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":rs:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            Not looking to exchange?
+                          </h2>
+                        </div>
+                      </header>
+                      <p class="text-gray-500">
+                        Please continue to finish your request.
+                      </p>
+                      <form
+                        method="post"
+                        action="/lunas-sobre-mi-jamon/order/6356769833278/Return/tzg2rtkat3/resolution"
+                        name="credit"
+                        aria-label="credit"
+                        data-sentry-element="RouterForm"
+                        data-sentry-source-file="form.tsx"
+                        class="flex flex-col gap-6"
+                        data-sentry-component="Form"
+                      >
+                        <input
+                          type="hidden"
+                          hidden=""
+                          data-testid="creditResolution"
+                          name="resolutionMethod"
+                          value="Refund"
+                        /><button
+                          id="rPortalExchangeMoneyBackNext"
+                          data-sentry-element="Button"
+                          data-sentry-source-file="button.tsx"
+                          data-sentry-component="Button"
+                          type="button"
+                          class="inline-flex items-center justify-center rounded-md border px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 border-primary bg-transparent text-primary-on-container hover:bg-surface w-full md:w-1/2"
+                        >
+                          <span>Continue</span>
+                        </button>
+                      </form>
+                    </section>
+                  </section>
+                  <span
+                    id="nextButtonExchange"
+                    style="cursor: pointer"
+                    class="next-button"
+                    >Next</span
+                  >
+                  <span
+                    id="nextButtonExchangeMoneyBack"
+                    style="cursor: pointer"
+                    class="next-button gift-card hidden"
+                    >Gift Card</span
+                  >
+                </main>
+                <!-- Money Back Page         -->
+                <!-- ======================= -->
+                <main
+                  id="rPortalMoneyBack"
+                  class="flex-1"
+                  style="display: none"
+                >
+                  <section
+                    class="flex flex-col gap-4"
+                    data-sentry-component="Page"
+                    data-sentry-source-file="page.tsx"
+                  >
+                    <div class="px-4">
+                      <h1 class="text-center text-2xl text-gray-800">
+                        How would you like your money back?
+                      </h1>
+                    </div>
+                    <section
+                      aria-labelledby=":r2d:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":r2d:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            Gift card with
+                            <span id="moneyBackIncentive">$99.50</span> bonus
+                          </h2>
+                        </div>
+                      </header>
+                      <p class="text-gray-500">
+                        Get a gift card for store credit. A redeemable code will
+                        be sent via email once your return has been approved.
+                      </p>
+                      <form
+                        method="post"
+                        action="/lunas-sobre-mi-jamon/order/6356767998270/refund-options"
+                        class="flex flex-col gap-6"
+                        data-sentry-element="RouterForm"
+                        data-sentry-component="Form"
+                        data-sentry-source-file="form.tsx"
+                      >
+                        <input
+                          type="hidden"
+                          hidden=""
+                          name="resolution"
+                          value="Gift_Card"
+                        /><button
+                          id="rPortalMoneyBackNext"
+                          data-sentry-element="Button"
+                          data-sentry-component="Button"
+                          data-sentry-source-file="button.tsx"
+                          type="button"
+                          class="inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 bg-primary text-on-primary w-full md:w-1/2"
+                        >
+                          <span
+                            >Gift Card (<span id="moneyBackTotalWithIncentive"
+                              >$1,094.50</span
+                            >)</span
+                          >
+                        </button>
+                      </form>
+                    </section>
+                    <section
+                      aria-labelledby=":r2e:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":r2e:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            Original payment method
+                          </h2>
+                        </div>
+                      </header>
+                      <p class="text-gray-500">
+                        Disclaimer: Receive a refund to your original payment
+                        method once your return has been approved. If you choose
+                        this method, the final amount may be subject to a return
+                        handling fee. The handling fee amount will be calculated
+                        for your review before you submit your request.
+                      </p>
+                      <form
+                        method="post"
+                        action="/lunas-sobre-mi-jamon/order/6356767998270/refund-options"
+                        class="flex flex-col gap-6"
+                        data-sentry-element="RouterForm"
+                        data-sentry-component="Form"
+                        data-sentry-source-file="form.tsx"
+                      >
+                        <input
+                          type="hidden"
+                          hidden=""
+                          name="resolution"
+                          value="Refund"
+                        /><button
+                          data-sentry-element="Button"
+                          data-sentry-component="Button"
+                          data-sentry-source-file="button.tsx"
+                          type="button"
+                          class="inline-flex items-center justify-center rounded-md border px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 border-primary bg-transparent text-primary-on-container hover:bg-surface w-full md:w-1/2"
+                        >
+                          <span
+                            >Original Payment Method (<span id="productPrice"
+                              >$995.00</span
+                            >)</span
+                          >
+                        </button>
+                      </form>
+                    </section>
+                  </section>
+                  <span
+                    id="nextButtonMoneyBack"
+                    style="cursor: pointer"
+                    class="next-button"
+                    >Next</span
+                  >
+                </main>
+                <!-- Address Page            -->
+                <!-- ======================= -->
+                <main id="rPortalAddress" class="flex-1" style="display: none">
+                  <section
+                    class="flex flex-col gap-4"
+                    data-sentry-component="Page"
+                    data-sentry-source-file="page.tsx"
+                  >
+                    <div class="px-4">
+                      <h1 class="text-center text-2xl text-gray-800">
+                        Is this still the right address?
+                      </h1>
+                    </div>
+                    <section
+                      aria-labelledby=""
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <div
+                        class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <address
+                          class="italic"
+                          data-sentry-component="AddressDisplay"
+                          data-sentry-source-file="address.tsx"
+                        >
+                          <span>Carl Smiles</span><br /><span>223 Erbes</span
+                          ><br /><span>Thousand Oaks, CA 91263</span><br /><span
+                            >US</span
+                          ><br /><span>9495736456</span>
+                        </address>
+                        <span
+                          data-sentry-element="Link"
+                          data-sentry-source-file="link-button.tsx"
+                          class="inline-flex items-center justify-center rounded-md border px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 border-primary bg-transparent text-primary-on-container hover:bg-surface w-full sm:w-48"
+                          data-sentry-component="LinkButton"
+                          >Change Address</span
+                        >
+                      </div>
+                      <form
+                        method="post"
+                        action="/lunas-sobre-mi-jamon/order/6356769833278/address?index"
+                        data-sentry-element="RouterForm"
+                        data-sentry-source-file="form.tsx"
+                        class="flex flex-col gap-6"
+                        data-sentry-component="Form"
+                      >
+                        <input
+                          type="hidden"
+                          name="firstName"
+                          value="Dallin"
+                        /><input
+                          type="hidden"
+                          name="lastName"
+                          value="Moon"
+                        /><input
+                          type="hidden"
+                          name="line1"
+                          value="3849 W Tenacity Cir"
+                        /><input type="hidden" name="line2" value="" /><input
+                          type="hidden"
+                          name="city"
+                          value="Riverton"
+                        /><input
+                          type="hidden"
+                          name="countryCode"
+                          value="US"
+                        /><input
+                          type="hidden"
+                          name="stateOrProvinceCode"
+                          value="UT"
+                        /><input
+                          type="hidden"
+                          name="postalCode"
+                          value="84065"
+                        /><input
+                          type="hidden"
+                          name="phone"
+                          value="9495736456"
+                        /><button
+                          id="rPortalAddressNext"
+                          data-sentry-element="Button"
+                          data-sentry-source-file="button.tsx"
+                          data-sentry-component="Button"
+                          type="button"
+                          class="inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 bg-primary text-on-primary w-full md:w-1/2"
+                        >
+                          <span>Continue</span>
+                        </button>
+                      </form>
+                    </section>
+                  </section>
+                  <span
+                    id="nextButtonAddress"
+                    style="cursor: pointer"
+                    class="next-button"
+                    >Next</span
+                  >
+                </main>
+                <!-- Return Method Page      -->
+                <!-- ======================= -->
+                <main id="rPortalMethod" class="flex-1" style="display: none">
+                  <section
+                    class="flex flex-col gap-4"
+                    data-sentry-component="Page"
+                    data-sentry-source-file="page.tsx"
+                  >
+                    <div class="px-4">
+                      <h1 class="text-center text-2xl text-gray-800">
+                        How would you like to return your items?
+                      </h1>
+                    </div>
+                    <form
+                      method="post"
+                      action="/lunas-sobre-mi-jamon/order/6356769833278/return-methods"
+                      data-sentry-element="RouterForm"
+                      data-sentry-source-file="form.tsx"
+                      class="flex flex-col gap-6"
+                      data-sentry-component="Form"
+                    >
+                      <section
+                        aria-labelledby=""
+                        class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                        data-sentry-component="Card"
+                        data-sentry-source-file="card.tsx"
+                      >
+                        <fieldset
+                          class=""
+                          data-sentry-component="RadioGroup"
+                          data-sentry-source-file="radio-group.tsx"
+                        >
+                          <legend
+                            class="text-sm font-medium text-gray-700 sr-only"
+                          >
+                            Return Methods
+                          </legend>
+                          <div>
+                            <div class="flex flex-col gap-4">
+                              <label
+                                data-sentry-element="unknown"
+                                data-sentry-component="Label"
+                                data-sentry-source-file="field.tsx"
+                                class="bg-transparent text-sm font-medium text-gray-700 cursor-pointer rounded-lg border p-6 shadow-sm focus-within:ring-offset-2 focus:outline-primary border-primary ring-2 ring-primary flex items-center justify-between px-6 py-4"
+                              >
+                                <input
+                                  name="return-method"
+                                  aria-labelledby="return-method-Label-label"
+                                  aria-describedby="return-method-Label-description"
+                                  required=""
+                                  type="radio"
+                                  class="sr-only"
+                                  value='{"type":"Label","provider":"Easy_Post","iconImgUrl":"https://cdn.corso.com/img/carrier-usps-bk.svg","storeRuleId":703,"returnLocation":{"id":42},"shipmentFromPlatform":{"id":"shp_68eb8837fa6948799758167b685b3a57","rate":{"cost":12.82,"id":"rate_36746cfe6d524ccd87ead51ab02288d6","carrier":"USPS"}},"label":"Use Provided Label - (USPS)","description":"Box Needed"}'
+                                  checked=""
+                                />
+                                <div class="flex flex-col gap-2">
+                                  <div id="return-method-Label-label">
+                                    Use Provided Label - (USPS)<span
+                                      class="inline-flex max-w-max items-center gap-x-1 whitespace-nowrap rounded-full border px-2 py-[0.15rem] text-xs ml-2 border-green-300 bg-green-100 text-green-800"
+                                      data-sentry-component="Badge"
+                                      data-sentry-source-file="badge.tsx"
+                                      >Fastest</span
+                                    >
+                                  </div>
+                                  <span
+                                    id="return-method-Label-description"
+                                    class="text-gray-500"
+                                    >Box Needed</span
+                                  >
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  focusable="false"
+                                  data-prefix="fab"
+                                  data-icon="usps"
+                                  class="svg-inline--fa fa-usps size-8"
+                                  role="img"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 576 512"
+                                  data-sentry-element="FontAwesomeIcon"
+                                  data-sentry-component="Icon"
+                                  data-sentry-source-file="icon.tsx"
+                                >
+                                  <path
+                                    fill="currentColor"
+                                    d="M460.3 241.7c25.8-41.3 15.2-48.8-11.7-48.8h-27c-.1 0-1.5-1.4-10.9 8-11.2 5.6-37.9 6.3-37.9 8.7 0 4.5 70.3-3.1 88.1 0 9.5 1.5-1.5 20.4-4.4 32-.5 4.5 2.4 2.3 3.8.1zm-112.1 22.6c64-21.3 97.3-23.9 102-26.2 4.4-2.9-4.4-6.6-26.2-5.8-51.7 2.2-137.6 37.1-172.6 53.9l-30.7-93.3h196.6c-2.7-28.2-152.9-22.6-337.9-22.6L27 415.8c196.4-97.3 258.9-130.3 321.2-151.5zM94.7 96c253.3 53.7 330 65.7 332.1 85.2 36.4 0 45.9 0 52.4 6.6 21.1 19.7-14.6 67.7-14.6 67.7-4.4 2.9-406.4 160.2-406.4 160.2h423.1L549 96z"
+                                  ></path>
+                                </svg>
+                              </label>
+                              <label
+                                data-sentry-element="unknown"
+                                data-sentry-component="Label"
+                                data-sentry-source-file="field.tsx"
+                                class="bg-transparent text-sm font-medium text-gray-700 cursor-pointer rounded-lg border border-outline p-6 shadow-sm focus-within:ring-offset-2 focus:outline-primary flex items-center justify-between px-6 py-4"
+                              >
+                                <input
+                                  name="return-method"
+                                  aria-labelledby="return-method-Packing_Slip-label"
+                                  aria-describedby="return-method-Packing_Slip-description"
+                                  required=""
+                                  type="radio"
+                                  class="sr-only"
+                                  value='{"type":"Packing_Slip","iconImgUrl":"https://cdn.corso.com/img/carrier-box.svg","storeRuleId":703,"returnLocation":{"id":42},"label":"Pack &amp; Ship","description":"Box &amp; Label Needed"}'
+                                />
+                                <div class="flex flex-col gap-2">
+                                  <div id="return-method-Packing_Slip-label">
+                                    Pack &amp; Ship
+                                  </div>
+                                  <span
+                                    id="return-method-Packing_Slip-description"
+                                    class="text-gray-500"
+                                    >Box &amp; Label Needed</span
+                                  >
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  focusable="false"
+                                  data-prefix="fal"
+                                  data-icon="truck"
+                                  class="svg-inline--fa fa-truck size-8"
+                                  role="img"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 640 512"
+                                  data-sentry-element="FontAwesomeIcon"
+                                  data-sentry-component="Icon"
+                                  data-sentry-source-file="icon.tsx"
+                                >
+                                  <path
+                                    fill="currentColor"
+                                    d="M64 32C46.3 32 32 46.3 32 64l0 288c0 17.7 14.3 32 32 32l5.5 0c13.2-37.3 48.7-64 90.5-64s77.4 26.7 90.5 64L384 384l0-320c0-17.7-14.3-32-32-32L64 32zm0 384c-35.3 0-64-28.7-64-64L0 64C0 28.7 28.7 0 64 0L352 0c35.3 0 64 28.7 64 64l0 32 65.3 0c14 0 27.3 6.1 36.4 16.8l78.7 91.8c7.5 8.7 11.6 19.8 11.6 31.2L608 384l16 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-48 0c0 53-43 96-96 96s-96-43-96-96l-128 0c0 53-43 96-96 96s-96-43-96-96zM416 224l154.9 0-77.5-90.4c-3-3.5-7.5-5.6-12.1-5.6L416 128l0 96zm0 32l0 88.4c17-15.2 39.4-24.4 64-24.4c41.8 0 77.4 26.7 90.5 64l5.5 0 0-128-160 0zM224 416A64 64 0 1 0 96 416a64 64 0 1 0 128 0zm256 64a64 64 0 1 0 0-128 64 64 0 1 0 0 128z"
+                                  ></path>
+                                </svg>
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </section>
+                      <button
+                        id="rPortalMethodNext"
+                        data-sentry-element="Button"
+                        data-sentry-source-file="button.tsx"
+                        data-sentry-component="Button"
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 bg-primary text-on-primary w-full md:w-1/2"
+                      >
+                        <span>Next</span>
+                      </button>
+                    </form>
+                  </section>
+                  <span
+                    id="nextButtonMethod"
+                    style="cursor: pointer"
+                    class="next-button"
+                    >Next</span
+                  >
+                </main>
+                <!-- Review Page Money Back  -->
+                <!-- ======================= -->
+                <main
+                  id="rPortalReviewMoneyBack"
+                  class="flex-1"
+                  style="display: none"
+                >
+                  <section
+                    class="flex flex-col gap-4"
+                    data-sentry-component="Page"
+                    data-sentry-source-file="page.tsx"
+                  >
+                    <div class="px-4">
+                      <h1 class="text-center text-2xl text-gray-800">
+                        How does this look?
+                      </h1>
+                      <p class="mt-1 text-center text-gray-500">
+                        Review your decisions before submitting your request
+                      </p>
+                    </div>
+                    <form
+                      method="post"
+                      action="/lunas-sobre-mi-jamon/order/6356767998270/review/return"
+                      data-sentry-element="RouterForm"
+                      data-sentry-source-file="form.tsx"
+                      class="flex flex-col gap-4"
+                      data-sentry-component="Form"
+                    >
+                      <section
+                        aria-labelledby=":rf:"
+                        class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                        data-sentry-component="Card"
+                        data-sentry-source-file="card.tsx"
+                      >
+                        <header>
+                          <div class="">
+                            <h2
+                              id=":rf:"
+                              class="text-left text-xl font-medium text-gray-800"
+                            >
+                              Items you are sending back
+                            </h2>
+                          </div>
+                        </header>
+                        <div
+                          class="divide-y divide-outline [&amp;>article]:py-4 [&amp;>:first-child]:pt-0 [&amp;>:last-child]:last:pb-0"
+                        >
+                          <article
+                            class="flex flex-col gap-8 sm:flex-row sm:items-center"
+                            aria-labelledby=":rg:"
+                          >
+                            <div class="flex w-full items-center gap-4">
+                              <div
+                                class="relative rounded flex-shrink-0 self-start"
+                                data-sentry-component="ProductImage"
+                                data-sentry-source-file="product-image.tsx"
+                              >
+                                <img
+                                  id="productImg"
+                                  src="https://cdn.shopify.com/s/files/1/0912/4151/3278/files/blue-surfboard-carl.png?v=1735662510"
+                                  alt="Surfboard - The Carl"
+                                  class="rounded border border-outline object-contain size-12"
+                                /><span
+                                  class="inline-flex max-w-max items-center gap-x-1 whitespace-nowrap rounded-full border px-2 py-[0.15rem] text-xs bg-gray-50 border-outline text-gray-800 absolute -right-2 -top-2"
+                                  data-sentry-component="Badge"
+                                  data-sentry-source-file="badge.tsx"
+                                  ><span class="sr-only">Quantity</span
+                                  ><span>1</span></span
+                                >
+                              </div>
+                              <div
+                                class="flex w-full flex-col gap-1 text-sm font-medium text-gray-500"
+                              >
+                                <div
+                                  class="flex w-full justify-between text-gray-800"
+                                >
+                                  <span id="productTitle"
+                                    >Surfboard - The Carl</span
+                                  ><span
+                                    class="hidden sm:block"
+                                    id="productPrice"
+                                    >$995.00</span
+                                  >
+                                </div>
+                                <span class="font-normal" id="productOptions"
+                                  >blue</span
+                                >
+                              </div>
+                            </div>
+                          </article>
+                        </div>
+                        <hr
+                          class="border-outline"
+                          data-sentry-component="Divider"
+                          data-sentry-source-file="divider.tsx"
+                        />
+                        <dl
+                          class="grid grid-cols-2 text-sm *:py-1 [&amp;>dd:first-of-type]:!pt-0 [&amp;>dd:last-of-type]:!pb-0 [&amp;>dt:first-of-type]:!pt-0 [&amp;>dt:last-of-type]:!pb-0 mt-6"
+                          data-sentry-component="DL"
+                          data-sentry-source-file="definition-list.tsx"
+                        >
+                          <dt id=":rh:" class="text-sm">Subtotal</dt>
+                          <dd
+                            aria-labelledby=":rh:"
+                            class="text-sm text-right"
+                            id="productPrice"
+                          >
+                            $995.00
+                          </dd>
+                          <dt id=":ri:" class="text-sm">Tax</dt>
+                          <dd aria-labelledby=":ri:" class="text-sm text-right">
+                            $0.00
+                          </dd>
+                          <dt id=":rj:" class="text-sm">Incentive</dt>
+                          <dd
+                            aria-labelledby=":rj:"
+                            class="text-sm text-right"
+                            id="moneyBackIncentive"
+                          >
+                            $99.50
+                          </dd>
+                          <dt id=":rl:" class="font-bold text-gray-800 text-lg">
+                            Return Value
+                          </dt>
+                          <dd
+                            aria-labelledby=":rl:"
+                            class="font-bold text-gray-800 text-lg text-right"
+                            id="moneyBackTotalWithIncentive"
+                          >
+                            $1,081.04
+                          </dd>
+                        </dl>
+                      </section>
+                      <input
+                        data-testid="default-exchange-method"
+                        type="hidden"
+                        name="exchangeMethod"
+                        value="standard"
+                      />
+                      <section
+                        aria-labelledby=":rm:"
+                        class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                        data-sentry-component="Card"
+                        data-sentry-source-file="card.tsx"
+                      >
+                        <header>
+                          <div class="">
+                            <h2
+                              id=":rm:"
+                              class="text-left text-xl font-medium text-gray-800"
+                            >
+                              Refund Summary
+                            </h2>
+                          </div>
+                        </header>
+                        <dl
+                          class="grid grid-cols-2 text-sm *:py-1 [&amp;>dd:first-of-type]:!pt-0 [&amp;>dd:last-of-type]:!pb-0 [&amp;>dt:first-of-type]:!pt-0 [&amp;>dt:last-of-type]:!pb-0"
+                          data-sentry-component="DL"
+                          data-sentry-source-file="definition-list.tsx"
+                        >
+                          <dt id=":rn:" class="font-bold text-gray-800 text-lg">
+                            Refund Value
+                          </dt>
+                          <dd
+                            aria-labelledby=":rn:"
+                            class="font-bold text-gray-800 text-lg text-right"
+                            id="moneyBackTotalWithIncentive"
+                          >
+                            $1,081.04
+                          </dd>
+                          <dt id=":ro:" class="text-sm">Method</dt>
+                          <dd aria-labelledby=":ro:" class="text-sm text-right">
+                            Gift Card
+                          </dd>
+                        </dl>
+                      </section>
+                      <input
+                        type="hidden"
+                        name="claimValues"
+                        value='{"fromCustomerShipping":-13.46,"fee":0,"incentive":99.5,"balance":-1081.04,"toCustomerShipping":0,"authorizedAmount":-1081.04}'
+                      /><button
+                        id="rPortalReviewMoneyBackNext"
+                        data-sentry-element="Button"
+                        data-sentry-source-file="button.tsx"
+                        data-sentry-component="Button"
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 bg-primary text-on-primary w-full md:w-1/2 mt-2"
+                      >
+                        <span>Submit Return Request</span>
+                      </button>
+                    </form>
+                  </section>
+                  <span
+                    id="nextButtonReviewMoneyBack"
+                    style="cursor: pointer"
+                    class="next-button"
+                    >Next</span
+                  >
+                </main>
+                <!-- Review Page             -->
+                <!-- ======================= -->
+                <main id="rPortalReview" class="flex-1" style="display: none">
+                  <section
+                    class="flex flex-col gap-4"
+                    data-sentry-component="Page"
+                    data-sentry-source-file="page.tsx"
+                  >
+                    <div class="px-4">
+                      <h1 class="text-center text-2xl text-gray-800">
+                        How does this look?
+                      </h1>
+                      <p class="mt-1 text-center text-gray-500">
+                        Review your decisions before submitting your request
+                      </p>
+                    </div>
+                    <form
+                      method="post"
+                      action="/lunas-sobre-mi-jamon/order/6356769833278/review/return"
+                      data-sentry-element="RouterForm"
+                      data-sentry-source-file="form.tsx"
+                      class="flex flex-col gap-4"
+                      data-sentry-component="Form"
+                    >
+                      <section
+                        aria-labelledby=":r1q:"
+                        class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                        data-sentry-component="Card"
+                        data-sentry-source-file="card.tsx"
+                      >
+                        <header>
+                          <div class="">
+                            <h2
+                              id=":r1q:"
+                              class="text-left text-xl font-medium text-gray-800"
+                            >
+                              Items you are sending back
+                            </h2>
+                          </div>
+                        </header>
+                        <div
+                          class="divide-y divide-outline [&amp;>article]:py-4 [&amp;>:first-child]:pt-0 [&amp;>:last-child]:last:pb-0"
+                        >
+                          <article
+                            class="flex flex-col gap-8 sm:flex-row sm:items-center"
+                            aria-labelledby=":r1r:"
+                          >
+                            <div class="flex w-full items-center gap-4">
+                              <div
+                                class="relative rounded flex-shrink-0 self-start"
+                                data-sentry-component="ProductImage"
+                                data-sentry-source-file="product-image.tsx"
+                              >
+                                <img
+                                  id="productImg"
+                                  src="https://cdn.shopify.com/s/files/1/0912/4151/3278/files/blue-surfboard-carl.png?v=1735662510"
+                                  alt="Surfboard - The Carl"
+                                  class="rounded border border-outline object-contain size-12"
+                                /><span
+                                  class="inline-flex max-w-max items-center gap-x-1 whitespace-nowrap rounded-full border px-2 py-[0.15rem] text-xs bg-gray-50 border-outline text-gray-800 absolute -right-2 -top-2"
+                                  data-sentry-component="Badge"
+                                  data-sentry-source-file="badge.tsx"
+                                  ><span class="sr-only">Quantity</span
+                                  ><span>1</span></span
+                                >
+                              </div>
+                              <div
+                                class="flex w-full flex-col gap-1 text-sm font-medium text-gray-500"
+                              >
+                                <div
+                                  class="flex w-full justify-between text-gray-800"
+                                >
+                                  <span id="productTitle"
+                                    >Surfboard - The Carl</span
+                                  ><span
+                                    id="productPrice"
+                                    class="hidden sm:block"
+                                    >$995.00</span
+                                  >
+                                </div>
+                                <span id="productOptions" class="font-normal"
+                                  >blue</span
+                                >
+                              </div>
+                            </div>
+                          </article>
+                        </div>
+                        <hr
+                          class="border-outline"
+                          data-sentry-component="Divider"
+                          data-sentry-source-file="divider.tsx"
+                        />
+                        <dl
+                          class="grid grid-cols-2 text-sm *:py-1 [&amp;>dd:first-of-type]:!pt-0 [&amp;>dd:last-of-type]:!pb-0 [&amp;>dt:first-of-type]:!pt-0 [&amp;>dt:last-of-type]:!pb-0 mt-6"
+                          data-sentry-component="DL"
+                          data-sentry-source-file="definition-list.tsx"
+                        >
+                          <dt id=":r1s:" class="text-sm">Subtotal</dt>
+                          <dd
+                            id="productPrice"
+                            aria-labelledby=":r1s:"
+                            class="text-sm text-right"
+                          >
+                            $995.00
+                          </dd>
+                          <dt id=":r1t:" class="text-sm">Tax</dt>
+                          <dd
+                            aria-labelledby=":r1t:"
+                            class="text-sm text-right"
+                          >
+                            $0.00
+                          </dd>
+                          <dt
+                            id=":r1u:"
+                            class="font-bold text-gray-800 text-lg"
+                          >
+                            Return Value
+                          </dt>
+                          <dd
+                            aria-labelledby=":r1u:"
+                            id="productPrice"
+                            class="font-bold text-gray-800 text-lg text-right"
+                          >
+                            $995.00
+                          </dd>
+                        </dl>
+                      </section>
+                      <section
+                        aria-labelledby=":r1v:"
+                        class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                        data-sentry-component="Card"
+                        data-sentry-source-file="card.tsx"
+                      >
+                        <header>
+                          <div class="">
+                            <h2
+                              id=":r1v:"
+                              class="text-left text-xl font-medium text-gray-800"
+                            >
+                              Items you are getting
+                            </h2>
+                          </div>
+                        </header>
+                        <div
+                          class="divide-y divide-outline [&amp;>article]:py-4 [&amp;>:first-child]:pt-0 [&amp;>:last-child]:last:pb-0"
+                        >
+                          <article
+                            class="flex flex-col gap-8 sm:flex-row sm:items-center"
+                            aria-labelledby=":r20:"
+                          >
+                            <div class="flex w-full items-center gap-4">
+                              <div
+                                class="relative rounded flex-shrink-0 self-start"
+                                data-sentry-component="ProductImage"
+                                data-sentry-source-file="product-image.tsx"
+                              >
+                                <img
+                                  id="productImgExchange"
+                                  src="https://cdn.shopify.com/s/files/1/0912/4151/3278/files/blue-surfboard-carl.png?v=1735662510"
+                                  alt="Surfboard - The Carl"
+                                  class="rounded border border-outline object-contain size-12"
+                                /><span
+                                  class="inline-flex max-w-max items-center gap-x-1 whitespace-nowrap rounded-full border px-2 py-[0.15rem] text-xs bg-gray-50 border-outline text-gray-800 absolute -right-2 -top-2"
+                                  data-sentry-component="Badge"
+                                  data-sentry-source-file="badge.tsx"
+                                  ><span class="sr-only">Quantity</span
+                                  ><span>1</span></span
+                                >
+                              </div>
+                              <div
+                                class="flex w-full flex-col gap-1 text-sm font-medium text-gray-500"
+                              >
+                                <div
+                                  class="flex w-full justify-between text-gray-800"
+                                >
+                                  <span id="productNameExchange"
+                                    >Surfboard - The Carl</span
+                                  ><span
+                                    id="productPrice"
+                                    class="hidden sm:block"
+                                    >$995.00</span
+                                  >
+                                </div>
+                                <span
+                                  id="productOptionExchange"
+                                  class="font-normal"
+                                  >blue</span
+                                >
+                              </div>
+                            </div>
+                          </article>
+                        </div>
+                        <hr
+                          class="border-outline"
+                          data-sentry-component="Divider"
+                          data-sentry-source-file="divider.tsx"
+                        />
+                        <dl
+                          class="grid grid-cols-2 text-sm *:py-1 [&amp;>dd:first-of-type]:!pt-0 [&amp;>dd:last-of-type]:!pb-0 [&amp;>dt:first-of-type]:!pt-0 [&amp;>dt:last-of-type]:!pb-0 mt-6"
+                          data-sentry-component="DL"
+                          data-sentry-source-file="definition-list.tsx"
+                        >
+                          <dt id=":r21:" class="text-sm">Subtotal</dt>
+                          <dd
+                            aria-labelledby=":r21:"
+                            class="text-sm text-right"
+                            id="productPrice"
+                          >
+                            $995.00
+                          </dd>
+                          <dt id=":r22:" class="text-sm">Tax</dt>
+                          <dd
+                            aria-labelledby=":r22:"
+                            class="text-sm text-right"
+                          >
+                            $0.00
+                          </dd>
+                          <dt
+                            id=":r23:"
+                            class="font-bold text-gray-800 text-lg"
+                          >
+                            Exchange Value
+                          </dt>
+                          <dd
+                            aria-labelledby=":r23:"
+                            class="font-bold text-gray-800 text-lg text-right"
+                            id="productPrice"
+                          >
+                            $995.00
+                          </dd>
+                        </dl>
+                      </section>
+                      <input
+                        data-testid="default-exchange-method"
+                        type="hidden"
+                        name="exchangeMethod"
+                        value="standard"
+                      /><input
+                        type="hidden"
+                        name="claimValues"
+                        value='{"fromCustomerShipping":0,"fee":0,"incentive":0,"balance":0,"toCustomerShipping":0,"authorizedAmount":0}'
+                      /><button
+                        id="rPortalReviewNext"
+                        data-sentry-element="Button"
+                        data-sentry-source-file="button.tsx"
+                        data-sentry-component="Button"
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 bg-primary text-on-primary w-full md:w-1/2 mt-2"
+                      >
+                        <span>Submit Return Request</span>
+                      </button>
+                    </form>
+                  </section>
+                  <span
+                    id="nextButtonReview"
+                    style="cursor: pointer"
+                    class="next-button"
+                    >Next</span
+                  >
+                </main>
+                <!-- Confirmation Page       -->
+                <!-- ======================= -->
+                <main
+                  id="rPortalConfirmation"
+                  class="flex-1"
+                  style="display: none"
+                >
+                  <section
+                    class="flex flex-col gap-4"
+                    data-sentry-component="Page"
+                    data-sentry-source-file="page.tsx"
+                  >
+                    <div class="px-4">
+                      <h1 class="text-center text-2xl text-gray-800">
+                        We received your request
+                      </h1>
+                      <p class="mt-1 text-center text-gray-500">
+                        Confirmation number: #975-1035-1
+                      </p>
+                    </div>
+                    <section
+                      data-testid="return-shipments-card"
+                      aria-labelledby=":r24:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":r24:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            Return Items By: Jun 19, 2025
+                          </h2>
+                        </div>
+                        <p class="text-gray-500">
+                          Please use the provided QR Code to return your items
+                        </p>
+                      </header>
+                      <div
+                        class="divide-y divide-outline [&amp;>:first-child]:pt-0 [&amp;>:last-child]:last:pb-0 [&amp;>article]:py-4"
+                      >
+                        <article
+                          class="mb-4 border-b border-outline pb-4 last:mb-0 last:border-none last:pb-0"
+                          aria-labelledby=":r25:"
+                          data-sentry-component="ClaimLineItem"
+                          data-sentry-source-file="claim-line-item.tsx"
+                        >
+                          <div class="flex gap-4">
+                            <div
+                              class="relative rounded flex-shrink-0 self-start"
+                              data-sentry-component="ProductImage"
+                              data-sentry-source-file="product-image.tsx"
+                            >
+                              <img
+                                id="productImg"
+                                src="https://cdn.shopify.com/s/files/1/0912/4151/3278/files/blue-surfboard-carl.png?v=1735662510"
+                                alt="Surfboard - The Carl"
+                                class="rounded border border-outline object-contain size-12"
+                              /><span
+                                class="inline-flex max-w-max items-center gap-x-1 whitespace-nowrap rounded-full border px-2 py-[0.15rem] text-xs bg-gray-50 border-outline text-gray-800 absolute -right-2 -top-2"
+                                data-sentry-component="Badge"
+                                data-sentry-source-file="badge.tsx"
+                                ><span class="sr-only">Quantity</span
+                                ><span>1</span></span
+                              >
+                            </div>
+                            <div
+                              class="flex w-full flex-col gap-1 text-sm font-medium text-gray-500"
+                            >
+                              <div>
+                                <div
+                                  class="flex w-full justify-between text-gray-800"
+                                >
+                                  <span id="productTitle"
+                                    >Surfboard - The Carl</span
+                                  ><span id="productPrice" class=""
+                                    >$995.00</span
+                                  >
+                                </div>
+                                <span>blue</span>
+                              </div>
+                              <div class="flex gap-1">
+                                <span
+                                  class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10"
+                                  data-sentry-component="Chip"
+                                  data-sentry-source-file="chip.tsx"
+                                  >Request: Exchange</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <figure
+                        class="flex w-full flex-col items-center divide-y self-center rounded-lg border border-outline sm:flex-row sm:items-stretch sm:divide-x sm:divide-y-0"
+                        data-sentry-component="QrCode"
+                        data-sentry-source-file="qr-code.tsx"
+                      >
+                        <div class="flex basis-1/2 items-center justify-center">
+                          <img
+                            alt="QR Code for shipping label"
+                            class="w-72 p-4"
+                            src="https://corso-crew-stg.sfo3.digitaloceanspaces.com/image/shipping-label-qr-code/2025-05-22t13-45-21-512z-6dfe4b2ccb5d400ebac6e27ffb7ed182.png"
+                          />
+                        </div>
+                        <figcaption
+                          class="flex w-full basis-1/2 items-center justify-center rounded-bl-lg rounded-br-lg rounded-tr-none bg-gray-50 sm:rounded-bl-none sm:rounded-tr-lg"
+                          data-sentry-element="figcaption"
+                          data-sentry-source-file="qr-code.tsx"
+                        >
+                          <span class="sr-only"
+                            >QR Code for shipping label</span
+                          >
+                          <dl
+                            class="flex flex-col items-center p-4 sm:items-start"
+                          >
+                            <dt class="text-sm uppercase text-gray-500">
+                              Confirmation
+                            </dt>
+                            <dd class="mb-2">#975-1035-1</dd>
+                            <dt class="text-sm uppercase text-gray-500">
+                              Carrier
+                            </dt>
+                            <dd class="mb-2 flex items-center gap-1">
+                              <img
+                                aria-hidden="true"
+                                alt="carrier"
+                                class="w-8"
+                                src="https://cdn.corso.com/img/carrier-usps-bk.svg"
+                              />USPS
+                            </dd>
+                            <dt class="text-sm uppercase text-gray-500">To</dt>
+                            <dd class="mb-2">Carl Smiles</dd>
+                            <dt class="text-sm uppercase text-gray-500">
+                              From
+                            </dt>
+                            <dd class="text-center sm:text-left">
+                              223 Erbes<br />Thousand Oaks, CA 91263<br />US
+                            </dd>
+                          </dl>
+                        </figcaption>
+                      </figure>
+                      <div class="flex flex-col gap-4 md:flex-row">
+                        <span
+                          class="inline-flex items-center justify-center rounded-md border px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 border-primary bg-transparent text-primary-on-container hover:bg-surface w-full md:w-1/2"
+                          data-sentry-element="Link"
+                          data-sentry-component="LinkButton"
+                          data-sentry-source-file="link-button.tsx"
+                          >Download Return Label</span
+                        ><span
+                          rel="noreferrer"
+                          class="inline-flex items-center justify-center rounded-md border px-4 py-2 font-medium shadow-sm hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 border-primary bg-transparent text-primary-on-container hover:bg-surface w-full md:w-1/2"
+                          data-sentry-element="Link"
+                          data-sentry-component="LinkButton"
+                          data-sentry-source-file="link-button.tsx"
+                          >Back To Our Website</span
+                        >
+                      </div>
+                    </section>
+                    <section
+                      id="confirmationWhatYouAreGetting"
+                      data-testid="request-summary-card"
+                      aria-labelledby=":r26:"
+                      class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm md:p-8"
+                      data-sentry-component="Card"
+                      data-sentry-source-file="card.tsx"
+                    >
+                      <header>
+                        <div class="">
+                          <h2
+                            id=":r26:"
+                            class="text-left text-xl font-medium text-gray-800"
+                          >
+                            What you are getting
+                          </h2>
+                        </div>
+                      </header>
+                      <div
+                        class="divide-y divide-outline [&amp;>:first-child]:pt-0 [&amp;>:last-child]:last:pb-0 [&amp;>article]:py-4"
+                      >
+                        <article
+                          class="flex flex-col gap-8 sm:flex-row sm:items-center"
+                          aria-labelledby=":r27:"
+                        >
+                          <div class="flex w-full items-center gap-4">
+                            <div
+                              class="relative rounded flex-shrink-0 self-start"
+                              data-sentry-component="ProductImage"
+                              data-sentry-source-file="product-image.tsx"
+                            >
+                              <img
+                                id="productImgExchange"
+                                src="https://cdn.shopify.com/s/files/1/0912/4151/3278/files/blue-surfboard-carl.png?v=1735662510"
+                                alt="Surfboard - The Carl"
+                                class="rounded border border-outline object-contain size-12"
+                              /><span
+                                class="inline-flex max-w-max items-center gap-x-1 whitespace-nowrap rounded-full border px-2 py-[0.15rem] text-xs bg-gray-50 border-outline text-gray-800 absolute -right-2 -top-2"
+                                data-sentry-component="Badge"
+                                data-sentry-source-file="badge.tsx"
+                                ><span class="sr-only">Quantity</span
+                                ><span>1</span></span
+                              >
+                            </div>
+                            <div
+                              class="flex w-full flex-col gap-1 text-sm font-medium text-gray-500"
+                            >
+                              <div
+                                class="flex w-full justify-between text-gray-800"
+                              >
+                                <span id="productNameExchange"
+                                  >Surfboard - The Carl</span
+                                >
+                              </div>
+                              <span
+                                id="productOptionExchange"
+                                class="font-normal"
+                                >blue</span
+                              >
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                    </section>
+                  </section>
+                  <a
+                    href="#"
+                    id="nextButtonConfirmation"
+                    style="cursor: pointer"
+                    class="next-button"
+                    >View In Admin</a
+                  >
+                </main>
+
+                <footer
+                  class="mt-8 flex flex-col items-stretch justify-between space-x-4 md:flex-row"
+                  data-testid="app-footer"
+                  data-sentry-component="Footer"
+                  data-sentry-source-file="app-shell-component.tsx"
+                >
+                  <div
+                    class="flex items-center justify-center text-center md:justify-start md:text-left"
+                  >
+                    <p class="text-xs">
+                      Need help with? Contact us at support@<span
+                        id="emailAddressBrandName"
+                        style="text-transform: lowercase"
+                        >ooni</span
+                      >.com
+                    </p>
+                  </div>
+                  <div
+                    class="mt-8 flex items-center justify-center text-xs md:mt-0 md:justify-start"
+                  >
+                    <span class="w-14"
+                      ><a
+                        rel="noreferrer"
+                        data-sentry-element="Link"
+                        data-sentry-source-file="link-button.tsx"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 p-0 text-primary-on-container shadow-none hover:underline focus:underline"
+                        data-sentry-component="LinkButton"
+                        href="https://corso.com/returns-exchanges"
+                        target="_blank"
+                        ><img
+                          alt="Corso Logo"
+                          src="https://corso-media.sfo3.cdn.digitaloceanspaces.com/img/corso-logo.png" /></a
+                    ></span>
+                  </div>
+                </footer>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      localStorage.setItem("moneyBack", false);
+
+      // Get the encoded checkout url paramater
+      const params = new URLSearchParams(window.location.search);
+      const checkoutParams = params.get("checkout");
+
+      // Decode and Parse
+      const decodedCheckoutParams = atob(checkoutParams);
+      const checkoutJson = JSON.parse(decodedCheckoutParams);
+
+      console.log("checkoutJson", checkoutJson);
+
+      // turn url into usable variables
+      const {
+        rates,
+        brandColor,
+        brandLogo,
+        productName,
+        productDesc,
+        productPrice,
+        productImage,
+        exchangeProductImage,
+        exchangeProductName,
+        exchangeProductOptions,
+        exchangeProductOptionLabel,
+        plusPrice,
+        checkbox,
+        checkboxLabel,
+        checkboxDesc,
+        widgetImageUrl,
+        storeName,
+        showProducts,
+      } = checkoutJson;
+
+      // Get today's date
+      const today = new Date();
+
+      // Get yesterday's date
+      const yesterday = new Date();
+      const twoDaysAgo = new Date();
+      const fiveDaysAgo = new Date();
+      const sevenDaysAgo = new Date();
+      const thirtyDaysAhead = new Date();
+      yesterday.setDate(today.getDate() - 1);
+      twoDaysAgo.setDate(today.getDate() - 2);
+      fiveDaysAgo.setDate(today.getDate() - 5);
+      sevenDaysAgo.setDate(today.getDate() - 7);
+      thirtyDaysAhead.setDate(today.getDate() + 31);
+
+      // Format the date as "Jan 19, 2025"
+      const options = { year: "numeric", month: "short", day: "numeric" };
+      const formattedDateToday = today.toLocaleDateString("en-US", options);
+      const formattedDateYesterday = yesterday.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateTwoDaysAgo = twoDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateFiveDaysAgo = fiveDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateSevenDaysAgo = sevenDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateThirtyDaysAhead = thirtyDaysAhead.toLocaleDateString(
+        "en-US",
+        options
+      );
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.documentElement.style.setProperty(
+          "--corso-primary",
+          "#" + brandColor
+        );
+
+        document.documentElement.style.setProperty(
+          "--corso-header-img-url",
+          `url("${brandLogo}")`
+        );
+
+        document.documentElement.style.setProperty(
+          "--corso-primary-on-container",
+          "#" + brandColor
+        );
+
+        const orderDate = document.getElementById("orderDate");
+        const eligibleUntilDate = document.getElementById("eligibleUntilDate");
+        const productImgs = document.querySelectorAll("#productImg");
+        const productTitles = document.querySelectorAll("#productTitle");
+        const productOptions = document.querySelectorAll("#productOptions");
+        const productPrices = document.querySelectorAll("#productPrice");
+        const productImgIneligible = document.getElementById(
+          "productImgIneligible"
+        );
+        const productTitleIneligible = document.getElementById(
+          "productTitleIneligible"
+        );
+        const productPriceIneligible = document.getElementById(
+          "productPriceIneligible"
+        );
+        const emailAddressBrandName = document.getElementById(
+          "emailAddressBrandName"
+        );
+        const productImgExchange = document.querySelectorAll(
+          "#productImgExchange"
+        );
+        const exchangeProductOptionLabelText = document.getElementById(
+          "exchangeProductOptionLabel"
+        );
+        const productNameExchange = document.querySelectorAll(
+          "#productNameExchange"
+        );
+        const productOptionExchange = document.querySelectorAll(
+          "#productOptionExchange"
+        );
+        const moneyBackIncentive = document.querySelectorAll(
+          "#moneyBackIncentive"
+        );
+        const moneyBackTotalWithIncentive = document.querySelectorAll(
+          "#moneyBackTotalWithIncentive"
+        );
+
+        orderDate.innerText = formattedDateSevenDaysAgo;
+        eligibleUntilDate.innerText = formattedDateThirtyDaysAhead;
+        productImgIneligible.src = widgetImageUrl;
+        productTitleIneligible.innerText = checkboxLabel;
+        productPriceIneligible.innerText = "$" + (plusPrice * 1).toFixed(2);
+        emailAddressBrandName.innerText = storeName.replace(/\s+/g, "");
+
+        if (exchangeProductImage) {
+          productImgExchange.forEach((img) => {
+            img.src = exchangeProductImage;
+          });
+          productNameExchange.forEach((text) => {
+            text.innerHTML = exchangeProductName;
+          });
+          productOptionExchange.forEach((text) => {
+            text.innerHTML = exchangeProductOptions[0];
+          });
+        } else {
+          productImgExchange.forEach((img) => {
+            img.src = productImage;
+          });
+          productNameExchange.forEach((text) => {
+            text.innerHTML = productName;
+          });
+          productOptionExchange.forEach((text) => {
+            text.innerHTML = productDesc;
+          });
+        }
+
+        exchangeProductOptionLabelText.innerText = exchangeProductOptionLabel;
+
+        productImgs.forEach((img) => {
+          img.src = productImage;
+        });
+
+        productTitles.forEach((text) => {
+          text.innerText = productName;
+        });
+
+        productOptions.forEach((text) => {
+          text.innerText = productDesc;
+        });
+
+        productPrices.forEach((text) => {
+          text.innerText = "$" + (productPrice * 1).toFixed(2);
+        });
+
+        let variantSelect = document.getElementById("exchangeProductOptions");
+        variantSelect.innerHTML = "";
+        exchangeProductOptions.forEach((variant) => {
+          let option = document.createElement("option");
+          option.value = variant;
+          option.textContent = variant;
+          variantSelect.appendChild(option);
+        });
+
+        productOptions.forEach((text) => {
+          text.innerText = productDesc;
+        });
+
+        moneyBackIncentive.forEach((text) => {
+          text.innerText = "$" + (productPrice * 0.1).toFixed(2);
+        });
+
+        moneyBackTotalWithIncentive.forEach((text) => {
+          text.innerText =
+            "$" + (productPrice * 1 + productPrice * 0.1).toFixed(2);
+        });
+
+        // Get the button and the div elements
+        const nextButtonOrder = document.getElementById("nextButtonOrder");
+
+        const rPortalReason = document.getElementById("rPortalReason");
+        const nextButtonReason = document.getElementById("nextButtonReason");
+
+        const rPortalReasonDetail = document.getElementById(
+          "rPortalReasonDetail"
+        );
+        const nextButtonReasonDetail = document.getElementById(
+          "nextButtonReasonDetail"
+        );
+
+        const rPortalMeta = document.getElementById("rPortalMeta");
+        const nextButtonMeta = document.getElementById("nextButtonMeta");
+
+        const rPortalExchangeProducts = document.getElementById("rPortalExchangeProducts");
+        const nextButtonExchangeProducts =
+          document.getElementById("nextButtonExchangeProducts");
+
+        const rPortalExchange = document.getElementById("rPortalExchange");
+        const nextButtonExchange =
+          document.getElementById("nextButtonExchange");
+        const nextButtonExchangeMoneyBack = document.getElementById(
+          "nextButtonExchangeMoneyBack"
+        );
+
+        const rPortalMoneyBack = document.getElementById("rPortalMoneyBack");
+        const nextButtonMoneyBack = document.getElementById(
+          "nextButtonMoneyBack"
+        );
+
+        const rPortalAddress = document.getElementById("rPortalAddress");
+        const nextButtonAddress = document.getElementById("nextButtonAddress");
+
+        const rPortalMethod = document.getElementById("rPortalMethod");
+        const nextButtonMethod = document.getElementById("nextButtonMethod");
+
+        const rPortalReviewMoneyBack = document.getElementById(
+          "rPortalReviewMoneyBack"
+        );
+        const nextButtonReviewMoneyBack = document.getElementById(
+          "nextButtonReviewMoneyBack"
+        );
+
+        const rPortalReview = document.getElementById("rPortalReview");
+        const nextButtonReview = document.getElementById("nextButtonReview");
+
+        const rPortalConfirmation = document.getElementById(
+          "rPortalConfirmation"
+        );
+        const nextButtonConfirmation = document.getElementById(
+          "nextButtonConfirmation"
+        );
+        const confirmationWhatYouAreGetting = document.getElementById(
+          "confirmationWhatYouAreGetting"
+        );
+
+        
+      });
+    </script>
+
+    <div class="menu-nav"></div>
+
+    <div class="next-nav">
+      <div data-next-page="returns-reasons" data-next-text="Next"></div>
+    </div>
+
+    <script src="navigation.js"></script>
+
+  </body>
+</html>

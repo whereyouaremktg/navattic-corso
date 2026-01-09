@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      :root {
+        --brandColor: #000000;
+      }
+      .view-order-button {
+        background-color: var(--brandColor);
+      }
+      .visit-our-store-link,
+      .corso-text-link {
+        color: var(--brandColor);
+      }
+      .shop-now-image {
+        width: 100%;
+      }
+    </style>
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="customer-portal.css">
+
+  </head>
+  <body>
+    <div class="shop-now-container blur">
+      <a id="imageButton" href="shipping-plus.html">
+        <img
+          class="shop-now-image"
+          id="shopNowImage"
+          src="#"
+          alt="Shp Now Image"
+        />
+      </a>
+    </div>
+
+    <dialog id="corso-session-banner" open="">
+    <section>
+    <p>Return Credit Ready to Use</p>
+    <p>Start shopping and we'll apply this credit to your cart. Checkout when you're ready to finish your return.</p>
+    <p data-amount="405">Credit remaining: <span id="shopNowCredit">$0.00</span>.</p>
+    </section>
+  <button id="corso-session-banner-close" type="button" aria-label="Collapse Session Details">×</button></dialog>
+
+    <script>
+      // Get the encoded checkout url paramater
+      const params = new URLSearchParams(window.location.search);
+      const checkoutParams = params.get("checkout");
+
+      // Decode and Parse
+      const decodedCheckoutParams = atob(checkoutParams);
+      const checkoutJson = JSON.parse(decodedCheckoutParams);
+
+      console.log("checkoutJson", checkoutJson);
+
+      // turn url into usable variables
+      const { widgetUrl, brandColor, productPrice, shopNowImageUrl, showNextButton, showProducts } =
+        checkoutJson;
+
+      document.addEventListener("DOMContentLoaded", () => {
+
+        const shopNowImage = document.getElementById("shopNowImage");
+        shopNowImage.src = shopNowImageUrl;
+
+        const imageButton = document.getElementById("imageButton");
+        imageButton.href = "shipping-plus.html?checkout=" + checkoutParams;
+
+        const shopNowCredit = document.querySelectorAll("#shopNowCredit");
+        shopNowCredit.forEach((text) => {
+          text.innerText = "$" + ((productPrice  * 1) + 10).toFixed(2);
+        });
+
+      });
+    </script>
+
+    <div class="menu-nav"></div>
+
+    <div class="next-nav">
+      <div data-next-page="returns-shop-now-brand-finish" data-next-text="Next"></div>
+    </div>
+
+    <script src="navigation.js"></script>
+  </body>
+</html>

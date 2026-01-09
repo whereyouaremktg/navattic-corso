@@ -1,0 +1,288 @@
+<html lang="en" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="customer-portal.css">
+    <title>Customer Portal</title>
+  </head>
+  <body id="crew" class="overscroll-none ready">
+    <div id="root">
+      <div
+        class="h-full"
+        data-sentry-component="AppShell"
+        data-sentry-source-file="app-shell-component.tsx"
+      >
+        <div class="relative grid h-full grid-rows-[min-content_1fr]">
+          <header
+            class="flex min-h-16 flex-col items-center justify-center bg-white shadow"
+            data-sentry-component="Header"
+            data-sentry-source-file="app-shell-component.tsx"
+          >
+            <span
+              aria-label="Go to Order look up"
+              data-sentry-element="Link"
+              data-sentry-source-file="link-button.tsx"
+              class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 p-0 text-primary-on-container shadow-none hover:underline focus:underline my-3 h-10 w-full max-w-md"
+              data-sentry-component="LinkButton"
+            >
+              <div
+                class="h-full w-full bg-header-logo bg-contain bg-center bg-no-repeat"
+                data-testid="header-logo"
+              ></div>
+            </span>
+          </header>
+          <div
+            class="h-auto bg-banner bg-cover bg-fixed text-base md:bg-banner-img"
+            data-sentry-component="Body"
+            data-sentry-source-file="app-shell-component.tsx"
+          >
+            <div class="mx-auto h-auto max-w-3xl p-2">
+              <div
+                id="app-body"
+                class="relative h-auto w-full rounded-none border border-gray-200 bg-gray-50 px-4 py-8 shadow md:block md:rounded-lg"
+              >
+                <nav
+                  class="-mx-4 -mt-8 mb-4 rounded-t-md p-4 text-gray-800"
+                  data-sentry-component="AppBar"
+                  data-sentry-source-file="app-shell-component.tsx"
+                >
+                  <div
+                    class="flex flex-col items-center justify-between gap-1 md:flex-row"
+                  >
+                    <div
+                      class="flex w-full items-center justify-between gap-1 md:w-auto"
+                    >
+                      <span
+                        data-sentry-element="Link"
+                        data-sentry-source-file="link-button.tsx"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 shadow-none hover:underline focus:underline text-gray-800 hover:text-gray-600 p-1 text-sm"
+                        data-sentry-component="LinkButton"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fal"
+                          data-icon="magnifying-glass"
+                          class="svg-inline--fa fa-magnifying-glass size-4 mr-1"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          data-sentry-element="FontAwesomeIcon"
+                          data-sentry-component="Icon"
+                          data-sentry-source-file="icon.tsx"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M384 208A176 176 0 1 0 32 208a176 176 0 1 0 352 0zM343.3 366C307 397.2 259.7 416 208 416C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208c0 51.7-18.8 99-50 135.3L507.3 484.7c6.2 6.2 6.2 16.4 0 22.6s-16.4 6.2-22.6 0L343.3 366z"
+                          ></path>
+                        </svg>
+                        Search
+                      </span>
+                    </div>
+                    <div
+                      class="flex w-full justify-between gap-1 px-1 text-xs font-medium md:w-auto md:flex-col md:px-0 md:text-right"
+                    >
+                      <span>Order: #3183</span
+                      ><span
+                        >Order Date:
+                        <span id="orderDate">Nov 4, 2024</span></span
+                      >
+                    </div>
+                  </div>
+                </nav>
+
+
+
+                  <main class="flex-1">
+                    <section class="flex flex-col gap-8" data-sentry-component="Page" data-sentry-source-file="Page.tsx">
+                        <header class="px-4 sr-only">
+                            <h1 class="text-center text-2xl text-gray-800">Shop Now Offer</h1>
+                        </header>
+                        <section aria-labelledby=":r3d:" class="flex flex-col rounded-md border border-gray-200 bg-white shadow-xs gap-8 p-6 md:p-10" data-sentry-component="Card" data-sentry-source-file="Card.tsx">
+                            <header class="sr-only">
+                                <div class="">
+                                    <h2 id=":r3d:" class="text-left text-xl font-medium text-gray-800">Shop Now</h2>
+                                </div>
+                            </header>
+                            <section class="space-y-3" data-sentry-component="ShopNowReturnCredit" data-sentry-source-file="ShopNowPage.tsx">
+                                <div class="flex flex-col gap-3 rounded-xl border border-primary/20 bg-primary/5 p-5">
+                                    <p class="text-sm font-semibold tracking-wide text-primary uppercase">Your credit</p>
+                                    <div class="flex items-center gap-2"><span class="text-xl font-bold text-gray-900" id="productPrice">$0.00</span><span class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-sm font-semibold text-primary/90 shadow-xs"><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="circle-check" class="svg-inline--fa fa-circle-check size-5 h-4 w-4 text-primary" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-sentry-element="FontAwesomeIcon" data-sentry-component="Icon" data-sentry-source-file="Icon.tsx"><path fill="currentColor" d="M256 32a224 224 0 1 1 0 448 224 224 0 1 1 0-448zm0 480A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM363.3 203.3c6.2-6.2 6.2-16.4 0-22.6s-16.4-6.2-22.6 0L224 297.4l-52.7-52.7c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6l64 64c6.2 6.2 16.4 6.2 22.6 0l128-128z"></path></svg>+ $10.00 bonus</span></div>
+                                </div>
+                            </section>
+                            <section class="space-y-4">
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Why shop now?</h3>
+                                    <p class="mt-1 text-sm text-gray-600">Put your credit to work instantly to get your new items faster.</p>
+                                </div>
+                                <dl class="grid grid-cols-[auto_1fr] space-y-3 gap-x-3"><dt class="contents"><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="dollar-sign" class="svg-inline--fa fa-dollar-sign size-4 self-center text-primary" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-sentry-element="FontAwesomeIcon" data-sentry-component="Icon" data-sentry-source-file="Icon.tsx"><path fill="currentColor" d="M176 16c0-8.8-7.2-16-16-16s-16 7.2-16 16l0 47.5c-6.3 .1-12.6 .3-18.8 .9c-24 2-47.9 7.8-67.4 20.6C37.7 98.1 23.2 118 17.9 146c-3.8 20.3-1.9 38.2 5.7 53.7C31 215 43.1 226.5 57.1 235.4c26.7 17 63.6 26.7 97.2 35.5l1.7 .4c35.7 9.4 67.8 17.9 89.8 31.9c10.6 6.8 17.8 14.2 21.9 22.6c4 8.3 5.8 19 3 33.8c-3.9 20.7-18.4 36.4-42.9 46c-24.9 9.8-59.1 12.6-98 7c-24.4-3.6-61-12.1-91.3-25.2c-8.1-3.5-17.5 .2-21 8.4s.2 17.5 8.4 21c33.6 14.5 73.1 23.5 99.3 27.4c0 0 .1 0 .1 0c6.4 .9 12.7 1.6 18.9 2.1l0 49.5c0 8.8 7.2 16 16 16s16-7.2 16-16l0-48.6c23.2-.7 44.8-4.7 63.4-11.9c32-12.5 56.2-35.7 62.7-69.9c3.8-20.3 1.9-38.2-5.7-53.7c-7.4-15.3-19.6-26.8-33.5-35.6c-26.7-17-63.6-26.7-97.2-35.5l-1.7-.4c-35.7-9.4-67.8-17.9-89.8-31.9c-10.6-6.8-17.8-14.2-21.9-22.6c-4-8.3-5.8-19-3-33.8c3.6-19.3 13.1-31.8 26-40.2c13.4-8.8 31.5-13.7 52.6-15.5c42.3-3.5 91.3 6 124.3 14c8.6 2.1 17.2-3.2 19.3-11.8s-3.2-17.2-11.8-19.3c-21.9-5.3-52.1-11.7-83.8-14.4L176 16z"></path></svg><span class="col-start-2 font-semibold text-gray-900">Make more for your return</span></dt>
+                                    <dd class="col-start-2 text-sm text-gray-600">Because we think we you can find something new to love, we have added a little extra to your return credit.</dd><dt class="contents"><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass size-4 self-center text-primary" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-sentry-element="FontAwesomeIcon" data-sentry-component="Icon" data-sentry-source-file="Icon.tsx"><path fill="currentColor" d="M384 208A176 176 0 1 0 32 208a176 176 0 1 0 352 0zM343.3 366C307 397.2 259.7 416 208 416C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208c0 51.7-18.8 99-50 135.3L507.3 484.7c6.2 6.2 6.2 16.4 0 22.6s-16.4 6.2-22.6 0L343.3 366z"></path></svg><span class="col-start-2 font-semibold text-gray-900">Explore our latest arrivals</span></dt>
+                                    <dd class="col-start-2 text-sm text-gray-600">Browse the latest arrivals chosen to complement what you already love.</dd><dt class="contents"><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="truck" class="svg-inline--fa fa-truck size-4 self-center text-primary" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-sentry-element="FontAwesomeIcon" data-sentry-component="Icon" data-sentry-source-file="Icon.tsx"><path fill="currentColor" d="M64 32C46.3 32 32 46.3 32 64l0 288c0 17.7 14.3 32 32 32l5.5 0c13.2-37.3 48.7-64 90.5-64s77.4 26.7 90.5 64L384 384l0-320c0-17.7-14.3-32-32-32L64 32zm0 384c-35.3 0-64-28.7-64-64L0 64C0 28.7 28.7 0 64 0L352 0c35.3 0 64 28.7 64 64l0 32 65.3 0c14 0 27.3 6.1 36.4 16.8l78.7 91.8c7.5 8.7 11.6 19.8 11.6 31.2L608 384l16 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-48 0c0 53-43 96-96 96s-96-43-96-96l-128 0c0 53-43 96-96 96s-96-43-96-96zM416 224l154.9 0-77.5-90.4c-3-3.5-7.5-5.6-12.1-5.6L416 128l0 96zm0 32l0 88.4c17-15.2 39.4-24.4 64-24.4c41.8 0 77.4 26.7 90.5 64l5.5 0 0-128-160 0zM224 416A64 64 0 1 0 96 416a64 64 0 1 0 128 0zm256 64a64 64 0 1 0 0-128 64 64 0 1 0 0 128z"></path></svg><span class="col-start-2 font-semibold text-gray-900">Faster returns</span></dt>
+                                    <dd class="col-start-2 text-sm text-gray-600">Avoid out of stock delays. Enjoy speedy shipping on us when you complete your exchange with Shop Now.</dd>
+                                </dl>
+                            </section>
+                            <form method="post" action="/luna-qa/order/11752031551854/return/shop?index" data-sentry-element="RouterForm" data-sentry-source-file="Form.tsx" class="flex flex-col gap-4" data-sentry-component="Form"><button name="shopNow" value="yes" data-sentry-element="Submit" data-sentry-source-file="ShopNowPage.tsx" type="submit" class="inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 font-medium shadow-xs hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer focus:outline-solid focus:outline-primary focus:outline-2 focus:outline-offset-2 bg-primary text-on-primary w-full md:w-1/2"><span>Start Shopping</span></button><a data-sentry-element="Link" data-sentry-source-file="LinkButton.tsx" class="inline-flex items-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer focus:outline-primary focus:outline-2 focus:outline-offset-2 max-w-fit justify-start p-0 text-gray-900 shadow-none hover:underline focus:border-none focus:underline focus:ring-0 focus:ring-transparent focus:ring-offset-0 focus:outline-none" data-sentry-component="LinkButton" href="/luna-qa/order/11752031551854/return/address">No thanks, continue with return</a></form>
+                        </section>
+                    </section>
+                </main>
+                
+
+                <footer
+                  class="mt-8 flex flex-col items-stretch justify-between space-x-4 md:flex-row"
+                  data-testid="app-footer"
+                  data-sentry-component="Footer"
+                  data-sentry-source-file="app-shell-component.tsx"
+                >
+                  <div
+                    class="flex items-center justify-center text-center md:justify-start md:text-left"
+                  >
+                    <p class="text-xs">
+                      Need help with? Contact us at support@<span
+                        id="emailAddressBrandName"
+                        style="text-transform: lowercase"
+                        >ooni</span
+                      >.com
+                    </p>
+                  </div>
+                  <div
+                    class="mt-8 flex items-center justify-center text-xs md:mt-0 md:justify-start"
+                  >
+                    <span class="w-14"
+                      ><a
+                        rel="noreferrer"
+                        data-sentry-element="Link"
+                        data-sentry-source-file="link-button.tsx"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 p-0 text-primary-on-container shadow-none hover:underline focus:underline"
+                        data-sentry-component="LinkButton"
+                        href="https://corso.com/returns-exchanges"
+                        target="_blank"
+                        ><img
+                          alt="Corso Logo"
+                          src="https://corso-media.sfo3.cdn.digitaloceanspaces.com/img/corso-logo.png" /></a
+                    ></span>
+                  </div>
+                </footer>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      // Get the encoded checkout url paramater
+      const params = new URLSearchParams(window.location.search);
+      const checkoutParams = params.get("checkout");
+
+      // Decode and Parse
+      const decodedCheckoutParams = atob(checkoutParams);
+      const checkoutJson = JSON.parse(decodedCheckoutParams);
+
+      console.log("checkoutJson", checkoutJson);
+
+      // turn url into usable variables
+      const {
+        rates,
+        brandColor,
+        brandLogo,
+        productName,
+        productDesc,
+        productPrice,
+        productImage,
+        exchangeProductImage,
+        exchangeProductName,
+        exchangeProductOptions,
+        exchangeProductOptionLabel,
+        plusPrice,
+        checkbox,
+        checkboxLabel,
+        checkboxDesc,
+        widgetImageUrl,
+        storeName,
+        showProducts,
+      } = checkoutJson;
+
+      // Get today's date
+      const today = new Date();
+
+      // Get yesterday's date
+      const yesterday = new Date();
+      const twoDaysAgo = new Date();
+      const fiveDaysAgo = new Date();
+      const sevenDaysAgo = new Date();
+      const thirtyDaysAhead = new Date();
+      yesterday.setDate(today.getDate() - 1);
+      twoDaysAgo.setDate(today.getDate() - 2);
+      fiveDaysAgo.setDate(today.getDate() - 5);
+      sevenDaysAgo.setDate(today.getDate() - 7);
+      thirtyDaysAhead.setDate(today.getDate() + 31);
+
+      // Format the date as "Jan 19, 2025"
+      const options = { year: "numeric", month: "short", day: "numeric" };
+      const formattedDateToday = today.toLocaleDateString("en-US", options);
+      const formattedDateYesterday = yesterday.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateTwoDaysAgo = twoDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateFiveDaysAgo = fiveDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateSevenDaysAgo = sevenDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateThirtyDaysAhead = thirtyDaysAhead.toLocaleDateString(
+        "en-US",
+        options
+      );
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.documentElement.style.setProperty(
+          "--corso-primary",
+          "#" + brandColor
+        );
+
+        document.documentElement.style.setProperty(
+          "--corso-header-img-url",
+          `url("${brandLogo}")`
+        );
+
+        document.documentElement.style.setProperty(
+          "--corso-primary-on-container",
+          "#" + brandColor
+        );
+
+        const orderDate = document.getElementById("orderDate");
+        const productPrices = document.querySelectorAll("#productPrice");
+        
+
+        const emailAddressBrandName = document.getElementById(
+          "emailAddressBrandName"
+        );
+
+        orderDate.innerText = formattedDateSevenDaysAgo;
+        emailAddressBrandName.innerText = storeName.replace(/\s+/g, "");
+
+        productPrices.forEach((text) => {
+          text.innerText = "$" + (productPrice * 1).toFixed(2);
+        });
+
+      });
+    </script>
+
+    <div class="menu-nav"></div>
+
+    <div class="next-nav">
+      <div data-next-page="returns-shop-now-brand" data-next-text="Next"></div>
+    </div>
+
+    <script src="navigation.js"></script>
+
+  </body>
+</html>

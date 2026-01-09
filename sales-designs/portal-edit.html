@@ -1,0 +1,262 @@
+<html lang="en" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      :root {
+        --corso-primary: #000000;
+        --corso-surface: #000000;
+        --corso-primary-on-container: #000000;
+        --corso-on-primary: #ffffff;
+        --corso-banner: #edeae5;
+        --corso-header-img-url: url("https://cdn.corso.com/img/Corso_Horizontal-Lockup_Black.png");
+        --corso-banner-img-url: url("");
+      }
+    </style>
+    <title>Customer Portal</title>
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="customer-portal.css">
+  </head>
+  <body id="crew" class="overscroll-none ready">
+    <div id="root">
+      <div
+        class="h-full"
+        data-sentry-component="AppShell"
+        data-sentry-source-file="app-shell-component.tsx"
+      >
+        <div class="relative grid h-full grid-rows-[min-content_1fr]">
+          <header
+            class="flex min-h-16 flex-col items-center justify-center bg-white shadow"
+            data-sentry-component="Header"
+            data-sentry-source-file="app-shell-component.tsx"
+          >
+            <span
+              aria-label="Go to Order look up"
+              data-sentry-element="Link"
+              data-sentry-source-file="link-button.tsx"
+              class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 p-0 text-primary-on-container shadow-none hover:underline focus:underline my-3 h-10 w-full max-w-md"
+              data-sentry-component="LinkButton"
+            >
+              <div
+                class="h-full w-full bg-header-logo bg-contain bg-center bg-no-repeat"
+                data-testid="header-logo"
+              ></div>
+            </span>
+          </header>
+          <div
+            class="h-auto bg-banner bg-cover bg-fixed text-base md:bg-banner-img"
+            data-sentry-component="Body"
+            data-sentry-source-file="app-shell-component.tsx"
+          >
+            <div class="mx-auto h-auto max-w-3xl p-2">
+              <div
+                id="app-body"
+                class="relative h-auto w-full rounded-none border border-gray-200 bg-gray-50 px-4 py-8 shadow md:block md:rounded-lg"
+              >
+                <nav
+                  class="-mx-4 -mt-8 mb-4 rounded-t-md p-4 text-gray-800"
+                  data-sentry-component="AppBar"
+                  data-sentry-source-file="app-shell-component.tsx"
+                >
+                  <div
+                    class="flex flex-col items-center justify-between gap-1 md:flex-row"
+                  >
+                    <div
+                      class="flex w-full items-center justify-between gap-1 md:w-auto"
+                    >
+                      <span
+                        data-sentry-element="Link"
+                        data-sentry-source-file="link-button.tsx"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 shadow-none hover:underline focus:underline text-gray-800 hover:text-gray-600 p-1 text-sm"
+                        data-sentry-component="LinkButton"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fal"
+                          data-icon="magnifying-glass"
+                          class="svg-inline--fa fa-magnifying-glass size-4 mr-1"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          data-sentry-element="FontAwesomeIcon"
+                          data-sentry-component="Icon"
+                          data-sentry-source-file="icon.tsx"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M384 208A176 176 0 1 0 32 208a176 176 0 1 0 352 0zM343.3 366C307 397.2 259.7 416 208 416C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208c0 51.7-18.8 99-50 135.3L507.3 484.7c6.2 6.2 6.2 16.4 0 22.6s-16.4 6.2-22.6 0L343.3 366z"
+                          ></path>
+                        </svg>
+                        Search
+                      </span>
+                    </div>
+                    <div
+                      class="flex w-full justify-between gap-1 px-1 text-xs font-medium md:w-auto md:flex-col md:px-0 md:text-right"
+                    >
+                      <span>Order: #3183</span
+                      ><span
+                        >Order Date:
+                        <span id="orderDate">Nov 4, 2024</span></span
+                      >
+                    </div>
+                  </div>
+                </nav>
+                <main class="flex-1"><section class="flex flex-col gap-4" data-sentry-component="Page" data-sentry-source-file="Page.tsx"><header class="px-4 sr-only"><h1 class="text-center heading-md text-gray-900">Edit Your Order</h1></header><section aria-labelledby="" class="flex flex-col gap-6 rounded-md border border-gray-200 bg-white p-4 shadow-xs md:p-8" data-sentry-component="Card" data-sentry-source-file="Card.tsx"><ul aria-label="Possible Edit Actions" class="flex flex-col divide-y divide-outline *:first:pt-0 *:last:pb-0 *:py-4" data-sentry-element="Element" data-sentry-component="Divide" data-sentry-source-file="Divide.tsx"><li><section class="grid w-full auto-rows-auto items-center gap-4 sm:gap-y-0 grid-cols-1 has-[.media]:grid-cols-[3.5rem_1fr] has-[.action]:sm:grid-cols-[1fr_15rem] sm:has-[.media]:has-[.action]:grid-cols-[3.5rem_1fr_15rem] has-[.media]:[grid-template-areas:&quot;media&quot;] has-[.media]:has-[.header]:[grid-template-areas:&quot;media_header&quot;] has-[.media]:has-[.header]:has-[.action]:[grid-template-areas:&quot;media_header&quot;_&quot;._action&quot;] sm:has-[.media]:has-[.header]:has-[.action]:[grid-template-areas:&quot;media_header_action&quot;] has-[.media]:has-[.content]:[grid-template-areas:&quot;media_content&quot;] has-[.media]:has-[.content]:has-[.action]:[grid-template-areas:&quot;media_content&quot;_&quot;._action&quot;] sm:has-[.media]:has-[.content]:has-[.action]:[grid-template-areas:&quot;media_content_action&quot;] has-[.media]:has-[.header]:has-[.content]:[grid-template-areas:&quot;media_header&quot;_&quot;._content&quot;] has-[.media]:has-[.header]:has-[.content]:has-[.action]:[grid-template-areas:&quot;media_header&quot;_&quot;._content&quot;_&quot;._action&quot;] sm:has-[.media]:has-[.header]:has-[.content]:has-[.action]:[grid-template-areas:&quot;media_header_action&quot;_&quot;._content_.&quot;] has-[.header]:[grid-template-areas:&quot;header&quot;] has-[.header]:has-[.action]:[grid-template-areas:&quot;header&quot;_&quot;action&quot;] sm:has-[.header]:has-[.action]:[grid-template-areas:&quot;header_action&quot;] has-[.header]:has-[.content]:has-[.action]:[grid-template-areas:&quot;header&quot;_&quot;content&quot;_&quot;action&quot;] sm:has-[.header]:has-[.content]:has-[.action]:[grid-template-areas:&quot;header_action&quot;_&quot;content_.&quot;] has-[.content]:[grid-template-areas:&quot;content&quot;] has-[.content]:has-[.action]:[grid-template-areas:&quot;content&quot;_&quot;action&quot;] sm:has-[.content]:has-[.action]:[grid-template-areas:&quot;content_action&quot;]" aria-labelledby="luid-8" aria-describedby="luid-9" data-sentry-component="CardSectionRoot" data-sentry-source-file="CardSection.tsx"><figure class="media flex justify-center justify-self-center text-gray-900 [grid-area:media]" data-sentry-component="CardSectionMedia" data-sentry-source-file="CardSection.tsx"><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="truck" class="svg-inline--fa fa-truck size-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-sentry-element="FontAwesomeIcon" data-sentry-component="Icon" data-sentry-source-file="Icon.tsx"><path fill="currentColor" d="M64 32C46.3 32 32 46.3 32 64l0 288c0 17.7 14.3 32 32 32l5.5 0c13.2-37.3 48.7-64 90.5-64s77.4 26.7 90.5 64L384 384l0-320c0-17.7-14.3-32-32-32L64 32zm0 384c-35.3 0-64-28.7-64-64L0 64C0 28.7 28.7 0 64 0L352 0c35.3 0 64 28.7 64 64l0 32 65.3 0c14 0 27.3 6.1 36.4 16.8l78.7 91.8c7.5 8.7 11.6 19.8 11.6 31.2L608 384l16 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-48 0c0 53-43 96-96 96s-96-43-96-96l-128 0c0 53-43 96-96 96s-96-43-96-96zM416 224l154.9 0-77.5-90.4c-3-3.5-7.5-5.6-12.1-5.6L416 128l0 96zm0 32l0 88.4c17-15.2 39.4-24.4 64-24.4c41.8 0 77.4 26.7 90.5 64l5.5 0 0-128-160 0zM224 416A64 64 0 1 0 96 416a64 64 0 1 0 128 0zm256 64a64 64 0 1 0 0-128 64 64 0 1 0 0 128z"></path></svg></figure><header class="header [grid-area:header]" data-sentry-component="CardSectionHeader" data-sentry-source-file="CardSection.tsx"><div id="luid-8" class="subheading-md text-gray-900" data-sentry-component="CardSectionTitle" data-sentry-source-file="CardSection.tsx">Update Address</div><div id="luid-9" class="body-md text-gray-600" data-sentry-component="CardSectionDescription" data-sentry-source-file="CardSection.tsx">Change the shipping address for your order.</div></header><div class="action grid grid-cols-1 [grid-area:action] *:w-full" data-sentry-component="CardSectionAction" data-sentry-source-file="CardSection.tsx"><form method="post" action="/luna-qa/order/11754906059118/edit?index" class="flex flex-col gap-6 items-stretch" data-sentry-element="RouterForm" data-sentry-component="Form" data-sentry-source-file="Form.tsx"><input type="hidden" name="order-edit-action" value="{&quot;editStartLabel&quot;:&quot;Update your shipping address.&quot;,&quot;editConfirmLabel&quot;:&quot;&quot;,&quot;editSuccessLabel&quot;:&quot;Your address update request has been sent.&quot;,&quot;editType&quot;:&quot;UPDATE_SHIPPING_ADDRESS&quot;,&quot;storeRuleId&quot;:859}"><button type="submit" class="label-lg inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 shadow-xs hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer focus:outline-solid focus:outline-primary focus:outline-2 focus:outline-offset-2 bg-primary text-on-primary w-full md:w-full"><span>Update Address</span></button></form></div></section></li><li><section class="grid w-full auto-rows-auto items-center gap-4 sm:gap-y-0 grid-cols-1 has-[.media]:grid-cols-[3.5rem_1fr] has-[.action]:sm:grid-cols-[1fr_15rem] sm:has-[.media]:has-[.action]:grid-cols-[3.5rem_1fr_15rem] has-[.media]:[grid-template-areas:&quot;media&quot;] has-[.media]:has-[.header]:[grid-template-areas:&quot;media_header&quot;] has-[.media]:has-[.header]:has-[.action]:[grid-template-areas:&quot;media_header&quot;_&quot;._action&quot;] sm:has-[.media]:has-[.header]:has-[.action]:[grid-template-areas:&quot;media_header_action&quot;] has-[.media]:has-[.content]:[grid-template-areas:&quot;media_content&quot;] has-[.media]:has-[.content]:has-[.action]:[grid-template-areas:&quot;media_content&quot;_&quot;._action&quot;] sm:has-[.media]:has-[.content]:has-[.action]:[grid-template-areas:&quot;media_content_action&quot;] has-[.media]:has-[.header]:has-[.content]:[grid-template-areas:&quot;media_header&quot;_&quot;._content&quot;] has-[.media]:has-[.header]:has-[.content]:has-[.action]:[grid-template-areas:&quot;media_header&quot;_&quot;._content&quot;_&quot;._action&quot;] sm:has-[.media]:has-[.header]:has-[.content]:has-[.action]:[grid-template-areas:&quot;media_header_action&quot;_&quot;._content_.&quot;] has-[.header]:[grid-template-areas:&quot;header&quot;] has-[.header]:has-[.action]:[grid-template-areas:&quot;header&quot;_&quot;action&quot;] sm:has-[.header]:has-[.action]:[grid-template-areas:&quot;header_action&quot;] has-[.header]:has-[.content]:has-[.action]:[grid-template-areas:&quot;header&quot;_&quot;content&quot;_&quot;action&quot;] sm:has-[.header]:has-[.content]:has-[.action]:[grid-template-areas:&quot;header_action&quot;_&quot;content_.&quot;] has-[.content]:[grid-template-areas:&quot;content&quot;] has-[.content]:has-[.action]:[grid-template-areas:&quot;content&quot;_&quot;action&quot;] sm:has-[.content]:has-[.action]:[grid-template-areas:&quot;content_action&quot;]" aria-labelledby="luid-10" aria-describedby="luid-11" data-sentry-component="CardSectionRoot" data-sentry-source-file="CardSection.tsx"><figure class="media flex justify-center justify-self-center text-gray-900 [grid-area:media]" data-sentry-component="CardSectionMedia" data-sentry-source-file="CardSection.tsx"><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="xmark" class="svg-inline--fa fa-xmark size-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-sentry-element="FontAwesomeIcon" data-sentry-component="Icon" data-sentry-source-file="Icon.tsx"><path fill="currentColor" d="M324.5 411.1c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6L214.6 256 347.1 123.5c6.2-6.2 6.2-16.4 0-22.6s-16.4-6.2-22.6 0L192 233.4 59.6 100.9c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6L169.4 256 36.9 388.5c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0L192 278.6 324.5 411.1z"></path></svg></figure><header class="header [grid-area:header]" data-sentry-component="CardSectionHeader" data-sentry-source-file="CardSection.tsx"><div id="luid-10" class="subheading-md text-gray-900" data-sentry-component="CardSectionTitle" data-sentry-source-file="CardSection.tsx">Cancel Order</div><div id="luid-11" class="body-md text-gray-600" data-sentry-component="CardSectionDescription" data-sentry-source-file="CardSection.tsx">Request to cancel your order.</div></header><div class="action grid grid-cols-1 [grid-area:action] *:w-full" data-sentry-component="CardSectionAction" data-sentry-source-file="CardSection.tsx"><form method="post" action="/luna-qa/order/11754906059118/edit?index" class="flex flex-col gap-6 items-stretch" data-sentry-element="RouterForm" data-sentry-component="Form" data-sentry-source-file="Form.tsx"><input type="hidden" name="order-edit-action" value="{&quot;editStartLabel&quot;:&quot;Submit a request to cancel your order. This action is irreversible.&quot;,&quot;editConfirmLabel&quot;:&quot;If your order is eligible for cancellation, you will receive a confirmation email.&quot;,&quot;editSuccessLabel&quot;:&quot;Your order cancellation request has been sent.&quot;,&quot;editType&quot;:&quot;CANCEL_ORDER&quot;,&quot;shouldNotifyOnCancellation&quot;:true,&quot;shouldRestockOnCancellation&quot;:true,&quot;storeRuleId&quot;:858}"><button type="submit" class="label-lg inline-flex items-center justify-center rounded-md border px-4 py-2 shadow-xs hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer focus:outline-solid focus:outline-primary focus:outline-2 focus:outline-offset-2 border-primary bg-transparent text-primary-on-container hover:bg-surface w-full md:w-full"><span>Cancel</span></button></form></div></section></li></ul></section></section></main>
+
+                <footer
+                  class="mt-8 flex flex-col items-stretch justify-between space-x-4 md:flex-row"
+                  data-testid="app-footer"
+                  data-sentry-component="Footer"
+                  data-sentry-source-file="app-shell-component.tsx"
+                >
+                  <div
+                    class="flex items-center justify-center text-center md:justify-start md:text-left"
+                  >
+                    <p class="text-xs">
+                      Need help with? Contact us at support@<span
+                      id="emailAddressBrandName"
+                      style="text-transform: lowercase"
+                      >ooni</span
+                    >.com
+                    </p>
+                  </div>
+                  <div
+                    class="mt-8 flex items-center justify-center text-xs md:mt-0 md:justify-start"
+                  >
+                    <span class="w-14"
+                      ><a
+                        rel="noreferrer"
+                        data-sentry-element="Link"
+                        data-sentry-source-file="link-button.tsx"
+                        class="inline-flex items-center justify-center rounded-md border border-transparent font-medium hover:brightness-90 disabled:opacity-50 disabled:cursor-not-allowed focus:outline focus:outline-primary focus:outline-2 focus:outline-offset-2 p-0 text-primary-on-container shadow-none hover:underline focus:underline"
+                        data-sentry-component="LinkButton"
+                        href="https://corso.com/returns-exchanges"
+                        target="_blank"
+                        ><img
+                          alt="Corso Logo"
+                          src="https://corso-media.sfo3.cdn.digitaloceanspaces.com/img/corso-logo.png" /></a
+                    ></span>
+                  </div>
+                </footer>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Get the encoded checkout url paramater
+      const params = new URLSearchParams(window.location.search);
+      const checkoutParams = params.get("checkout");
+
+      // Decode and Parse
+      const decodedCheckoutParams = atob(checkoutParams);
+      const checkoutJson = JSON.parse(decodedCheckoutParams);
+
+      console.log("checkoutJson", checkoutJson);
+
+      // turn url into usable variables
+      const {
+        rates,
+        brandColor,
+        brandLogo,
+        productName,
+        productDesc,
+        productPrice,
+        productImage,
+        checkbox,
+        checkboxLabel,
+        checkboxDesc,
+        storeName,
+		showProducts,
+      } = checkoutJson;
+
+      // Get today's date
+      const today = new Date();
+
+      // Get yesterday's date
+      const yesterday = new Date();
+      const twoDaysAgo = new Date();
+      const fiveDaysAgo = new Date();
+      const sevenDaysAgo = new Date();
+      yesterday.setDate(today.getDate() - 1);
+      twoDaysAgo.setDate(today.getDate() - 2);
+      fiveDaysAgo.setDate(today.getDate() - 5);
+      sevenDaysAgo.setDate(today.getDate() - 7);
+
+      // Format the date as "Jan 19, 2025"
+      const options = { year: "numeric", month: "short", day: "numeric" };
+      const formattedDateToday = today.toLocaleDateString("en-US", options);
+      const formattedDateYesterday = yesterday.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateTwoDaysAgo = twoDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateFiveDaysAgo = fiveDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+      const formattedDateSevenDaysAgo = sevenDaysAgo.toLocaleDateString(
+        "en-US",
+        options
+      );
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.documentElement.style.setProperty(
+          "--corso-primary",
+          "#" + brandColor
+        );
+
+        console.log("logo", brandLogo);
+
+        document.documentElement.style.setProperty(
+          "--corso-header-img-url",
+          `url("${brandLogo}")`
+        );
+
+        document.documentElement.style.setProperty(
+          "--corso-primary-on-container",
+          "#" + brandColor
+        );
+
+        const orderDate = document.getElementById("orderDate");
+        const deliveredOnDate = document.getElementById("deliveredOnDate");
+        const trackingHistoryDate = document.getElementById(
+          "trackingHistoryDate"
+        );
+        const trackingProductImage = document.getElementById(
+          "trackingProductImage"
+        );
+        const trackingProductName = document.getElementById(
+          "trackingProductName"
+        );
+        const trackingHistoryDate2 = document.getElementById(
+          "trackingHistoryDate2"
+        );
+        const trackingHistoryDate3 = document.getElementById(
+          "trackingHistoryDate3"
+        );
+        const emailAddressBrandName = document.getElementById(
+          "emailAddressBrandName"
+        );
+
+        orderDate.innerText = formattedDateSevenDaysAgo;
+        
+        emailAddressBrandName.innerText = storeName.replace(/\s+/g, "");
+
+      });
+    </script>
+
+    <div class="menu-nav"></div>
+
+    <div class="next-nav">
+      <div data-next-page="portal-edit-address" data-next-text="Next"></div>
+    </div>
+
+    <script src="navigation.js"></script>
+  </body>
+</html>

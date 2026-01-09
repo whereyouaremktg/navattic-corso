@@ -1,0 +1,114 @@
+.floating-menu {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.floating-button {
+  background-color: var(--brandColor, var(--swn0j0));
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+  display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.floating-button:hover {
+  transform: scale(1.05);
+}
+
+.floating-button:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.menu-icon {
+  width: 25px;
+  height: 25px;
+  fill: white;
+  pointer-events: none;
+}
+
+.menu-items {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+}
+
+.menu-items a,
+.menu-close {
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+  border: none;
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.menu-close {
+  text-align: right;
+  font-weight: bold;
+}
+
+.menu-items a:hover,
+.menu-close:hover {
+  background-color: #f0f0f0;
+}
+
+.menu-items a:last-child {
+  border-bottom: none;
+}
+
+.hidden-nav {
+  display: none !important;
+}
+
+.next-nav {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  flex-direction: row;
+  gap: 5px;
+  align-items: flex-end;
+  z-index: 9999;
+}
+
+.next-button {
+  background-color: var(--brandColor);
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-block;
+}
+
+.next-button:hover {
+  background-color: var(--brandColor);
+  transform: translateY(-3px);
+}

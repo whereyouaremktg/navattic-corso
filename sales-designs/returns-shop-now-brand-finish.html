@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      :root {
+        --brandColor: #000000;
+      }
+      .view-order-button {
+        background-color: var(--brandColor);
+      }
+      .visit-our-store-link,
+      .corso-text-link {
+        color: var(--brandColor);
+      }
+      .shop-now-image {
+        width: 100%;
+      }
+    </style>
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="customer-portal.css">
+
+  </head>
+  <body>
+    <div class="shop-now-container">
+      <a id="imageButton" href="shipping-plus.html">
+        <img
+          class="shop-now-image"
+          id="shopNowImage"
+          src="#"
+          alt="Shp Now Image"
+        />
+      </a>
+    </div>
+
+    <button id="corso-session-banner-show" type="button" aria-label="Session Details" data-placement="bottom left">Payment Due:&nbsp;<span id="shopNowCredit">$0.00</span></button>
+
+    <script>
+      // Get the encoded checkout url paramater
+      const params = new URLSearchParams(window.location.search);
+      const checkoutParams = params.get("checkout");
+
+      // Decode and Parse
+      const decodedCheckoutParams = atob(checkoutParams);
+      const checkoutJson = JSON.parse(decodedCheckoutParams);
+
+      console.log("checkoutJson", checkoutJson);
+
+      // turn url into usable variables
+      const { widgetUrl, brandColor, productPrice, exchangeProductPrice, shopNowImageUrl, showNextButton, showProducts } =
+        checkoutJson;
+
+      const shopNowCredit = Math.abs(((productPrice || 0) * 1 + 10) - ((exchangeProductPrice || 0) * 1));
+
+      console.log("exchangeProductPrice", exchangeProductPrice);
+      console.log("shopNowCredit", shopNowCredit);
+
+      document.addEventListener("DOMContentLoaded", () => {
+
+        const shopNowImage = document.getElementById("shopNowImage");
+        shopNowImage.src = shopNowImageUrl;
+
+        const imageButton = document.getElementById("imageButton");
+        imageButton.href = "shipping-plus.html?checkout=" + checkoutParams;
+
+        const shopNowCreditElements = document.querySelectorAll("#shopNowCredit");
+        shopNowCreditElements.forEach((text) => {
+          text.innerText = "$" + shopNowCredit;
+        });
+
+      });
+    </script>
+
+    <div class="menu-nav"></div>
+
+    <div class="next-nav">
+      <div data-next-page="returns-shop-now-continue" data-next-text="Next"></div>
+    </div>
+
+    <script src="navigation.js"></script>
+  </body>
+</html>
