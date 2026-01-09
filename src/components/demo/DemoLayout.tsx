@@ -36,6 +36,8 @@ export interface DemoLayoutProps {
   hideAppBar?: boolean;
   /** For admin: which sidebar module is active */
   activeModule?: string;
+  /** For admin: callback when sidebar item is clicked */
+  onModuleChange?: (module: string) => void;
 }
 
 // ============================================================================
@@ -217,11 +219,17 @@ const sidebarLabels: Record<string, string> = {
 function AdminSidebar({
   config,
   activeModule,
+  onModuleChange,
 }: {
   config: DemoConfig;
   activeModule?: string;
+  onModuleChange?: (module: string) => void;
 }) {
   const modules = config.admin?.enabledModules || ["shipping", "returns"];
+
+  const handleClick = (module: string) => {
+    onModuleChange?.(module);
+  };
 
   return (
     <aside className="group/sidebar hidden flex-col overflow-auto bg-neutral-200 lg:flex lg:rounded-tl-lg">
@@ -231,17 +239,23 @@ function AdminSidebar({
             <ul className="space-y-1">
               {/* Order Lookup */}
               <li>
-                <span className="flex items-center gap-x-3 rounded-md p-2 text-xs font-semibold text-neutral-900 hover:bg-neutral-100">
+                <button
+                  type="button"
+                  onClick={() => handleClick("order-lookup")}
+                  className="w-full flex items-center gap-x-3 rounded-md p-2 text-xs font-semibold text-neutral-900 hover:bg-neutral-100 text-left"
+                >
                   <Search className="size-5 shrink-0 lg:size-4" />
                   <div className="truncate">Order Lookup</div>
-                </span>
+                </button>
               </li>
               {/* Module items */}
               {modules.map((module) => (
                 <li key={module}>
-                  <span
+                  <button
+                    type="button"
+                    onClick={() => handleClick(module)}
                     className={cn(
-                      "flex items-center gap-x-3 rounded-md p-2 text-xs font-semibold",
+                      "w-full flex items-center gap-x-3 rounded-md p-2 text-xs font-semibold text-left",
                       activeModule === module
                         ? "bg-neutral-50 text-blue-700"
                         : "text-neutral-900 hover:bg-neutral-100"
@@ -249,7 +263,7 @@ function AdminSidebar({
                   >
                     {sidebarIcons[module]}
                     <div className="truncate">{sidebarLabels[module]}</div>
-                  </span>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -262,16 +276,29 @@ function AdminSidebar({
               </div>
               <ul className="space-y-1">
                 <li>
-                  <span className="flex items-center gap-x-3 rounded-md p-2 text-xs font-semibold text-neutral-900 hover:bg-neutral-100">
+                  <button
+                    type="button"
+                    onClick={() => handleClick("analytics")}
+                    className={cn(
+                      "w-full flex items-center gap-x-3 rounded-md p-2 text-xs font-semibold text-left",
+                      activeModule === "analytics"
+                        ? "bg-neutral-50 text-blue-700"
+                        : "text-neutral-900 hover:bg-neutral-100"
+                    )}
+                  >
                     <PieChart className="size-5 shrink-0 lg:size-4" />
                     <div className="truncate">Dashboards</div>
-                  </span>
+                  </button>
                 </li>
                 <li>
-                  <span className="flex items-center gap-x-3 rounded-md p-2 text-xs font-semibold text-neutral-900 hover:bg-neutral-100">
+                  <button
+                    type="button"
+                    onClick={() => handleClick("corso-ai")}
+                    className="w-full flex items-center gap-x-3 rounded-md p-2 text-xs font-semibold text-neutral-900 hover:bg-neutral-100 text-left"
+                  >
                     <Sparkles className="size-5 shrink-0 lg:size-4" />
                     <div className="truncate">Corso AI</div>
-                  </span>
+                  </button>
                 </li>
               </ul>
             </li>
@@ -387,10 +414,12 @@ function AdminLayout({
   config,
   children,
   activeModule,
+  onModuleChange,
 }: {
   config: DemoConfig;
   children: React.ReactNode;
   activeModule?: string;
+  onModuleChange?: (module: string) => void;
 }) {
   return (
     <div className="h-full">
@@ -399,7 +428,11 @@ function AdminLayout({
         style={{ "--sidebar-col": "minmax(auto, 15rem)" } as React.CSSProperties}
       >
         <AdminHeader config={config} />
-        <AdminSidebar config={config} activeModule={activeModule} />
+        <AdminSidebar
+          config={config}
+          activeModule={activeModule}
+          onModuleChange={onModuleChange}
+        />
         <div className="overflow-auto bg-neutral-100 p-4 lg:block lg:rounded-tr-lg lg:px-12">
           <main className="mx-auto" style={{ maxWidth: "1200px" }}>
             {children}
@@ -420,6 +453,7 @@ export function DemoLayout({
   onBackClick,
   hideAppBar,
   activeModule,
+  onModuleChange,
 }: DemoLayoutProps) {
   const { config } = useDemoConfig();
   
@@ -437,7 +471,11 @@ export function DemoLayout({
           {children}
         </PortalLayout>
       ) : (
-        <AdminLayout config={config} activeModule={activeModule}>
+        <AdminLayout
+          config={config}
+          activeModule={activeModule}
+          onModuleChange={onModuleChange}
+        >
           {children}
         </AdminLayout>
       )}
